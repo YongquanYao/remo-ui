@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    <re-tip></re-tip>
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <ul>
