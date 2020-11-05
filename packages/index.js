@@ -1,8 +1,11 @@
-import ReTip from './tip'
+import ReTip from './remo-tip'
+import ReButton from './remo-button'
+import '../public/css/shn-vue-ui-base.css'
 
 // 所有组件列表
 const components = [
-  ReTip
+  ReTip,
+  ReButton
 ]
 
 // 定义 install 方法，接收 Vue 作为参数
@@ -24,5 +27,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 export default {
   install,
   // 所有组件，必须具有 install，才能使用 Vue.use()
-  ReTip
+  ReTip,
+  ReButton
 }

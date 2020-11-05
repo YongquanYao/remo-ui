@@ -20,6 +20,11 @@ export default {
       // 默认值为 default
       default: 'default'
     }
+  },
+  data () {
+    return {
+
+    }
   }
 }
 </script>

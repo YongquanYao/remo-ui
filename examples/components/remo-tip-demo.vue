@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h2>remoUI - Tip</h2>
     <re-tip>
       Green
       Green    
@@ -23,6 +24,9 @@
 export default {
   name: 'RemoTipDemo',
   data () {
+    return {
+
+    }
   }
 }
 </script>
@@ -31,6 +35,7 @@ export default {
 <style scoped>
 h1, h2 {
   font-weight: normal;
+  margin-left: 10px;
 }
 ul {
   list-style-type: none;
