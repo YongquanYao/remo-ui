@@ -60,7 +60,15 @@ exports.cssLoaders = function (options) {
     postcss: generateLoaders(),
     less: generateLoaders('less'),
     sass: generateLoaders('sass', { indentedSyntax: true }),
-    scss: generateLoaders('sass'),
+    // scss: generateLoaders('sass'),
+    scss: generateLoaders('sass').concat(
+      {
+        loader: 'sass-resources-loader',
+        options: {
+          resources: path.resolve(__dirname, '../public/css/remo-ui.scss') //自定义文件名
+        }
+      }
+    ),
     stylus: generateLoaders('stylus'),
     styl: generateLoaders('stylus')
   }

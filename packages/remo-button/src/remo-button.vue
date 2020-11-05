@@ -6,7 +6,14 @@
     :style="customizeColor"
     @click="click"
   >
-    <slot></slot>
+  <i
+    v-if="icon != '' || circle"
+  >
+    +
+  </i>
+  <span class="remo-button-span" v-if="!circle">
+      <slot></slot>
+  </span>
 </button>
 </template>
 
@@ -37,6 +44,23 @@ export default {
     block: {
       type: Boolean,
       default: false
+    },
+    icon: {
+      type: String,
+      default: ''
+    }
+  },
+  data () {
+    return {
+      customizeColor: {
+        backgroundColor: this.color,
+        borderColor: this.color
+      }
+    }
+  },
+  methods: {
+    click () {
+      this.$emit('click')
     }
   }
 
@@ -44,6 +68,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+// @import '../../../public/css/remo-ui.scss'; 局部引入 
 .remo-button {
   position: relative;
   display: inline-block;
@@ -79,6 +104,9 @@ export default {
     color: $--color-primary;
     background-color: #fff;
     border-color: $--color-primary;
+  }
+  i + .remo-button-span {
+    margin-left: 5px;
   }
 }
 .ripple {

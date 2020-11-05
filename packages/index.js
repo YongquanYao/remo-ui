@@ -1,6 +1,5 @@
 import ReTip from './remo-tip'
 import ReButton from './remo-button'
-import '../public/css/shn-vue-ui-base.css'
 
 // 所有组件列表
 const components = [

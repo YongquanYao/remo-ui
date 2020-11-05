@@ -17,6 +17,24 @@
     <re-tip color="red">
       red
     </re-tip>
+    <re-button>
+      default
+    </re-button>
+    <re-button type="primary">
+      Primary
+    </re-button>
+    <re-button type="success">
+      Success
+    </re-button>
+    <re-button type="danger" circle @click="tesClick">
+      11
+    </re-button>
+    <re-button type="dashed" >
+      dashed
+    </re-button>
+    <re-button type="dotted" >
+      dotted
+    </re-button>
   </div>
 </template>
 
@@ -26,6 +44,11 @@ export default {
   data () {
     return {
 
+    }
+  },
+  methods: {
+    tesClick () {
+      alert('1')
     }
   }
 }
