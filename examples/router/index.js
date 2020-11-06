@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import RemoTipDemo from '@/components/remo-tip-demo.vue'
+import RemoUiDemo from '@/components/remo-ui-demo.vue'
 
 Vue.use(Router)
 
@@ -8,8 +8,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'RemoTipDemo',
-      component: RemoTipDemo
+      name: 'RemoUiDemo',
+      component: RemoUiDemo
     }
   ]
 })

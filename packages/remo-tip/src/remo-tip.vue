@@ -34,7 +34,7 @@ export default {
   position: relative;
   display: inline-block;
   padding: 8px 20px;
-  margin: 15px 10px;
+  margin: 10px 10px;
 
   font-size: 15px;
   line-height: 25px;
