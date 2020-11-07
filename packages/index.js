@@ -1,12 +1,14 @@
 import ReTip from './remo-tip'
 import ReButton from './remo-button'
 import ReBlockShadow from './remo-block-shadow'
+import ReInput from './remo-input'
 
 // 所有组件列表
 const components = [
   ReTip,
   ReButton,
-  ReBlockShadow
+  ReBlockShadow,
+  ReInput
 ]
 
 // 定义 install 方法，接收 Vue 作为参数
@@ -30,5 +32,6 @@ export default {
   // 所有组件，必须具有 install，才能使用 Vue.use()
   ReTip,
   ReButton,
-  ReBlockShadow
+  ReBlockShadow,
+  ReInput
 }

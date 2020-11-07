@@ -26,6 +26,11 @@
       <re-block-shadow mode="sharp">Sharp</re-block-shadow>
       <re-block-shadow width="550px" height="150px" >Customisze 550px(W) 150px(H)</re-block-shadow>
     </div>
+    <div >
+      <h2>remoUI - Input</h2>
+      <re-input v-model="input"/>
+      <span style="margin-left:20px">{{input}}</span>
+    </div>
   </div>
 </template>
 
@@ -34,7 +39,7 @@ export default {
   name: 'RemoUiDemo',
   data () {
     return {
-
+      input: ''
     }
   },
   methods: {
