@@ -2,26 +2,24 @@
 
 > A UI Library For VUE@2 
 
-## Build Setup
+## Components Goal
+- [x] Tip
+- [X] Button
+- [x] Shadow Box
+- [] Anchor-link
+- [] Anchor
+- [] Input
+- [] Upload
+- [] DatePicker
+- [] CountryPicker
+- [] Statistic
+- [] Image Card
+- [] Modal Mask
+- [] Collapse
+- [] BackTop
+- [] Footer
+- [] Drawer
+- [] Divider   
 
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run all tests
-npm test
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## About
+Lots of people and I Used to development frontend App with some mature popluar UI libraray like Ant Design, IView or Element. However, this kind of Librarys so how could not satisify your develop demand. I decide to develop my own UI library for Deep learning in VUE and futher development usage. Hope this could help me and you some days. :blush:
