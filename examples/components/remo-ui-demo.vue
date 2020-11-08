@@ -29,7 +29,25 @@
     <div >
       <h2>remoUI - Input</h2>
       <re-input v-model="input"/>
-      <span style="margin-left:20px">{{input}}</span>
+      <span style="margin-left:20px" >{{input}}</span>
+      <re-input v-model="input1" pattern='frame'/>
+      <span style="margin-left:20px">{{input1}}</span>
+    </div>
+     <div >
+      <h2>remoUI - Divider</h2>
+      <p>Normal horizontal divider</p>
+      <re-divider/>
+      <p>Normal horizontal divider</p>
+      <p>Normal vertical divider<re-divider direction="vertical"/>Normal vertical divider</p>
+      <re-divider contentPosition="left">
+          Left
+      </re-divider>
+      <re-divider contentPosition="right">
+        right
+      </re-divider>
+      <re-divider>
+        Center normal
+      </re-divider>
     </div>
   </div>
 </template>
@@ -39,7 +57,8 @@ export default {
   name: 'RemoUiDemo',
   data () {
     return {
-      input: ''
+      input: '',
+      input1: ''
     }
   },
   methods: {
@@ -69,6 +88,7 @@ a {
 }
 .example_content{
   display: flex;
+  flex-wrap: wrap;
 }
 .container{
   margin: 0 10px;
@@ -77,5 +97,8 @@ a {
 .block div{
     margin-top: 15px;
     text-align: center;
+}
+.example_content div{
+   margin-right:20px;
 }
 </style>

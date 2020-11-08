@@ -33,14 +33,14 @@
       class="remo-input__inner"
       ref="input"
     />
-    <i :class="suffixIcon" class="suffix-icon shni" v-if="suffixIcon != '' && pattern === 'frame'"></i>
-    <i :class="prefixIcon" class="prefix-icon shni" v-if="prefixIcon != '' && pattern === 'frame'"></i>
+    <i :class="suffixIcon" class="suffix-icon remo" v-if="suffixIcon != '' && pattern === 'frame'"></i>
+    <i :class="prefixIcon" class="prefix-icon remo" v-if="prefixIcon != '' && pattern === 'frame'"></i>
 
     <label
       :class="{'remo-input__label__focus':value != ''}"
       @click="$refs.input.focus()"
       class="remo-input__label"
-      v-if="pattern == 'line' && animation && !disabled"
+      v-if="pattern === 'line' && animation && !disabled"
     >{{placeholder}}</label>
   </div>
 </template>
