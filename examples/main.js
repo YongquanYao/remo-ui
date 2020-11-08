@@ -5,6 +5,8 @@ import App from './App'
 import router from './router'
 import RemoUI from './../packages'
 
+import '../public/icon/iconfont.css'
+
 Vue.config.productionTip = false
 Vue.use(RemoUI)
 

@@ -6,11 +6,12 @@
     :style="customizeColor"
     @click="click"
   >
-  <i
-    v-if="icon != '' || circle"
-  >
-    +
-  </i>
+   <i
+      :class="[icon === '' ? 'remo-question':icon ]"
+      class="remoi"
+      style="font-size:14px"
+      v-if="icon != '' || circle"
+    ></i>
   <span class="remo-button-span" v-if="!circle">
       <slot></slot>
   </span>

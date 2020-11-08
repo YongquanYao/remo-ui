@@ -1,3 +1,5 @@
+import '../public/iconfont/iconfont.css'
+
 import ReTip from './remo-tip'
 import ReButton from './remo-button'
 import ReBlockShadow from './remo-block-shadow'

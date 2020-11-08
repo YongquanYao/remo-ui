@@ -13,15 +13,15 @@
       <re-button>default</re-button>
       <re-button type="primary">Primary</re-button>
       <re-button type="success">Success</re-button>
-      <re-button type="danger" circle @click="tesClick">11</re-button>
+      <re-button type="danger" circle  icon="remo-user"></re-button>
       <re-button type="dashed" >dashed</re-button>
       <re-button type="dotted" >dotted</re-button>
     </div>
      <div class="container block">
       <h2>remoUI - Shadow Block</h2>
       <re-block-shadow>Default</re-block-shadow>
-      <re-block-shadow mode="light"> Light</re-block-shadow>
-      <re-block-shadow mode="deep"> Deep</re-block-shadow>
+      <re-block-shadow mode="light">Light</re-block-shadow>
+      <re-block-shadow mode="deep">Deep</re-block-shadow>
       <re-block-shadow mode="curve">Curve</re-block-shadow>
       <re-block-shadow mode="sharp">Sharp</re-block-shadow>
       <re-block-shadow width="550px" height="150px" >Customisze 550px(W) 150px(H)</re-block-shadow>
