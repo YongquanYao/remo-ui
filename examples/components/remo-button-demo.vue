@@ -49,12 +49,11 @@
           <re-divider/>
         </div>
         <div>
-          <re-button type="customize" :color="'#DB7093'"  icon="remo-heart">Customize Color</re-button>
-          <!-- <re-button type="warning"   icon="remo-phone"></re-button>
-          <re-button type="success"   icon="remo-plus"></re-button>
-          <re-button type="danger"   icon="remo-shop"></re-button>
-          <re-button type="dashed"   icon="remo-heart"></re-button> -->
-        </div>
+           <re-button type="customize" :color="'#87cefa'"  icon="remo-heart">Customize Color</re-button>
+          <re-button type="customize" :color="'#0892d0'"  icon="remo-heart">Customize Color</re-button>
+          <re-button type="customize" :color="'#4682b4'"  icon="remo-heart">Customize Color</re-button>
+           <re-button type="customize" :color="'#0067a5'"  icon="remo-heart">Customize Color</re-button>
+    </div>
       </div>
     </div>
 </template>

@@ -39,19 +39,23 @@ export default {
   name: 'Home',
   data () {
     return {
-      active: 1,
+      active: '1',
       sidebar_data: [
         {
           title: '开发指南',
           child_data: [
             {
-              title: '安装/快速上手'
+              title: '安装/快速上手',
+              id: '1',
+              path: '/'
             },
             {
-              title: 'Icon 图标'
+              title: 'Icon 图标',
+              id: '2'
             },
             {
-              title: 'About 关于'
+              title: 'About 关于',
+              id: '3'
             }
           ]
         },
@@ -60,58 +64,25 @@ export default {
           child_data: [
             {
               group: '通用',
-              title: 'Button 按钮'
+              title: 'Button 按钮',
+              path: '#/component/remo-button',
+              id: '001'
             },
             {
-              title: 'Shadow Block 阴影模块'
-            },
-            {
-              group: '数据录入',
-              title: 'Input 输入框'
-            },
-            {
-              title: 'Upload 上传'
-            }
-          ]
-        },
-        {
-          title: '组件',
-          child_data: [
-            {
-              group: '通用',
-              title: 'Button 按钮'
-            },
-            {
-              title: 'Shadow Block 阴影模块'
+              title: 'Shadow Block 阴影模块',
+              id: '002'
             },
             {
               group: '数据录入',
-              title: 'Input 输入框'
+              title: 'Input 输入框',
+              id: '003'
             },
             {
-              title: 'Upload 上传'
+              title: 'Upload 上传',
+              id: '004'
             }
           ]
-        },
-        {
-          title: '组件',
-          child_data: [
-            {
-              group: '通用',
-              title: 'Button 按钮'
-            },
-            {
-              title: 'Shadow Block 阴影模块'
-            },
-            {
-              group: '数据录入',
-              title: 'Input 输入框'
-            },
-            {
-              title: 'Upload 上传'
-            }
-          ]
-        },
+        },   
         {
           title: '实用插件',
           child_data: [
