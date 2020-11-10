@@ -1,4 +1,4 @@
-import '../public/iconfont/iconfont.css'
+import '../public/icon/iconfont.css'
 
 import ReTip from './remo-tip'
 import ReButton from './remo-button'

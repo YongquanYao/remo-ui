@@ -2,7 +2,7 @@
     <div class="home">
         <div class="header">
             <div class="container">
-                <h2>Remo UI</h2>
+                <span class="title">Remo UI</span>
             </div>
         </div>
         <div class="main">
@@ -146,6 +146,10 @@ export default {
             margin: 0 auto;
             padding: 0 10px;
             border-bottom: 1px solid #dcdfe6; // 分界线
+            .title{
+              font-size: 25px;
+              font-weight: 600;
+            }
         }
     }
     .main{
@@ -225,7 +229,7 @@ export default {
         .content {
             flex: 1;
             width: 100%;
-            padding: 0 50px 0 10px;
+            padding: 10px 50px 0 10px;
             margin-left: 240px;
         }
     }
