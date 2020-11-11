@@ -2,7 +2,7 @@
     <div class="home">
         <div class="header">
             <div class="container">
-                <span class="title">Remo UI</span>
+                <span class="title">Remo UI <i class="remoi remo-slack"/></span>
             </div>
         </div>
         <div class="main">
@@ -111,15 +111,22 @@ export default {
         height: 80px;
         line-height: 80px;  // 字体居中
         background: #fff;
+        box-shadow: 1px 1px 5px 1px #ebebeb;
         .container{ //里面的容器
             height: 100%; // 撑开
             width: 1140px;
             margin: 0 auto;
             padding: 0 10px;
-            border-bottom: 1px solid #dcdfe6; // 分界线
+            // border-bottom: 1px solid #dcdfe6; // 分界线
             .title{
               font-size: 25px;
-              font-weight: 600;
+              font-weight: 700;
+              color:#409eff;
+              i{
+                font-size: 24px;
+                color: #666;
+                font-weight: 500;
+              }
             }
         }
     }
@@ -139,7 +146,7 @@ export default {
             width: 200px;
             height: 80%;
             top: 135px;
-            // visibility: hidden; // 鼠标在才触发滚动条
+            visibility: hidden; // 鼠标在才触发滚动条
             border-right: 1px solid #dcdfe6; // 分界线
             overflow: auto;
             &:hover{
