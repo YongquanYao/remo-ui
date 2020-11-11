@@ -1,27 +1,19 @@
 <template>
     <div>
-      <div class="demo-block">
-        <div class="title">
-          <span>Default - 默认</span>
-          <span class="desc">基础阴影效果:</span>
-        </div>
-        <re-block-shadow>
+      <demo-block title="Default - 默认" desc="基础阴影效果:">
+         <re-block-shadow>
           <span style="color:#409eff">
             Hi there ! I am Default block card.
           </span>
         </re-block-shadow>
-      </div>
-       <div class="demo-block">
-        <div class="title">
-          <span>Light - 轻微</span>
-          <span class="desc">淡阴影效果:</span>
-        </div>
-        <re-block-shadow mode="light">
+      </demo-block>
+      <demo-block title="Light - 轻微" desc="淡阴影效果:">
+         <re-block-shadow mode="light">
           <span style="color:#409eff">
             Hi there ! I am Light block card.
           </span>
         </re-block-shadow>
-      </div>
+      </demo-block>
       <div class="demo-block">
         <div class="title">
           <span>Deep - 明显</span>
@@ -77,8 +69,12 @@
 </template>
 
 <script>
+import demoBlock from './demo-block.vue'
 export default {
   name: 'RemoShadowBlkDemo',
+  components: {
+    demoBlock
+  },
   data () {
     return {
       tabledata: [
