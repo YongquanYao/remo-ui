@@ -98,13 +98,18 @@ export default {
               id: '002'
             },
             {
-              group: '数据录入',
-              title: 'Input 输入框',
+              title: 'Tip 提示',
+              path: '#/component/remo-tip',
               id: '003'
             },
             {
-              title: 'Upload 上传',
+              group: '数据录入',
+              title: 'Input 输入框',
               id: '004'
+            },
+            {
+              title: 'Upload 上传',
+              id: '005'
             }
           ]
         },

@@ -4,6 +4,7 @@ import Router from 'vue-router'
 import Home from '@/pages/Home.vue'
 import RemoBtn from '@/components/remo-button-demo'
 import RemoShadowBlk from '@/components/remo-shadowBlk-demo'
+import RemoTip from '@/components/remo-tip-demo'
 
 Vue.use(Router)
 
@@ -25,10 +26,18 @@ export default new Router({
         {
           path: '/component/remo-shadow-block',
           name: 'RemoShadowBlkDemo',
+          component: RemoShadowBlk,
           meta: {
             title: '组件|Remo'
-          },
-          component: RemoShadowBlk
+          }
+        },
+        {
+          path: '/component/remo-tip',
+          name: 'RemoTipDemo',
+          component: RemoTip,
+          meta: {
+            title: '组件|Remo'
+          }
         }
       ]
     }

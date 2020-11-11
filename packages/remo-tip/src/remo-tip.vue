@@ -2,7 +2,9 @@
     <div>
       <span
         :class="{'remo-tip-green': color === 'default' || color === 'green', 'remo-tip-blue': color === 'blue', 'remo-tip-orange': color === 'orange', 'remo-tip-red': color === 'red', 'remo-tip-gray': color === 'gray' }"
-        class="remo-tip" >
+        class="remo-tip"
+        :style="color !== 'default'  && color !== 'green' && color !== 'blue' && color !== 'red' && color !== 'orange' && color !== 'gray' ? customizeColor : ''"
+        >
         <!-- 使用插槽，供父组件传递按钮名字 -->
         <slot></slot>
       </span>
@@ -23,7 +25,11 @@ export default {
   },
   data () {
     return {
-
+      customizeColor: {
+        backgroundColor: '#fffff',
+        border: `1px solid ${this.color}`,
+        borderLeft: `6px solid ${this.color}`
+      }
     }
   }
 }
@@ -34,7 +40,7 @@ export default {
   position: relative;
   display: inline-block;
   padding: 8px 20px;
-  margin: 10px 10px;
+  margin: 10px 0px;
 
   font-size: 15px;
   line-height: 25px;
