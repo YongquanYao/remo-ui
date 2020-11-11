@@ -3,6 +3,7 @@ import Router from 'vue-router'
 // import RemoUiDemo from '@/components/remo-ui-demo.vue'
 import Home from '@/pages/Home.vue'
 import RemoBtn from '@/components/remo-button-demo'
+import RemoShadowBlk from '@/components/remo-shadowBlk-demo'
 
 Vue.use(Router)
 
@@ -20,6 +21,14 @@ export default new Router({
           meta: {
             title: '组件|Remo'
           }
+        },
+        {
+          path: '/component/remo-shadow-block',
+          name: 'RemoShadowBlkDemo',
+          meta: {
+            title: '组件|Remo'
+          },
+          component: RemoShadowBlk
         }
       ]
     }

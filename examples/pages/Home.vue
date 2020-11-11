@@ -3,6 +3,14 @@
         <div class="header">
             <div class="container">
                 <span class="title">Remo UI <i class="remoi remo-slack"/></span>
+                <div class="header-nav">
+                  <ul>
+                    <li class="header-nav-item" v-for="x in headnav_data" :key="x.id">
+                        <i :class="x.icon" :style="{color: x.color}"></i>
+                        <a :href="x.path">{{x.name}}</a>
+                    </li>
+                  </ul>
+                </div>
             </div>
         </div>
         <div class="main">
@@ -40,6 +48,22 @@ export default {
   data () {
     return {
       active: '1',
+      headnav_data: [
+        // {
+        //   id: 990,
+        //   path: 'https://github.com/YongquanYao/remo-ui',
+        //   name: 'Github',
+        //   icon: 'remoi remo-github-fill',
+        //   color: '#000'
+        // },
+        // {
+        //   id: 991,
+        //   path: 'https://github.com/YongquanYao/remo-ui',
+        //   name: 'Wechat',
+        //   icon: 'remoi remo-wechat-fill',
+        //   color: '#7BB32E'
+        // }
+      ],
       sidebar_data: [
         {
           title: '开发指南',
@@ -70,6 +94,7 @@ export default {
             },
             {
               title: 'Shadow Block 阴影模块',
+              path: '#/component/remo-shadow-block',
               id: '002'
             },
             {
@@ -82,7 +107,7 @@ export default {
               id: '004'
             }
           ]
-        },   
+        },
         {
           title: '实用插件',
           child_data: [
@@ -117,15 +142,58 @@ export default {
             width: 1140px;
             margin: 0 auto;
             padding: 0 10px;
+            display: flex;
+            @media (max-width: 1160px) {
+                 padding: 0 15px;
+            }
             // border-bottom: 1px solid #dcdfe6; // 分界线
             .title{
               font-size: 25px;
               font-weight: 700;
               color:#409eff;
+              &:hover{
+                color: #666;
+                i{
+                  color:#409eff;
+                }
+              }
               i{
                 font-size: 24px;
                 color: #666;
                 font-weight: 500;
+              }
+            }
+            .header-nav{
+              flex:1;
+              margin-right: -135px;
+              ul{
+                float: right;
+                visibility: visible; // 始终显示列表
+                list-style: none;
+                display: flex;
+                padding: 0;
+                margin: 0;
+                .header-nav-item{
+                  padding: 0 15px;
+                  height: 80px;
+                  transition: 0.5s;
+                  &:hover{
+                    transform: scale(1.05);
+                  }
+                  i{
+                    font-size: 19px;
+                    margin-right: 4px;
+                  }
+                  a{
+                    text-decoration: none;
+                    color: #555;
+                    font-size: 16px;
+                    font-weight: 450;
+                    &:hover{
+                      color:#409eff
+                    }
+                  }
+                }
               }
             }
         }
@@ -149,6 +217,10 @@ export default {
             visibility: hidden; // 鼠标在才触发滚动条
             border-right: 1px solid #dcdfe6; // 分界线
             overflow: auto;
+            // padding-left: 10px;
+            @media (max-width: 1160px) {
+                 padding-left: 10px;
+            }
             &:hover{
                 visibility: visible; // 鼠标在才触发滚动条
                 border-right: 1px solid #dcdfe6; // 分界线

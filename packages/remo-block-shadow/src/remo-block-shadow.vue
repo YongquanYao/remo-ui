@@ -7,7 +7,7 @@
           'remo-block-CurveShadow': mode === 'curve',
           'remo-block-SharpShadow' : mode === 'sharp'
       }"
-      :style="customizeStyle"
+      :style="mode !== 'sharp' ? customizeStyle : ''"
     >
     <div class="content">
       <slot></slot>
@@ -25,22 +25,18 @@ export default {
     },
     width: {
       type: String,
-      default: ''
+      default: '400px'
     },
     height: {
       type: String,
       default: '150px'
-    },
-    color: {
-      type: String,
-      default: ''
     }
   },
   data () {
     return {
       customizeStyle: {
         width: this.width,
-        'max-height': this.height
+        height: this.height
       }
     }
   }

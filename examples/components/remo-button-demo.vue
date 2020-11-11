@@ -144,20 +144,5 @@ export default {
       font-weight: 350;
     }
   }
-  table{
-    width: 100%;
-    border-collapse: collapse;
-    thead tr{
-      border-bottom: 1px solid #dcdfe6;
-    }
-    thead tr th{
-      padding: 15px;
-      max-width: 250px;
-      font-size: 14px;
-      font-weight: 400;
-      color: #909399;
-      white-space: nowrap;
-    }
-  }
 }
 </style>
