@@ -9,7 +9,9 @@
       }"
       :style="customizeStyle"
     >
-    <slot></slot>
+    <div class="content">
+      <slot></slot>
+    </div>
     </div>
 </template>
 
@@ -50,6 +52,12 @@ export default {
     width: 400px;
     height: 150px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
+    &::before,&::after{
+      content: '';
+    }
+    .content{
+      padding: 24px;
+    }
 }
 .remo-block-lightShadow{
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
