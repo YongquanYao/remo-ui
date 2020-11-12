@@ -5,6 +5,7 @@ import Home from '@/pages/Home.vue'
 import RemoBtn from '@/components/remo-button-demo'
 import RemoShadowBlk from '@/components/remo-shadowBlk-demo'
 import RemoTip from '@/components/remo-tip-demo'
+import RemoIcon from '@/components/remo-icon-demo'
 
 Vue.use(Router)
 
@@ -15,6 +16,14 @@ export default new Router({
       name: 'Home',
       component: Home,
       children: [
+        {
+          path: '/component/remo-icon',
+          name: 'RemoIconDemo',
+          component: RemoIcon,
+          meta: {
+            title: '组件|Remo'
+          }
+        },
         {
           path: '/component/remo-button',
           name: 'RemoBtnDemo',

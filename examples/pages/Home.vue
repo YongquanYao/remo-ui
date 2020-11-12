@@ -75,11 +75,13 @@ export default {
             },
             {
               title: 'Icon 图标',
-              id: '2'
+              id: '2',
+              path: '#/component/remo-icon'
             },
             {
               title: 'About 关于',
-              id: '3'
+              id: '3',
+              path: '#/component/remo-about'
             }
           ]
         },
