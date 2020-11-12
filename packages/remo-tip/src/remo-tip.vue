@@ -1,5 +1,4 @@
 <template>
-    <div>
       <span
         :class="{'remo-tip-green': color === 'default' || color === 'green', 'remo-tip-blue': color === 'blue', 'remo-tip-orange': color === 'orange', 'remo-tip-red': color === 'red', 'remo-tip-gray': color === 'gray' }"
         class="remo-tip"
@@ -8,7 +7,6 @@
         <!-- 使用插槽，供父组件传递按钮名字 -->
         <slot></slot>
       </span>
-    </div>
 </template>
 
 <script>
@@ -38,7 +36,7 @@ export default {
 <style lang="scss" scoped>
 .remo-tip{
   position: relative;
-  display: inline-block;
+  display: block;
   padding: 8px 20px;
   margin: 10px 0px;
 

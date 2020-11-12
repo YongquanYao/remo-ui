@@ -1,11 +1,11 @@
 <template>
     <div>
        <demo-block title="基础" desc="5种基本颜色: ">
-         <re-tip color="green">Green: green</re-tip>
-         <re-tip color="blue">Blue: blueeeeeeeeeeeeeeeeeeeeeee</re-tip>
-         <re-tip color="orange">Orange: orangeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</re-tip>
-         <re-tip color="red">Red: redddddddddddddddddddddddddddddddddddddddddddddddddddd</re-tip>
-         <re-tip color="gray">Gray: grayyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy</re-tip>
+         <re-tip color="green" style="width: 20%">green</re-tip>
+         <re-tip color="blue" style="width: 40%">blue</re-tip>
+         <re-tip color="orange" style="width: 60%">orange</re-tip>
+         <re-tip color="red" style="width: 80%">red</re-tip>
+         <re-tip color="gray" style="width: 90%">gray</re-tip>
        </demo-block>
        <demo-block title="自定义" desc="设置边框颜色: ">
          <re-tip color="pink">pink</re-tip>

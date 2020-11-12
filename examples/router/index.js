@@ -6,6 +6,9 @@ import RemoBtn from '@/components/remo-button-demo'
 import RemoShadowBlk from '@/components/remo-shadowBlk-demo'
 import RemoTip from '@/components/remo-tip-demo'
 import RemoIcon from '@/components/remo-icon-demo'
+import RemoInstall from '@/components/demo-install'
+import RemoAbout from '@/components/demo-about'
+import RemoDivider from '@/components/remo-divider-demo'
 
 Vue.use(Router)
 
@@ -15,7 +18,24 @@ export default new Router({
       path: '/',
       name: 'Home',
       component: Home,
+      redirect: '/component/remo-installation',
       children: [
+        {
+          path: '/component/remo-installation',
+          name: 'RemoInstall',
+          component: RemoInstall,
+          meta: {
+            title: '组件|Remo'
+          }
+        },
+        {
+          path: '/component/remo-about',
+          name: 'RemoAbout',
+          component: RemoAbout,
+          meta: {
+            title: '组件|Remo'
+          }
+        },
         {
           path: '/component/remo-icon',
           name: 'RemoIconDemo',
@@ -44,6 +64,14 @@ export default new Router({
           path: '/component/remo-tip',
           name: 'RemoTipDemo',
           component: RemoTip,
+          meta: {
+            title: '组件|Remo'
+          }
+        },
+        {
+          path: '/component/remo-divider',
+          name: 'RemoDividerDemo',
+          component: RemoDivider,
           meta: {
             title: '组件|Remo'
           }

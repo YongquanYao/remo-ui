@@ -21,12 +21,16 @@
 - [ ] Drawer
 - [x] Divider   
 - [x] Icon Library   
-- [ ] Table
+- [x] Table
 
 ## Example Complete
 - [X] Button
 - [x] Shadow Block
 - [x] Block for demo show
+- [x] Icon Library  
+- [ ] Input  
+- [ ] About  
+- [ ] Divider
 
 ## About
 Lots of people and I Used to development frontend App with some mature popluar UI libraray like Ant Design, IView or Element. However, this kind of Librarys so how could not satisify your develop demand. I decide to develop my own UI library for Deep learning in VUE and futher development usage. Hope this could help me and you some days. :blush:

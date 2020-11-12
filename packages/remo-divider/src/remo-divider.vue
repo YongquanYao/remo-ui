@@ -39,7 +39,7 @@ export default {
   line-height: 1.5;
   list-style: none;
   font-feature-settings: 'tnum';
-  background: #e8e8e8;
+  background: #e2e1e1;
 }
 .remo-divider-horizontal {
   display: block;

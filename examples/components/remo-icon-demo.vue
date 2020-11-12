@@ -37,7 +37,7 @@
 <script>
 import demoBlock from './demo-block'
 export default {
-  name: 'RemoIcon',
+  name: 'RemoIconDemo',
   components: {
     demoBlock
   },

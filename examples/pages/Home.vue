@@ -71,7 +71,7 @@ export default {
             {
               title: '安装/快速上手',
               id: '1',
-              path: '/'
+              path: '#/component/remo-installation'
             },
             {
               title: 'Icon 图标',
@@ -105,13 +105,18 @@ export default {
               id: '003'
             },
             {
-              group: '数据录入',
-              title: 'Input 输入框',
+              title: 'Divider 分割线',
+              path: '#/component/remo-divider',
               id: '004'
             },
             {
+              group: '数据录入',
+              title: 'Input 输入框',
+              id: '010'
+            },
+            {
               title: 'Upload 上传',
-              id: '005'
+              id: '011'
             }
           ]
         },
@@ -125,6 +130,21 @@ export default {
         }
       ]
     }
+  },
+  mounted () {
+    // 保证刷新导航匹配到刷新前的位置
+    const hash = window.location.hash
+    // console.log(hash)
+    let id = '1'
+    for (const i of this.sidebar_data) {
+      for (const q of i.child_data) {
+        if (q.path === hash) {
+          id = q.id
+        }
+      }
+    }
+    // console.log(id)
+    this.active = id
   }
 }
 </script>
