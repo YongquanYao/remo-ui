@@ -1,7 +1,8 @@
 <template>
     <div class="demo-block">
-        <div class="title">
-          <span v-if="title !== ''">{{title}}</span>
+        <div class="header">
+          <span class="big" v-if="header !== ''">{{header}}</span>
+          <span class="small" v-if="title !== ''">{{title}}</span>
           <span class="desc" v-if="desc !== ''">{{desc}}</span>
         </div>
         <slot></slot>
@@ -13,6 +14,10 @@ export default {
   name: 'demoBlock',
   props: {
     title: {
+      type: String,
+      default: ''
+    },
+    header: {
       type: String,
       default: ''
     },
@@ -32,10 +37,15 @@ export default {
 <style lang="scss" scoped>
 .demo-block{
   margin: 30px auto 60px;
-  .title{
-    font-size: 19px;
+  .header{
     font-weight: 450;
     margin: 20px 0 10px;
+    .big{
+      font-size: 25px;
+    }
+    .small{
+      font-size: 19px;
+    }
     .desc{
       display: block;
       font-size: 15px;

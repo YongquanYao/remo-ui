@@ -5,7 +5,7 @@
           <span>基础用法</span>
           <span class="desc">常用的7种Type:</span>
         </div>
-        <re-block-shadow width="100%" height="150px">
+        <re-block-shadow width="100%" height="90px">
           <re-button>default</re-button>
           <re-button type="primary">Primary</re-button>
           <re-button type="success">Success</re-button>
@@ -20,7 +20,7 @@
           <span >禁用</span>
           <span class="desc">无法点击模式:</span>
         </div>
-        <re-block-shadow width="100%" height="150px">
+        <re-block-shadow width="100%" height="90px">
           <re-button :disabled="true">default</re-button>
           <re-button :disabled="true" type="primary">Primary</re-button>
           <re-button :disabled="true" type="success">Success</re-button>
@@ -35,7 +35,7 @@
           <span>圆形</span>
           <span class="desc">配合icon使用:</span>
         </div>
-        <re-block-shadow width="100%" height="120px">
+        <re-block-shadow width="100%" height="90px">
           <re-button type="primary" circle  icon="remo-user"></re-button>
           <re-button type="warning" circle  icon="remo-phone"></re-button>
           <re-button type="success" circle  icon="remo-plus"></re-button>
@@ -48,10 +48,10 @@
           <span>自定义</span>
           <span class="desc">颜色图标自定义, type必须为customize: </span>
         </div>
-        <re-block-shadow width="100%" height="150px">
-           <re-button type="customize" :color="'#87cega'"  icon="remo-wechat-fill">Customize Color</re-button>
-          <re-button type="customize" :color="'#0892d0'"  icon="remo-alipay">Customize Color</re-button>
-          <re-button type="customize" :color="'#4682b4'"  icon="remo-google">Customize Color</re-button>
+        <re-block-shadow width="100%" height="90px">
+           <re-button type="customize" :color="'#1AAD19'"  icon="remo-wechat-fill">Customize Color</re-button>
+          <re-button type="customize" :color="red" icon="remo-alipay">Customize Color</re-button>
+          <re-button type="customize" color="red"  icon="remo-google">Customize Color</re-button>
            <re-button type="customize" :color="'#0067a5'"  icon="remo-facebook">Customize Color</re-button>
         </re-block-shadow>
       </div>

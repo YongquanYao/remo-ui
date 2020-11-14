@@ -123,6 +123,11 @@ export default {
               title: 'Backtop 回到顶部',
               path: '#/component/remo-backtop',
               id: '020'
+            },
+            {
+              title: 'FooterBar 底部工具栏',
+              path: '#/component/remo-footerbar',
+              id: '021'
             }
           ]
         },
@@ -313,7 +318,7 @@ export default {
         .content {
             flex: 1;
             width: 100%;
-            padding: 10px 50px 0 10px;
+            padding: 10px 50px 50px 10px;
             margin-left: 240px;
         }
     }

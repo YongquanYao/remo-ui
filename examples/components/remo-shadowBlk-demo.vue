@@ -1,14 +1,14 @@
 <template>
     <div>
       <demo-block title="Default - 默认" desc="基础阴影效果:">
-         <re-block-shadow>
+         <re-block-shadow  width="100%">
           <span style="color:#409eff">
             Hi there ! I am Default block card.
           </span>
         </re-block-shadow>
       </demo-block>
       <demo-block title="Light - 轻微" desc="淡阴影效果:">
-         <re-block-shadow mode="light">
+         <re-block-shadow mode="light"  width="100%">
           <span style="color:#409eff">
             Hi there ! I am Light block card.
           </span>
@@ -19,7 +19,7 @@
           <span>Deep - 明显</span>
           <span class="desc">深阴影效果:</span>
         </div>
-        <re-block-shadow mode="deep">
+        <re-block-shadow mode="deep"  width="100%">
           <span style="color:#409eff">
             Hi there ! I am Deep block card.
           </span>
@@ -30,7 +30,7 @@
           <span>Curve - 曲线</span>
           <span class="desc">线性阴影效果:</span>
         </div>
-        <re-block-shadow mode="curve">
+        <re-block-shadow mode="curve"  width="100%">
           <span style="color:#409eff">
             Hi there ! I am Curve block card.
           </span>
@@ -41,7 +41,7 @@
           <span>Sharp - 弯翘</span>
           <span class="desc">翘阴影效果:</span>
         </div>
-        <re-block-shadow mode="sharp">
+        <re-block-shadow mode="sharp" width="100%">
           <span style="color:#409eff">
             Hi there ! I am Sharp block card.
           </span>
