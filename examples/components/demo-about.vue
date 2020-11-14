@@ -1,5 +1,6 @@
 <template>
     <div>
+      <re-backtop></re-backtop>
         <demo-block title="关于Remo-UI库" desc="">
             Just come up in mind having my own UI tool-kit.
         </demo-block>

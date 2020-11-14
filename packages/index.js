@@ -6,6 +6,7 @@ import ReBlockShadow from './remo-block-shadow'
 import ReInput from './remo-input'
 import ReDivider from './remo-divider'
 import ReTable from './remo-table'
+import ReBacktop from './remo-backtop'
 
 // 所有组件列表
 const components = [
@@ -14,7 +15,8 @@ const components = [
   ReBlockShadow,
   ReInput,
   ReDivider,
-  ReTable
+  ReTable,
+  ReBacktop
 ]
 
 // 定义 install 方法，接收 Vue 作为参数
@@ -41,5 +43,6 @@ export default {
   ReBlockShadow,
   ReInput,
   ReDivider,
-  ReTable
+  ReTable,
+  ReBacktop
 }

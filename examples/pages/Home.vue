@@ -117,6 +117,12 @@ export default {
             {
               title: 'Upload 上传',
               id: '011'
+            },
+            {
+              group: '其他',
+              title: 'Backtop 回到顶部',
+              path: '#/component/remo-backtop',
+              id: '020'
             }
           ]
         },
@@ -178,6 +184,7 @@ export default {
               font-size: 25px;
               font-weight: 700;
               color:#409eff;
+              // font-family: 'Leckerli One';
               &:hover{
                 color: #666;
                 i{
