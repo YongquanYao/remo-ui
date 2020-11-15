@@ -115,6 +115,11 @@ export default {
               id: '005'
             },
             {
+              title: 'Drawer 抽屉',
+              path: '#/component/remo-drawer',
+              id: '006'
+            },
+            {
               group: '数据录入',
               title: 'Input 输入框',
               id: '010'

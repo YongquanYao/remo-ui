@@ -22,22 +22,22 @@ export default {
         {
           icon: 'home',
           name: '主页',
-          link: '#'
+          link: '#/component/remo-menu'
         },
         {
           icon: 'phone',
           name: '联系',
-          link: '#'
+          link: '#/component/remo-menu'
         },
         {
           icon: 'scan',
           name: '扫码',
-          link: '#'
+          link: '#/component/remo-menu'
         },
         {
           icon: 'setting',
           name: '设置',
-          link: '#'
+          link: '#/component/remo-menu'
         }
       ],
       tableData: [
