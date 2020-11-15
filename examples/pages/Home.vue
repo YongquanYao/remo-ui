@@ -110,6 +110,11 @@ export default {
               id: '004'
             },
             {
+              title: 'Menu 菜单',
+              path: '#/component/remo-menu',
+              id: '005'
+            },
+            {
               group: '数据录入',
               title: 'Input 输入框',
               id: '010'

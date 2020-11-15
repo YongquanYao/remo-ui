@@ -8,6 +8,7 @@ import ReDivider from './remo-divider'
 import ReTable from './remo-table'
 import ReBacktop from './remo-backtop'
 import ReFooterBar from './remo-footerbar'
+import ReMenu from './remo-menu'
 
 // 所有组件列表
 const components = [
@@ -18,7 +19,8 @@ const components = [
   ReDivider,
   ReTable,
   ReBacktop,
-  ReFooterBar
+  ReFooterBar,
+  ReMenu
 ]
 
 // 定义 install 方法，接收 Vue 作为参数
@@ -47,5 +49,6 @@ export default {
   ReDivider,
   ReTable,
   ReBacktop,
-  ReFooterBar
+  ReFooterBar,
+  ReMenu
 }

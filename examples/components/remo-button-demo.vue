@@ -50,7 +50,7 @@
         </div>
         <re-block-shadow width="100%" height="90px">
            <re-button type="customize" :color="'#1AAD19'"  icon="remo-wechat-fill">Customize Color</re-button>
-          <re-button type="customize" :color="red" icon="remo-alipay">Customize Color</re-button>
+          <re-button type="customize" icon="remo-alipay">Customize Color</re-button>
           <re-button type="customize" color="red"  icon="remo-google">Customize Color</re-button>
            <re-button type="customize" :color="'#0067a5'"  icon="remo-facebook">Customize Color</re-button>
         </re-block-shadow>

@@ -11,6 +11,7 @@ import RemoAbout from '@/components/demo-about'
 import RemoDivider from '@/components/remo-divider-demo'
 import RemoBacktop from '@/components/remo-backtop-demo'
 import RemoFooterbar from '@/components/remo-footerbar-demo'
+import RemoMenu from '@/components/remo-menu-demo'
 
 Vue.use(Router)
 
@@ -90,6 +91,14 @@ export default new Router({
           path: '/component/remo-footerbar',
           name: 'RemoFooterbar',
           component: RemoFooterbar,
+          meta: {
+            title: '组件|Remo'
+          }
+        },
+        {
+          path: '/component/remo-menu',
+          name: 'RemoMenu',
+          component: RemoMenu,
           meta: {
             title: '组件|Remo'
           }
