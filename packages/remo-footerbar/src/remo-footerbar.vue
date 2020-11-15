@@ -1,9 +1,9 @@
 <template>
-  <div v-if="visible" class="footerBarDiv">
+  <div v-if="checkVisible" class="footerBarDiv">
     <div class="left">{{content}}</div>
     <div class="right">
-      <re-button>{{cancelText}}</re-button>
-      <re-button type="primary">{{okText}}</re-button>
+      <re-button @click="cancel"  v-if="cancelButtonShow" >{{cancelText}}</re-button>
+      <re-button @click="confirm"  v-if="confirmButtonShow" type="primary">{{okText}}</re-button>
     </div>
   </div>
 </template>
@@ -18,7 +18,7 @@ export default {
     },
     content: {
       type: String,
-      default: 'Notification - extra information'
+      default: 'Notification - Extra Information'
     },
     okText: {
       type: String,
@@ -31,11 +31,36 @@ export default {
     visibleHeight: {
       type: Number,
       default: 0
+    },
+    cancelButtonShow: {
+      type: Boolean,
+      default: true
+    },
+    confirmButtonShow: {
+      type: Boolean,
+      default: true
+    },
+    show: {
+      type: Boolean,
+      default: true
     }
   },
   data () {
     return {
       visible: false
+    }
+  },
+  computed: {
+    checkVisible: {
+      get () {
+        if (this.show) {
+          return this.visible
+        }
+        return this.show
+      },
+      set (newValue) {
+        this.visible = newValue
+      }
     }
   },
   mounted () {
@@ -71,10 +96,16 @@ export default {
       // 滑动超出当前屏幕高度
       // console.log(this.getScrollTop())
       if (this.getScrollTop() > this.visibleHeight) {
-        this.visible = true
+        this.checkVisible = true
       } else {
-        this.visible = false
+        this.checkVisible = false
       }
+    },
+    confirm () {
+      this.$emit('confirm')
+    },
+    cancel () {
+      this.$emit('cancel')
     }
   }
 }

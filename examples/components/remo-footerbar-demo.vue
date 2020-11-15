@@ -1,7 +1,7 @@
 <template>
     <div>
         <demo-block header="Footer Bar" desc="固定在底部的工具栏">
-           <re-footer-bar></re-footer-bar>
+           <re-footer-bar :cancelText="cancelText" @cancel="handleCancel" @confirm="handleConfirm" :show="visible"></re-footer-bar>
         </demo-block>
         <demo-block title="基础用法" desc="滚动页面查看下方工具栏">
         </demo-block>
@@ -19,10 +19,11 @@ export default {
   },
   data () {
     return {
+      cancelText: 'Dismiss',
       tabledata: [
         {
           parameter: 'target',
-          description: '设置需要监听其滚动事件的元素,默认为窗口',
+          description: '设置需要监听其滚动事件的元素',
           dataTypes: 'String',
           option: '',
           default: 'window'
@@ -32,7 +33,7 @@ export default {
           description: '左测文案',
           dataTypes: 'String',
           option: '',
-          default: 'Notification - extra information'
+          default: 'Notification - Extra Information'
         },
         {
           parameter: 'okText',
@@ -78,12 +79,28 @@ export default {
         },
         {
           parameter: 'visibleHeight',
-          description: '滚动高度达到此参数值才出现工具栏，为0时不隐藏工具栏',
+          description: '滚动高度达到此参数值才出现工具栏',
           dataTypes: 'Number',
           option: '',
           default: '0'
+        },
+        {
+          parameter: 'visible',
+          description: '控制Footer是否显示,可配合回调事件',
+          dataTypes: 'Boolean',
+          option: 'true / false',
+          default: 'true'
         }
-      ]
+      ],
+      visible: true
+    }
+  },
+  methods: {
+    handleConfirm () {
+      this.visible = false
+    },
+    handleCancel () {
+      this.cancelText = 'Cancel'
     }
   }
 }
