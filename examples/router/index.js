@@ -13,6 +13,7 @@ import RemoBacktop from '@/components/remo-backtop-demo'
 import RemoFooterbar from '@/components/remo-footerbar-demo'
 import RemoMenu from '@/components/remo-menu-demo'
 import RemoDrawer from '@/components/remo-drawer-demo'
+import RemoInput from '@/components/remo-input-demo'
 
 Vue.use(Router)
 
@@ -108,6 +109,14 @@ export default new Router({
           path: '/component/remo-drawer',
           name: 'RemoDrawer',
           component: RemoDrawer,
+          meta: {
+            title: '组件|Remo'
+          }
+        },
+        {
+          path: '/component/remo-input',
+          name: 'RemoInput',
+          component: RemoInput,
           meta: {
             title: '组件|Remo'
           }

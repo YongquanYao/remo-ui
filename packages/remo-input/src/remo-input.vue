@@ -33,8 +33,8 @@
       class="remo-input__inner"
       ref="input"
     />
-    <i :class="suffixIcon" class="suffix-icon remo" v-if="suffixIcon != '' && pattern === 'frame'"></i>
-    <i :class="prefixIcon" class="prefix-icon remo" v-if="prefixIcon != '' && pattern === 'frame'"></i>
+    <i :class="suffixIcon" :style="{lineHeight:height + 'px'}" class="suffix-icon remoi" v-if="suffixIcon != '' && pattern === 'frame'"></i>
+    <i :class="prefixIcon" :style="{lineHeight:height + 'px'}" class="prefix-icon remoi" v-if="prefixIcon != '' && pattern === 'frame'"></i>
 
     <label
       :class="{'remo-input__label__focus':value != ''}"
@@ -129,11 +129,11 @@ export default {
     color: #c0c4cc;
     &.prefix-icon {
       position: absolute;
-      left: 5px;
+      left: 10px;
     }
     &.suffix-icon {
       position: absolute;
-      right: 5px;
+      right: 10px;
     }
   }
   .remo-input__inner {
@@ -152,7 +152,7 @@ export default {
       padding-right: 25px;
     }
     &.prefix-icon {
-      padding-left: 25px;
+      padding-left: 30px;
     }
     &:hover {
       border-color: #c0c4cc;

@@ -122,6 +122,7 @@ export default {
             {
               group: '数据录入',
               title: 'Input 输入框',
+              path: '#/component/remo-input',
               id: '010'
             },
             {
@@ -129,15 +130,26 @@ export default {
               id: '011'
             },
             {
+              group: '数据展示',
+              title: 'Statistic 统计数值',
+              path: '#/component/remo-statistic',
+              id: '020'
+            },
+            {
+              title: 'Image Card 图卡',
+              path: '#/component/remo-imgcard',
+              id: '021'
+            },
+            {
               group: '其他',
               title: 'Backtop 回到顶部',
               path: '#/component/remo-backtop',
-              id: '020'
+              id: '030'
             },
             {
               title: 'FooterBar 底部工具栏',
               path: '#/component/remo-footerbar',
-              id: '021'
+              id: '031'
             }
           ]
         },
