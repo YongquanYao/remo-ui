@@ -19,12 +19,12 @@
     </div>
      <div class="container block">
       <h2>remoUI - Shadow Block</h2>
-      <re-block-shadow>Default</re-block-shadow>
-      <re-block-shadow mode="light">Light</re-block-shadow>
-      <re-block-shadow mode="deep">Deep</re-block-shadow>
-      <re-block-shadow mode="curve">Curve</re-block-shadow>
-      <re-block-shadow mode="sharp">Sharp</re-block-shadow>
-      <re-block-shadow width="550px" height="150px" >Customisze 550px(W) 150px(H)</re-block-shadow>
+      <re-shadow-block>Default</remo-shadow-block>
+      <re-shadow-block mode="light">Light</remo-shadow-block>
+      <re-shadow-block mode="deep">Deep</remo-shadow-block>
+      <re-shadow-block mode="curve">Curve</remo-shadow-block>
+      <re-shadow-block mode="sharp">Sharp</remo-shadow-block>
+      <re-shadow-block width="550px" height="150px" >Customisze 550px(W) 150px(H)</remo-shadow-block>
     </div>
     <div >
       <h2>remoUI - Input</h2>
@@ -53,7 +53,9 @@
 </template>
 
 <script>
+import remoShadowBlock from '../../packages/remo-shawdow-block/src/remo-shadow-block.vue'
 export default {
+  components: { remoShadowBlock },
   name: 'RemoUiDemo',
   data () {
     return {

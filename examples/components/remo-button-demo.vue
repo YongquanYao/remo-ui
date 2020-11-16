@@ -5,7 +5,7 @@
           <span>基础用法</span>
           <span class="desc">常用的7种Type:</span>
         </div>
-        <re-block-shadow width="100%" height="90px">
+        <remo-shadow-block width="100%" height="90px">
           <re-button>default</re-button>
           <re-button type="primary">Primary</re-button>
           <re-button type="success">Success</re-button>
@@ -13,14 +13,14 @@
           <re-button type="danger">Danger</re-button>
           <re-button type="dashed" >dashed</re-button>
           <re-button type="dotted" >dotted</re-button>
-        </re-block-shadow>
+        </remo-shadow-block>
       </div>
       <div class="demo-block">
         <div class="title">
           <span >禁用</span>
           <span class="desc">无法点击模式:</span>
         </div>
-        <re-block-shadow width="100%" height="90px">
+        <remo-shadow-block width="100%" height="90px">
           <re-button :disabled="true">default</re-button>
           <re-button :disabled="true" type="primary">Primary</re-button>
           <re-button :disabled="true" type="success">Success</re-button>
@@ -28,32 +28,32 @@
           <re-button :disabled="true" type="danger">Danger</re-button>
           <re-button :disabled="true" type="dashed" >dashed</re-button>
           <re-button :disabled="true" type="dotted" >dotted</re-button>
-        </re-block-shadow>
+        </remo-shadow-block>
       </div>
       <div class="demo-block">
         <div class="title">
           <span>圆形</span>
           <span class="desc">配合icon使用:</span>
         </div>
-        <re-block-shadow width="100%" height="90px">
+        <remo-shadow-block width="100%" height="90px">
           <re-button type="primary" circle  icon="remo-user"></re-button>
           <re-button type="warning" circle  icon="remo-phone"></re-button>
           <re-button type="success" circle  icon="remo-plus"></re-button>
           <re-button type="danger" circle  icon="remo-shop"></re-button>
           <re-button type="dashed" circle  icon="remo-download"></re-button>
-        </re-block-shadow>
+        </remo-shadow-block>
       </div>
       <div class="demo-block">
         <div class="title">
           <span>自定义</span>
           <span class="desc">颜色图标自定义, type必须为customize: </span>
         </div>
-        <re-block-shadow width="100%" height="90px">
+        <remo-shadow-block width="100%" height="90px">
            <re-button type="customize" :color="'#1AAD19'"  icon="remo-wechat-fill">Customize Color</re-button>
           <re-button type="customize" icon="remo-alipay">Customize Color</re-button>
           <re-button type="customize" color="red"  icon="remo-google">Customize Color</re-button>
            <re-button type="customize" :color="'#0067a5'"  icon="remo-facebook">Customize Color</re-button>
-        </re-block-shadow>
+        </remo-shadow-block>
       </div>
       <div class="demo-block">
         <div class="title">
@@ -68,7 +68,9 @@
 </template>
 
 <script>
+import remoShadowBlock from '../../packages/remo-shawdow-block/src/remo-shadow-block.vue'
 export default {
+  components: { remoShadowBlock },
   name: 'RemoBtnDemo',
   data () {
     return {

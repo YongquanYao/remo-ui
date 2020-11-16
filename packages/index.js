@@ -2,7 +2,7 @@ import '../public/icon/iconfont.css'
 
 import ReTip from './remo-tip'
 import ReButton from './remo-button'
-import ReBlockShadow from './remo-block-shadow'
+import ReShadowBlock from './remo-shawdow-block'
 import ReInput from './remo-input'
 import ReDivider from './remo-divider'
 import ReTable from './remo-table'
@@ -15,7 +15,7 @@ import ReDrawer from './remo-drawer'
 const components = [
   ReTip,
   ReButton,
-  ReBlockShadow,
+  ReShadowBlock,
   ReInput,
   ReDivider,
   ReTable,
@@ -46,7 +46,7 @@ export default {
   // 所有组件，必须具有 install，才能使用 Vue.use()
   ReTip,
   ReButton,
-  ReBlockShadow,
+  ReShadowBlock,
   ReInput,
   ReDivider,
   ReTable,

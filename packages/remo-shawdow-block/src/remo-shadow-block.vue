@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  name: 'ReBlockShadow',
+  name: 'ReShadowBlock',
   props: {
     mode: {
       type: String,

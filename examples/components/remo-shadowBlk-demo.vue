@@ -1,62 +1,62 @@
 <template>
     <div>
       <demo-block title="Default - 默认" desc="基础阴影效果:">
-         <re-block-shadow  width="100%">
+         <remo-shadow-block  width="100%">
           <span style="color:#409eff">
             Hi there ! I am Default block card.
           </span>
-        </re-block-shadow>
+        </remo-shadow-block>
       </demo-block>
       <demo-block title="Light - 轻微" desc="淡阴影效果:">
-         <re-block-shadow mode="light"  width="100%">
+         <remo-shadow-block mode="light"  width="100%">
           <span style="color:#409eff">
             Hi there ! I am Light block card.
           </span>
-        </re-block-shadow>
+        </remo-shadow-block>
       </demo-block>
       <div class="demo-block">
         <div class="title">
           <span>Deep - 明显</span>
           <span class="desc">深阴影效果:</span>
         </div>
-        <re-block-shadow mode="deep"  width="100%">
+        <remo-shadow-block mode="deep"  width="100%">
           <span style="color:#409eff">
             Hi there ! I am Deep block card.
           </span>
-        </re-block-shadow>
+        </remo-shadow-block>
       </div>
       <div class="demo-block">
         <div class="title">
           <span>Curve - 曲线</span>
           <span class="desc">线性阴影效果:</span>
         </div>
-        <re-block-shadow mode="curve"  width="100%">
+        <remo-shadow-block mode="curve"  width="100%">
           <span style="color:#409eff">
             Hi there ! I am Curve block card.
           </span>
-        </re-block-shadow>
+        </remo-shadow-block>
       </div>
       <div class="demo-block">
         <div class="title">
           <span>Sharp - 弯翘</span>
           <span class="desc">翘阴影效果:</span>
         </div>
-        <re-block-shadow mode="sharp" width="100%">
+        <remo-shadow-block mode="sharp" width="100%">
           <span style="color:#409eff">
             Hi there ! I am Sharp block card.
           </span>
-        </re-block-shadow>
+        </remo-shadow-block>
       </div>
       <div class="demo-block">
         <div class="title">
           <span>自定义大小 </span>
           <span class="desc">可直接设置宽高:</span>
         </div>
-        <re-block-shadow mode="curve" width="600px" height="200px">
+        <remo-shadow-block mode="curve" width="600px" height="200px">
           <span style="color:#409eff">
             Hi there ! I am block with 600px Width and 200px Height.
           </span>
-        </re-block-shadow>
+        </remo-shadow-block>
       </div>
       <div class="demo-block">
         <div class="title">
@@ -69,11 +69,13 @@
 </template>
 
 <script>
+import RemoShadowBlock from '../../packages/remo-shawdow-block/src/remo-shadow-block.vue'
 import demoBlock from './demo-block.vue'
 export default {
   name: 'RemoShadowBlkDemo',
   components: {
-    demoBlock
+    demoBlock,
+    RemoShadowBlock
   },
   data () {
     return {

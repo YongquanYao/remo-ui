@@ -6,7 +6,7 @@
            </re-tip>
       </demo-block>
       <demo-block title="使用方法" desc="直接通过设置类class名为 remoi remo-xxxx">
-           <re-block-shadow height="80px" width="100%">
+           <re-shadow-block height="80px" width="100%">
             <i class="remoi remo-search demoIcon"></i>
             <i class="remoi remo-star demoIcon"></i>
             <i class="remoi remo-calendar demoIcon"></i>
@@ -19,7 +19,7 @@
             <i class="remoi remo-apartment demoIcon"></i>
             <i class="remoi remo-areachart demoIcon"></i>
             <i class="remoi remo-camera demoIcon"></i>
-           </re-block-shadow>
+           </re-shadow-block>
       </demo-block>
       <demo-block title="常用图标">
         <ul class="remo-list">

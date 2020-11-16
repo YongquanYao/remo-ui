@@ -1,3 +1,4 @@
+<!-- 核心就是在一个100%宽度遮罩层上有个一个可以动态配置宽度的div 例如0到300 -->
 <template>
   <div class="remo-drawer">
     <transition name="remo-fade">
@@ -14,7 +15,10 @@
     >
       <!-- <remo-loading :loading="loading"/> -->
       <div :id="'remo-drawer-content'+id" class="remo-drawer-content-block">
-        <div class="remo-drawer-header" v-if="title != ''">{{title}}</div>
+        <div class="remo-drawer-header" v-if="title != ''">
+          {{title}}
+          <i class="remoi remo-close" @click="handleDrawerClose"></i>
+        </div>
         <div class="remo-drawer-body">
           <slot></slot>
         </div>
@@ -46,61 +50,64 @@ export default {
     maskClosable: {
       type: Boolean,
       default: true
-    },
-    loading: {
-      type: Boolean,
-      default: false
     }
+    // loading: {
+    //   type: Boolean,
+    //   default: false
+    // }
   },
   data () {
     return {
       id: 0,
       show: this.visible,
-      width: 0,
-      observer: null,
+      width: 0
+      // observer: null
     }
   },
   created () {
     this.id = Math.floor(Math.random() * 100000)
   },
-  mounted () {
-    let _this = this
-    let element = document
-      .getElementById('remo-drawer-content' + this.id)
-      .getElementsByClassName('remo-drawer-content')[0]
-    if (typeof element != 'undefined') {
-      let MutationObserver =
-        window.MutationObserver ||
-        window.WebKitMutationObserver ||
-        window.MozMutationObserver
-      this.observer = new MutationObserver(mutationList => {
-        setTimeout(() => {
-          if (mutationList[0].target.offsetWidth != 0) {
-            _this.width += mutationList[0].target.offsetWidth
-          } else {
-            _this.width = document.getElementById(
-              'remo-drawer-content' + this.id
-            ).offsetWidth
-          }
-        }, 350)
-      })
-      this.observer.observe(element, {
-        attributes: true,
-        attributeFilter: ['style'],
-        attributeOldValue: false
-      })
-    }
-  },
+  // mounted () {
+  // 2层drawer方法
+  //   let _this = this
+  //   let element = document
+  //     .getElementById('remo-drawer-content' + this.id)
+  //     .getElementsByClassName('remo-drawer-content')[0]
+  //   if (typeof element !== 'undefined') {
+  //     let MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver
+  //     this.observer = new MutationObserver(mutationList => {
+  //       setTimeout(() => {
+  //         if (mutationList[0].target.offsetWidth !== 0) {
+  //           _this.width += mutationList[0].target.offsetWidth
+  //         } else {
+  //           _this.width = document.getElementById(
+  //             'remo-drawer-content' + this.id
+  //           ).offsetWidth
+  //         }
+  //       }, 350)
+  //     })
+  //     this.observer.observe(element, {
+  //       attributes: true,
+  //       attributeFilter: ['style'],
+  //       attributeOldValue: false
+  //     })
+  //   }
+  // },
   watch: {
     visible: function (val) {
       this.show = val
       console.log(val)
       if (this.show) {
+        // 显示
+        console.log(document.getElementById(
+          'remo-drawer-content' + this.id
+        ).offsetWidth)
         this.width = document.getElementById(
           'remo-drawer-content' + this.id
         ).offsetWidth
         // COMMONS.afterOpen()
       } else {
+        // 隐藏
         this.width = 0
         // if (document.getElementsByClassName('remo-drawer-mask').length === 1) {
         //   // COMMONS.beforeClose()
@@ -118,6 +125,10 @@ export default {
     },
     close () {
       this.$emit('close')
+    },
+    handleDrawerClose () {
+      // 改变父组件发送的显示状态
+      this.$emit('update:visible', false)
     }
   }
 }
@@ -169,6 +180,13 @@ export default {
       font-weight: 500;
       font-size: 16px;
       line-height: 22px;
+      i{
+        float:right;
+        cursor: pointer;
+        &:hover{
+          color: #409EFF
+        }
+      }
     }
     .remo-drawer-body {
       padding: 24px;
