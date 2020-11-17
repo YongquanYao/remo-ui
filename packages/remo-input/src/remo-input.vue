@@ -125,6 +125,7 @@ export default {
   width: 180px;
   position: relative;
   font-size: 14px;
+  display: block;
   i {
     color: #c0c4cc;
     &.prefix-icon {

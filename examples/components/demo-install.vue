@@ -4,7 +4,7 @@
             <re-tip style="width:90%" color="#c8d6fa">
               <span>
                 该项目使用了 <b>Vue.js</b> 框架开发做底层搭建。</br>
-                项目参考学习了 <b>Ant Design-UI</b> / <b>Element-UI</b>。
+                <!-- 项目参考学习了 <b>Ant Design-UI</b> / <b>Element-UI</b>。 -->
               </span>
             </re-tip>
         </demo-block>
