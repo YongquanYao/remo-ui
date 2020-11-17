@@ -14,6 +14,8 @@ import RemoFooterbar from '@/components/remo-footerbar-demo'
 import RemoMenu from '@/components/remo-menu-demo'
 import RemoDrawer from '@/components/remo-drawer-demo'
 import RemoInput from '@/components/remo-input-demo'
+import RemoStat from '@/components/remo-statistic-demo'
+import RemoImgcard from '@/components/remo-imgcard-demo'
 
 Vue.use(Router)
 
@@ -117,6 +119,22 @@ export default new Router({
           path: '/component/remo-input',
           name: 'RemoInput',
           component: RemoInput,
+          meta: {
+            title: '组件|Remo'
+          }
+        },
+        {
+          path: '/component/remo-statistic',
+          name: 'RemoStat',
+          component: RemoStat,
+          meta: {
+            title: '组件|Remo'
+          }
+        },
+        {
+          path: '/component/remo-imgcard',
+          name: 'RemoImgcard',
+          component: RemoImgcard,
           meta: {
             title: '组件|Remo'
           }

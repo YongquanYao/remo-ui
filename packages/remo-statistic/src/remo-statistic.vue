@@ -1,6 +1,11 @@
 <template>
     <span class="remo-statistic">
-      <span>{{intCheck(value) + floatCheck(value)}}</span>
+      <span class="unit" v-if="unit !==''">{{unit}}</span>
+      <i v-if="prefix!==''" class="remoi" :class="`${prefix}`" :style="{'color': iconColor !== '' ? iconColor : ''}" />
+      <span class="int" :style="{'fontSize': fontSize !== '' ? fontSize : '', 'color': fontColor !== '' ? fontColor : ''}">{{intValue}}
+        <span class="float">{{floatValue}}</span>
+      </span>
+      <i v-if="suffix!==''" class="remoi" :class="`${suffix}`" :style="{'color': iconColor !== '' ? iconColor : ''}" />
     </span>
 </template>
 
@@ -10,10 +15,72 @@ export default {
   props: {
     value: {
       type: String,
-      default: null
+      default: ''
+    },
+    prefix: {
+      type: String,
+      default: ''
+    },
+    suffix: {
+      type: String,
+      default: ''
+    },
+    unit: {
+      type: String,
+      default: ''
+    },
+    iconColor: {
+      type: String,
+      default: ''
+    },
+    fontSize: {
+      type: String,
+      default: ''
+    },
+    fontColor: {
+      type: String,
+      default: ''
+    },
+    decimal: {
+      type: Boolean,
+      default: true
     }
   },
-  method: {
+  data () {
+    return {
+    }
+  },
+  // computed()有数据就执行计算
+  computed: {
+    intValue: {
+      get () {
+        return this.intCheck(this.value)
+      },
+      set (newValue) {
+        this.value = newValue
+      }
+    },
+    floatValue: {
+      get () {
+        if (this.decimal) {
+          return this.floatCheck(this.value)
+        } else {
+          return ''
+        }
+      },
+      set (newValue) {
+        this.value = newValue
+      }
+    }
+  },
+  // watch负责监视传递数据发生变化才执行
+  // watch: {
+  //   value: function (newvalue) {
+  //     this.int = this.intCheck(newvalue)
+  //     this.float = this.floatCheck(newvalue)
+  //   }
+  // },
+  methods: {
     intCheck (value) {
       const valueArr = value.split('.')
       const arr = valueArr[0].split('')
@@ -24,6 +91,12 @@ export default {
           a += arr[i]
         }
         return a + ',' + b
+      } else {
+        let a = ''
+        for (let i = 0; i < arr.length; i++) {
+          a += arr[i]
+        }
+        return a
       }
     },
     floatCheck (value) {
@@ -46,5 +119,24 @@ export default {
   list-style: none;
   font-variant: tabular-nums;
   font-size: 24px;
+  .int {
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+  .float {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+  .unit{
+    padding-right: 4px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .remoi{
+    padding-right: 1px;
+    font-weight: 600;
+  }
 }
 </style>

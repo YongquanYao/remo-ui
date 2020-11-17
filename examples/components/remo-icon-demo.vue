@@ -1,7 +1,7 @@
 <template>
     <div>
       <demo-block title="Remo Icon图标" desc="语义化的矢量图形">
-           <re-tip class="tip" color="blue"><span>该项目参考使用 Ant Design 官方图标库, 筛选了部分实用图标。在此感谢Ant Desig的设计团队 !</span><br/>
+           <re-tip class="tip" color="blue"><span>该图标参考使用 Ant Design 官方图标库, 筛选了部分实用图标。在此感谢Ant Desig的设计团队 !</span><br/>
             <!-- <a @click="handlejump">https://ant.design/components/icon/</a> -->
            </re-tip>
       </demo-block>
