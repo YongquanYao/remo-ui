@@ -2,9 +2,8 @@
     <span class="remo-statistic">
       <span class="unit" v-if="unit !==''">{{unit}}</span>
       <i v-if="prefix!==''" class="remoi" :class="`${prefix}`" :style="{'color': iconColor !== '' ? iconColor : ''}" />
-      <span class="int" :style="{'fontSize': fontSize !== '' ? fontSize : '', 'color': fontColor !== '' ? fontColor : ''}">{{intValue}}
-        <span class="float">{{floatValue}}</span>
-      </span>
+      <span class="int" :style="{'fontSize': fontSize !== '' ? fontSize : '', 'color': fontColor !== '' ? fontColor : ''}">{{intValue}}</span>
+      <span class="float">{{floatValue.trim()}}</span>
       <i v-if="suffix!==''" class="remoi" :class="`${suffix}`" :style="{'color': iconColor !== '' ? iconColor : ''}" />
     </span>
 </template>
@@ -54,6 +53,7 @@ export default {
   computed: {
     intValue: {
       get () {
+        console.log(this.intCheck(this.value))
         return this.intCheck(this.value)
       },
       set (newValue) {
@@ -90,13 +90,13 @@ export default {
         for (let i = 0; i < arr.length - 3; i++) {
           a += arr[i]
         }
-        return a + ',' + b
+        return a + ',' + b.trim()
       } else {
         let a = ''
         for (let i = 0; i < arr.length; i++) {
           a += arr[i]
         }
-        return a
+        return a.trim()
       }
     },
     floatCheck (value) {
@@ -123,6 +123,7 @@ export default {
     font-size: 24px;
     font-weight: 500;
     letter-spacing: 1px;
+    margin-right: -6px;
   }
   .float {
     font-size: 16px;

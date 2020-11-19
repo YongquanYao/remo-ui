@@ -275,7 +275,7 @@ export default {
             width: 200px;
             height: 80%;
             top: 135px;
-            visibility: hidden; // 鼠标在才触发滚动条
+            // visibility: hidden; // 鼠标在才触发滚动条
             border-right: 1px solid #dcdfe6; // 分界线
             overflow: auto;
             // padding-left: 10px;
