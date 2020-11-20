@@ -2,7 +2,11 @@
     <div class="home">
         <div class="header">
             <div class="container">
-                <span class="title">Remo UI <i class="remoi remo-slack"/></span>
+                <span class="title">
+                  <!-- <img src="../assets/logo.png" alt="remo-logo"> -->
+                  <span class="logo-left">Re:</span>mo
+                  <!-- <i class="remoi remo-slack"/> -->
+                  </span>
                 <div class="header-nav">
                   <ul>
                     <li class="header-nav-item" v-for="x in headnav_data" :key="x.id">
@@ -55,7 +59,7 @@ export default {
         //   name: 'Github',
         //   icon: 'remoi remo-github-fill',
         //   color: '#000'
-        // },
+        // }
         // {
         //   id: 991,
         //   path: 'https://github.com/YongquanYao/remo-ui',
@@ -208,15 +212,25 @@ export default {
             }
             // border-bottom: 1px solid #dcdfe6; // 分界线
             .title{
-              font-size: 25px;
+              font-size: 40px;
               font-weight: 700;
               color:#409eff;
-              // font-family: 'Leckerli One';
+              font-family: 'skia';
+              .logo-left{
+                color: #364f6a;
+              }
               &:hover{
-                color: #666;
+                color: #364f6a;
+                .logo-left{
+                  color: #409eff;
+                }
                 i{
                   color:#409eff;
                 }
+              }
+              img{
+                width: 145px;
+                margin-top: 13px;
               }
               i{
                 font-size: 24px;
@@ -238,11 +252,12 @@ export default {
                   padding: 0 15px;
                   height: 80px;
                   transition: 0.5s;
-                  &:hover{
-                    transform: scale(1.05);
-                  }
+                  line-height: 80px;
+                  // &:hover{
+                  //   transform: scale(1.05);
+                  // }
                   i{
-                    font-size: 19px;
+                    font-size: 22px;
                     margin-right: 4px;
                   }
                   a{
@@ -250,9 +265,6 @@ export default {
                     color: #555;
                     font-size: 16px;
                     font-weight: 450;
-                    &:hover{
-                      color:#409eff
-                    }
                   }
                 }
               }

@@ -103,6 +103,10 @@
         <demo-block title='API' desc="属性说明如下：">
           <re-table :data="tableData" type="demo"></re-table>
         </demo-block>
+        <demo-block title='Slot' desc="插槽：">
+          <re-table :data="slotData" type="demo"></re-table>
+        </demo-block>
+
     </div>
 </template>
 
@@ -143,18 +147,20 @@ export default {
           dataTypes: 'String',
           optional: '',
           default: 'remo-heart'
-        },
+        }
+      ],
+      slotData: [
         {
-          parameter: 'v-slot:img',
+          parameter: 'img',
           description: '显示的图片, 可设定高度',
-          dataTypes: 'slot  ',
+          dataTypes: '',
           optional: '',
           default: '250px'
         },
         {
-          parameter: 'v-slot:desc',
+          parameter: 'desc',
           description: '显示的描述',
-          dataTypes: 'slot',
+          dataTypes: '',
           optional: '',
           default: ''
         }
