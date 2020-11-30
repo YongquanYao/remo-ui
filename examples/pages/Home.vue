@@ -154,6 +154,10 @@ export default {
               title: 'FooterBar 底部工具栏',
               path: '#/component/remo-footerbar',
               id: '031'
+            },
+            {
+              title: 'StatusLight 状态标志',
+              path: '#/component/remo-statuslight'
             }
           ]
         },
@@ -216,6 +220,7 @@ export default {
               font-weight: 700;
               color:#409eff;
               font-family: 'skia';
+              cursor: default;
               .logo-left{
                 color: #364f6a;
               }

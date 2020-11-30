@@ -16,6 +16,7 @@ import RemoDrawer from '@/components/remo-drawer-demo'
 import RemoInput from '@/components/remo-input-demo'
 import RemoStat from '@/components/remo-statistic-demo'
 import RemoImgcard from '@/components/remo-imgcard-demo'
+import RemoStatuslight from '@/components/remo-statuslight-demo'
 
 Vue.use(Router)
 
@@ -23,6 +24,7 @@ export default new Router({
   routes: [
     {
       path: '/',
+      // path: '/component/',
       name: 'Home',
       component: Home,
       redirect: '/component/remo-installation',
@@ -135,6 +137,14 @@ export default new Router({
           path: '/component/remo-imgcard',
           name: 'RemoImgcard',
           component: RemoImgcard,
+          meta: {
+            title: '组件|Remo'
+          }
+        },
+        {
+          path: '/component/remo-statuslight',
+          name: 'RemoStatuslight',
+          component: RemoStatuslight,
           meta: {
             title: '组件|Remo'
           }
