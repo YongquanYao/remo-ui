@@ -13,6 +13,7 @@ import ReDrawer from './remo-drawer'
 import ReStat from './remo-statistic'
 import ReImgCard from './remo-imgcard'
 import ReStatusLight from './remo-status-light'
+import ReCollapse from './remo-collapse'
 
 // 所有组件列表
 const components = [
@@ -28,7 +29,8 @@ const components = [
   ReDrawer,
   ReStat,
   ReImgCard,
-  ReStatusLight
+  ReStatusLight,
+  ReCollapse
 ]
 
 // 定义 install 方法，接收 Vue 作为参数
@@ -62,5 +64,6 @@ export default {
   ReDrawer,
   ReStat,
   ReImgCard,
-  ReStatusLight
+  ReStatusLight,
+  ReCollapse
 }

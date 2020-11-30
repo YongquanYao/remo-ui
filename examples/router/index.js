@@ -17,6 +17,7 @@ import RemoInput from '@/components/remo-input-demo'
 import RemoStat from '@/components/remo-statistic-demo'
 import RemoImgcard from '@/components/remo-imgcard-demo'
 import RemoStatuslight from '@/components/remo-statuslight-demo'
+import RemoCollapse from '@/components/remo-collapse-demo'
 
 Vue.use(Router)
 
@@ -148,7 +149,15 @@ export default new Router({
           meta: {
             title: '组件|Remo'
           }
-        }
+        },
+        {
+          path: '/component/remo-collapse',
+          name: 'RemoCollapse',
+          component: RemoCollapse,
+          meta: {
+            title: '组件|Remo'
+          }
+        },
       ]
     }
   ]

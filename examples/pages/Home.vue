@@ -157,7 +157,13 @@ export default {
             },
             {
               title: 'StatusLight 状态标志',
-              path: '#/component/remo-statuslight'
+              path: '#/component/remo-statuslight',
+              id: '032'
+            },
+            {
+              title: 'Collapse 折叠盒子',
+              path: '#/component/remo-collapse',
+              id: '033'
             }
           ]
         },

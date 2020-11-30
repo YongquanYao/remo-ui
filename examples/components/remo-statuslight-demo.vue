@@ -3,7 +3,7 @@
       <demo-block header="Status Light 状态标志">
       </demo-block>
       <demo-block title="基础" desc="6种状态静态展示：">
-          <re-shadow-block width="100%" height="70px">
+          <re-shadow-block width="100%" height="100%">
             <re-status-light style="margin-right:15px"/>
             <re-status-light style="margin-right:15px" status="active"/>
             <re-status-light style="margin-right:15px" status="positive"/>
@@ -12,7 +12,7 @@
           </re-shadow-block>
       </demo-block>
       <demo-block title="基础" desc="6种状态动态展示：">
-          <re-shadow-block width="100%" height="70px">
+          <re-shadow-block width="100%" height="100%">
             <re-status-light style="margin-right:15px" :animation="true" />
             <re-status-light style="margin-right:15px" :animation="true" status="active"/>
             <re-status-light style="margin-right:15px" :animation="true" status="positive"/>
