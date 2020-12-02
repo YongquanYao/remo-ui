@@ -37,7 +37,7 @@ export default {
   overflow: hidden;
    visibility: hidden;
    opacity: 0;
-   transition: opacity 0.6s ease-in-out;
+   transition: opacity 0.9s ease-in-out;
 }
 .re-collapse-active{
   visibility: visible;

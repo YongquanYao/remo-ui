@@ -130,8 +130,14 @@ export default {
               id: '010'
             },
             {
-              title: 'Upload 上传',
-              id: '011'
+              title: 'Upload Image 图片上传',
+              path: '#/component/remo-upload-img',
+              id: '012'
+            },
+            {
+              title: 'Upload 文件上传',
+              path: '#/component/remo-upload',
+              id: '013'
             },
             {
               group: '数据展示',
@@ -164,6 +170,11 @@ export default {
               title: 'Collapse 折叠盒子',
               path: '#/component/remo-collapse',
               id: '033'
+            },
+            {
+              title: 'Dragger 拖拽件',
+              path: '#/component/remo-dragger',
+              id: '034'
             }
           ]
         },

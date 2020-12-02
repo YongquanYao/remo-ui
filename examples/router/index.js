@@ -18,6 +18,9 @@ import RemoStat from '@/components/remo-statistic-demo'
 import RemoImgcard from '@/components/remo-imgcard-demo'
 import RemoStatuslight from '@/components/remo-statuslight-demo'
 import RemoCollapse from '@/components/remo-collapse-demo'
+import RemoDragger from '@/components/remo-dragger-demo'
+import RemoUploadImg from '@/components/remo-uploadImg-demo'
+import RemoUpload from '@/components/remo-upload-demo'
 
 Vue.use(Router)
 
@@ -158,6 +161,30 @@ export default new Router({
             title: '组件|Remo'
           }
         },
+        {
+          path: '/component/remo-dragger',
+          name: 'RemoDragger',
+          component: RemoDragger,
+          meta: {
+            title: '组件|Remo'
+          }
+        },
+        {
+          path: '/component/remo-upload-img',
+          name: 'RemoUploadImg',
+          component: RemoUploadImg,
+          meta: {
+            title: '组件|Remo'
+          }
+        },
+        {
+          path: '/component/remo-upload',
+          name: 'RemoUpload',
+          component: RemoUpload,
+          meta: {
+            title: '组件|Remo'
+          }
+        }
       ]
     }
   ]

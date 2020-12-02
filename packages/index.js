@@ -14,6 +14,7 @@ import ReStat from './remo-statistic'
 import ReImgCard from './remo-imgcard'
 import ReStatusLight from './remo-status-light'
 import ReCollapse from './remo-collapse'
+import ReUploadImg from './remo-upload-img'
 
 // 所有组件列表
 const components = [
@@ -30,7 +31,8 @@ const components = [
   ReStat,
   ReImgCard,
   ReStatusLight,
-  ReCollapse
+  ReCollapse,
+  ReUploadImg
 ]
 
 // 定义 install 方法，接收 Vue 作为参数
@@ -65,5 +67,6 @@ export default {
   ReStat,
   ReImgCard,
   ReStatusLight,
-  ReCollapse
+  ReCollapse,
+  ReUploadImg
 }
