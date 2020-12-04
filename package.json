@@ -1,6 +1,6 @@
 {
   "name": "remo-ui",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A UI Library For VUE@2.0+",
   "author": "Raymond <hi@raymondyao.info>",
   "main": "lib/remoui.js",
@@ -11,7 +11,7 @@
     "start": "npm run dev",
     "test": "npm run unit",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
-    "lib:all": "webpack --config ./build/webpack.lib.prod.js"
+    "lib:all": "node build/lib.js"
   },
   "repository": {
     "type": "git",
@@ -20,7 +20,8 @@
   "keywords": [
     "UI",
     "Vue",
-    "UI-Library"
+    "UI-Library",
+    "Light-UI"  
   ],
   "bugs": {
     "url": "https://github.com/YongquanYao/remo-ui/issues"
@@ -93,7 +94,6 @@
     "shelljs": "^0.7.6",
     "sinon": "^4.0.0",
     "sinon-chai": "^2.8.0",
-    "style-loader": "^2.0.0",
     "uglifyjs-webpack-plugin": "^1.1.1",
     "url-loader": "^0.5.8",
     "vue-loader": "^13.3.0",
@@ -101,7 +101,6 @@
     "vue-template-compiler": "^2.5.2",
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
-    "webpack-cli": "^4.2.0",
     "webpack-dev-server": "^2.9.1",
     "webpack-merge": "^4.1.0"
   },
