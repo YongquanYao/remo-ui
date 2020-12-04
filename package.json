@@ -1,22 +1,37 @@
 {
   "name": "remo-ui",
   "version": "1.0.0",
-  "private": true,
-  "description": "A UI Library For VUE@2 ",
-  "author": "Raymond <rrraymond810@gmail.com>",
+  "description": "A UI Library For VUE@2.0+",
+  "author": "Raymond <hi@raymondyao.info>",
   "scripts": {
     "build": "node build/build.js",
     "lint": "eslint --ext .js,.vue src test/unit",
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "test": "npm run unit",
-    "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run"
+    "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
+    "lib:all": "webpack --config ./build/webpack.lib.prod.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YongquanYao/remo-ui.git"
+  },
+  "keywords": [
+    "UI",
+    "Vue",
+    "UI-Library"
+  ],
+  "bugs": {
+    "url": "https://github.com/YongquanYao/remo-ui/issues"
+  },
+  "homepage": "https://github.com/YongquanYao/remo-ui#readme",
+  "license": "MIT",
   "dependencies": {
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
+    "@intervolga/optimize-cssnano-plugin": "^1.0.6",
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.22.1",
     "babel-eslint": "^8.2.1",
@@ -30,6 +45,7 @@
     "babel-preset-stage-2": "^6.22.0",
     "chai": "^4.1.2",
     "chalk": "^2.0.1",
+    "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^4.0.1",
     "cross-env": "^5.0.1",
     "css-loader": "^0.28.0",
@@ -56,6 +72,7 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-spec-reporter": "0.0.31",
     "karma-webpack": "^2.0.2",
+    "mini-css-extract-plugin": "^1.3.1",
     "mocha": "^3.2.0",
     "node-notifier": "^5.1.2",
     "node-sass": "^4.0.0",
