@@ -9,7 +9,7 @@
         <!-- v-for="(item,index) in formatImg" -->
         <div class="img-box"
         >
-          <img src="@/assets/1.jpg">
+          <!-- <img src="@/assets/1.jpg"> -->
           <div class="img-box-mask">
             <i
               class="remoi remo-eye"
@@ -194,7 +194,7 @@ export default {
       background: #fafafa;
       transition: border-color 0.3s ease;
       &:hover {
-        border-color: $--color-primary;
+        border-color: #409EFF;
       }
       .re-img-input {
         cursor: pointer;

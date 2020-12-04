@@ -46,7 +46,8 @@ module.exports = {
             loader: 'vue-loader',
             options: {
               compilerOptions: {
-                preserveWhitespace: false
+                preserveWhitespace: false,
+                sideEffects: false
               }
             }
           }
