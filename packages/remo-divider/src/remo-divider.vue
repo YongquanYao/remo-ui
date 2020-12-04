@@ -101,6 +101,6 @@ export default {
 }
 .remo-divider-inner-text {
   display: inline-block;
-  padding: 0 24px; //左右距离
+  padding: 0 24px;
 }
 </style>

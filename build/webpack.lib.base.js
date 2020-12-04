@@ -26,7 +26,7 @@ module.exports = {
         ]
       },
       {
-				test: /\.(jpe?g|png|gif)$/i,
+				test: /\.(jpe?g|png|gif|svg)$/i,
 				use: [
 					{
 						loader: 'url-loader',
@@ -50,6 +50,33 @@ module.exports = {
               }
             }
           }
+        ]
+      },
+      {
+        test: /\.(sass|css|scss)$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: "postcss-loader",
+            options: {
+              plugins: () => [
+                require("autoprefixer")()
+              ],
+            },
+          },
+          'sass-loader',
+        ]
+      },
+      {
+        test:/\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+        use: [
+           {
+               loader:  "file-loader",
+               options: {
+                  name:'fonts/[name].[hash:7].[ext]'
+               }
+           }
         ]
       }
     ]

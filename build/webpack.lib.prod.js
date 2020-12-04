@@ -38,9 +38,6 @@ module.exports = merge(webpackLibBaseConfig, {
           },
           {
             loader: 'sass-loader',
-            options: {
-              implementation: require('dart-sass')
-            }
           },
           {
             loader: 'postcss-loader'

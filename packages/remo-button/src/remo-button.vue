@@ -69,7 +69,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// @import '../../../public/css/remo-ui.scss'; 局部引入 
 .remo-button {
   position: relative;
   display: inline-block;
@@ -102,9 +101,9 @@ export default {
   outline: none;
   &:hover,
   &:focus {
-    color: $--color-primary;
+    color: #409EFF;
     background-color: #fff;
-    border-color: $--color-primary;
+    border-color: #409EFF;
   }
   i + .remo-button-span {
     margin-left: 5px;
@@ -138,57 +137,57 @@ export default {
 }
 .remo-button-success {
   color: #fff;
-  background-color: $--color-success;
-  border-color: $--color-success;
+  background-color: #67c23a;
+  border-color: #67c23a;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
   -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
   &:hover,
   &:focus {
     color: #fff;
-    background-color: $--color-success-light-2;
-    border-color: $--color-success-light-2;
+    background-color: mix(#fff, #67c23a, 20%);
+    border-color: mix(#fff, #67c23a, 20%);
   }
   &:after {
     background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
   }
   &.disabled {
     color: #fff;
-    background-color: $--color-success-light-5;
-    border-color: $--color-success-light-5;
+    background-color: mix(#fff, #67c23a, 20%);
+    border-color: mix(#fff, #67c23a, 20%);
     &:hover,
     &:focus {
       color: #fff;
-      background-color: $--color-success-light-5;
-      border-color: $--color-success-light-5;
+      background-color: mix(#fff, #67c23a, 50%);
+      border-color: mix(#fff, #67c23a, 50%);
     }
   }
 }
 .remo-button-primary {
   color: #fff;
-  background-color: $--color-primary;
-  border-color: $--color-primary;
+  background-color: #409EFF;
+  border-color: #409EFF;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
   -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
   &:hover,
   &:focus {
     color: #fff;
-    background-color: $--color-primary-light-2;
-    border-color: $--color-primary-light-2;
+    background-color: mix(#fff, #409EFF, 20%);
+    border-color: mix(#fff, #409EFF, 20%);
   }
   &:after {
     background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
   }
   &.disabled {
     color: #fff;
-    background-color: $--color-primary-light-5;
-    border-color: $--color-primary-light-5;
+    background-color: mix(#fff, #409EFF, 50%);
+    border-color: mix(#fff, #409EFF, 50%);
     &:hover,
     &:focus {
       color: #fff;
-      background-color: $--color-primary-light-5;
-      border-color: $--color-primary-light-5;
+      background-color: mix(#fff, #409EFF, 50%);
+      border-color: mix(#fff, #409EFF, 50%);
     }
   }
 }
@@ -207,57 +206,57 @@ export default {
 }
 .remo-button-danger {
   color: #fff;
-  background-color: $--color-danger;
-  border-color: $--color-danger;
+  background-color: #f56c6c;
+  border-color: #f56c6c;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
   -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
   &:hover,
   &:focus {
     color: #fff;
-    background-color: $--color-danger-light-2;
-    border-color: $--color-danger-light-2;
+    background-color: mix(#fff, #f56c6c, 20%);
+    border-color: mix(#fff, #f56c6c, 20%);
   }
   &:after {
     background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
   }
   &.disabled {
     color: #fff;
-    background-color: $--color-danger-light-5;
-    border-color: $--color-danger-light-5;
+    background-color: mix(#fff, #f56c6c, 50%);
+    border-color: mix(#fff, #f56c6c, 50%);
     &:hover,
     &:focus {
       color: #fff;
-      background-color: $--color-danger-light-5;
-      border-color: $--color-danger-light-5;
+      background-color: mix(#fff, #f56c6c, 50%);
+      border-color: mix(#fff, #f56c6c, 50%);
     }
   }
 }
 .remo-button-warning {
   color: #fff;
-  background-color: $--color-warning;
-  border-color: $--color-warning;
+  background-color: #e6a23c;
+  border-color: #e6a23c;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
   -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
   &:hover,
   &:focus {
     color: #fff;
-    background-color: $--color-warning-light-2;
-    border-color: $--color-warning-light-2;
+    background-color: mix(#fff,#e6a23c, 20%);
+    border-color: mix(#fff, #e6a23c, 20%);
   }
   &:after {
     background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
   }
   &.disabled {
     color: #fff;
-    background-color: $--color-warning-light-5;
-    border-color: $--color-warning-light-5;
+    background-color: mix(#fff, #e6a23c, 50%);
+    border-color: mix(#fff, #e6a23c, 50%);
     &:hover,
     &:focus {
       color: #fff;
-      background-color: $--color-warning-light-5;
-      border-color: $--color-warning-light-5;
+      background-color: mix(#fff, #e6a23c, 50%);
+      border-color: mix(#fff, #e6a23c, 50%);
     }
   }
 }

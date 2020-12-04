@@ -62,7 +62,7 @@ export default {
       }
     }
     .active_link{
-       color: $--color-primary;
+       color: #409EFF;
     }
     .active{
       margin-top: 10px;

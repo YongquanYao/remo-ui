@@ -160,7 +160,7 @@ export default {
     }
     &:focus {
       outline: none;
-      border-color: $--color-primary;
+      border-color: #409EFF;
     }
     &::-webkit-input-placeholder {
       /* WebKit browsers */
