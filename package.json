@@ -1,9 +1,10 @@
 {
   "name": "remo-ui",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A UI Library For VUE@2.0+",
   "author": "Raymond <hi@raymondyao.info>",
-  "main": "lib/remoui.js",
+  "main": "lib/index.js",
+  "file": "lib",
   "scripts": {
     "build": "node build/build.js",
     "lint": "eslint --ext .js,.vue src test/unit",
@@ -11,7 +12,7 @@
     "start": "npm run dev",
     "test": "npm run unit",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
-    "lib:all": "node build/lib.js"
+    "lib:all": "node lib_build/lib.js"
   },
   "repository": {
     "type": "git",

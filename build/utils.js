@@ -11,10 +11,10 @@ const { extract } = require('extract-text-webpack-plugin')
 // 返回路径
 exports.assetsPath = function (_path) {
   const assetsSubDirectory = process.env.NODE_ENV === 'production'
-    // 2级目录这里是static
-    ? config.build.assetsSubDirectory
-      // 2级目录这里是static
-    : config.dev.assetsSubDirectory
+    // 2级目录这里是'static'
+    ? config.build.assetsSubDirectory 
+    // 这里试是''                                                               // 2级目录这里是'static'
+    : process.env.NODE_ENV === 'lib' ? config.lib.assetsSubDirectory : config.dev.assetsSubDirectory
   //生成跨平台兼容的路径 
   return path.posix.join(assetsSubDirectory, _path)
 }
@@ -134,4 +134,25 @@ exports.createNotifierCallback = () => {
       icon: path.join(__dirname, 'logo.png')
     })
   }
+}
+
+const fs = require('fs')
+const join = path.join
+const resolve = (dir) => path.join(__dirname, '../', dir)
+
+exports.getComponentEntries = (path) => {
+  let files = fs.readdirSync(resolve(path));
+  const componentEntries = files.reduce((ret, item) => {
+    const itemPath = join(path, item)
+    const isDir = fs.statSync(itemPath).isDirectory();
+    if (isDir) {
+      ret[item] = resolve(join(itemPath, 'index.js'))
+    } else {
+      const [name] = item.split('.')
+      ret[name] = resolve(`${itemPath}`)
+    }
+    return ret
+  }, {})
+  console.dir(componentEntries)
+  return componentEntries
 }

@@ -79,7 +79,7 @@ module.exports = {
 
     // Paths
     assetsRoot: path.resolve(__dirname, '../lib'),
-    assetsSubDirectory: 'static',
+    assetsSubDirectory: '',
     assetsPublicPath: './', // 静态文件路径
 
     /**

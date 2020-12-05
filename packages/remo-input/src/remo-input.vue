@@ -1,10 +1,10 @@
 <template>
-  <!-- 
+  <!--
     Input Attributes
-      type                | 输入框类型	                   text/number/...
-      pattern             | 输入框样式	                   frame/line
-      value / v-model	    | 绑定值	                       string
-      placeholder  	      | 输入框占位文本	                string
+      type                | 输入框类型                   text/number/...
+      pattern             | 输入框样式                   frame/line
+      value / v-model     | 绑定值                      string
+      placeholder        | 输入框占位文本               string
       height              | 输入框高度                      number
       disabled            | 禁用                           boolean
       animation           | 动画                           boolean
@@ -93,7 +93,7 @@ export default {
       default: ''
     }
   },
-  data() {
+  data () {
     return {
       data: ''
     }
