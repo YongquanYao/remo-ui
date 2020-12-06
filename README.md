@@ -110,5 +110,6 @@ Lots of people, even me, are used to development frontend App with some mature p
 
 ## What now
 If you come up with any idea for requesting a new component feature, feel free to leave it in <a href="ISSUE">issue</a>.
+If you think this is cool, give me a 🌟.
 ## LICENSE
 [MIT](LICENSE)
