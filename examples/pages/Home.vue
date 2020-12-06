@@ -1,5 +1,6 @@
 <template>
     <div class="home">
+        <re-backtop></re-backtop>
         <div class="header">
             <div class="container">
                 <span class="title">
