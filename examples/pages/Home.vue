@@ -3,11 +3,11 @@
         <re-backtop></re-backtop>
         <div class="header">
             <div class="container">
-                <span class="title">
+                <span class="title" @click="jumpIndex">
                   <!-- <img src="../assets/logo.png" alt="remo-logo"> -->
                   <span class="logo-left">Re:</span>mo
                   <!-- <i class="remoi remo-slack"/> -->
-                  </span>
+                </span>
                 <div class="header-nav">
                   <ul>
                     <li class="header-nav-item" v-for="x in headnav_data" :key="x.id">
@@ -204,6 +204,11 @@ export default {
     }
     // console.log(id)
     this.active = id
+  },
+  methods: {
+    jumpIndex () {
+      this.$router.push('/')
+    }
   }
 }
 </script>
@@ -238,7 +243,7 @@ export default {
               font-weight: 700;
               color:#409eff;
               font-family: 'skia';
-              cursor: default;
+              cursor: pointer;
               .logo-left{
                 color: #364f6a;
               }

@@ -3,9 +3,17 @@
       <re-backtop></re-backtop>
         <demo-block title="About Remo-UI" desc="">
             <p>Just come up in mind having my own UI tool-kit ヾ(◍°∇°◍)ﾉﾞ.</p>
+            <p>Project is on going maintance and build.</p>
             <p>Feel free to leave me a message via below email.</p>
+            <p>If you think this is cool, give me a star 🌟 in github.</p>
         </demo-block>
         <demo-block title="About me" desc="">
+            游泳圈 / Raymond 🦁<br/><br/>
+            Front End Developer | Full Stack Engineer <br/><br/>
+            Guangzhou,China 🇨🇳 -  NewYork, USA 🇺🇸
+            <br/>
+            <br/>
+            Contact: &nbsp;&nbsp;
             <a href="https://github.com/YongquanYao"><i class="remoi remo-github-fill"></i></a>
             <a href="mailto:hi@raymondyao.info"><i class="remoi remo-mail"></i></a>
         </demo-block>
