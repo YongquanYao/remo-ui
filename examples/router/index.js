@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 // import RemoUiDemo from '@/components/remo-ui-demo.vue'
 import Home from '@/pages/Home.vue'
+import Index from '@/pages/Index.vue'
 import RemoBtn from '@/components/remo-button-demo'
 import RemoShadowBlk from '@/components/remo-shadowBlk-demo'
 import RemoTip from '@/components/remo-tip-demo'
@@ -28,6 +29,11 @@ export default new Router({
   routes: [
     {
       path: '/',
+      name: 'Index',
+      component: Index
+    },
+    {
+      path: '/component/',
       // path: '/component/',
       name: 'Home',
       component: Home,
