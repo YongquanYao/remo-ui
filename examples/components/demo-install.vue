@@ -28,16 +28,16 @@
         </demo-block>
         <demo-block title="按需加载" desc="你可以根据个人喜好引入需要的组件,项目打包时不用打包这个RemoUI">
             <re-tip style="width:90%" color="gray">
-               <b><p>import { ReButton, ReInput } from 'remo-ui';</p>
+               <b><p>import { &nbsp;ReButton, ReInput&nbsp; } from 'remo-ui';</p>
                    Vue.use(ReButton)</br>
                    Vue.use(ReInput)</b>
             </re-tip>
         </demo-block>
         <demo-block title="SSR 环境下" desc="如果使用如Nuxt.js/ Next.js 需要加<client-only>">
             <re-tip style="width:90%" color="gray">
-            < client-only ><br>
+            <b>< client-only ><br>
               &nbsp;&nbsp;&nbsp;< re-buttton >Remo 按钮</ re-buttton ><br>
-            </ client-only >
+            </ client-only ></b>
             </re-tip>
         </demo-block>
         ssr environment

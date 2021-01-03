@@ -4,19 +4,21 @@
       <div
         class="re-img-block"
         :style="{width: width + 'px', height:height + 'px'}"
+        v-for="(item,index) in list"
+        :key="index"
       >
-      <!-- :key="index" -->
-        <!-- v-for="(item,index) in formatImg" -->
         <div class="img-box"
         >
-          <!-- <img src="@/assets/1.jpg"> -->
+          <img :src="item">
           <div class="img-box-mask">
             <i
               class="remoi remo-eye"
+              @click="showImg(index)"
             >
             </i>
             <i
               class="remoi remo-delete"
+              @click="deleteImg(index)"
             >
             </i>
           </div>
@@ -42,6 +44,18 @@
             <p>{{addText}}</p>
           </div>
         </div>
+      </div>
+
+      <!-- 图片预览 -->
+      <div
+        class="remo-img-preview-mask"
+        v-if="previewImgShow"
+      ></div>
+      <div v-if="previewImgShow" class="remo-img-preview">
+        <i class="remoi remo-close"
+           @click="() => {this.previewImgShow=false}">
+        </i>
+        <img :src="previewImg" alt="prewiew_show_img" @click="() => {this.previewImgShow=false}">
       </div>
   </div>
 </template>
@@ -120,6 +134,31 @@ export default {
       previewImgShow: false,
       fileName: ''
     }
+  },
+  methods: {
+    changeImage (e) {
+      let file = e.target.files[0]
+      this.fileName = file.name
+      let reader = new FileReader()
+      let _this = this
+      reader.onload = function () {
+        // 图片的base64格式，可以塞进<img>离
+        let dataUrl = reader.result
+        _this.list.push(dataUrl)
+        _this.$emit('change', dataUrl, _this.list, _this.fileName)
+      }
+      reader.readAsDataURL(file)
+    },
+    deleteImg (index) {
+      if (index === undefined) {
+        return -1
+      }
+      this.list.splice(index, 1)
+    },
+    showImg (index) {
+      this.previewImg = this.list[index]
+      this.previewImgShow = true
+    }
   }
 }
 </script>
@@ -138,6 +177,7 @@ export default {
     border-radius: 4px;
     margin: 0 8px 8px 0;
     .img-box{
+      border: 1px solid #d9d9d9;
       position: relative;
       display: flex;
       justify-content: center;
@@ -215,6 +255,44 @@ export default {
           font-weight: 700;
         }
       }
+    }
+  }
+  .remo-img-preview-mask{
+    z-index: 199;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #00000557;
+  }
+  .remo-img-preview{
+    // width: 100%;
+    padding:5px 10px;
+    border: 1px solid #ebebeb;
+    box-shadow: 0 2px 4px 0 #999;
+    position: absolute;
+    margin-top: 80px;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    box-sizing: border-box;
+    z-index: 200;
+    background: #fff;
+    border-radius: 6px;
+    i{
+      cursor: pointer;
+      margin: 2px;
+      float: right;
+      &:hover{
+        color: #409EFF;
+      }
+    }
+    img{
+      width: 750px;
+      max-height: 648px;
+      border: 1px solid #ebebeb;
+      border-radius: 6px;
     }
   }
 }

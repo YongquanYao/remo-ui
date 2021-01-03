@@ -2,10 +2,16 @@
   <div>
       <demo-block header="Upload Image 上传图片">
       </demo-block>
-      <demo-block title="基础 图片预览/上传">
+      <demo-block title="基础" desc="图片预览/上传">
         <re-shadow-block width='100%' height="100%">
               <re-upload-img v-model="list"></re-upload-img>
         </re-shadow-block>
+      </demo-block>
+      <demo-block title="剪裁" desc="图片在线裁剪上传">
+        <!-- <re-shadow-block width='100%' height="300px">
+              <re-upload-img v-model="list"></re-upload-img>
+        </re-shadow-block> -->
+        开发中ing...
       </demo-block>
   </div>
 </template>
@@ -19,7 +25,9 @@ export default {
   },
   data () {
     return {
-      list: []
+      list: [
+        'https://remo.raymondyao.info/static/img/8.a8fc8b3.jpg'
+      ]
     }
   }
 }
