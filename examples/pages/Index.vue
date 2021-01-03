@@ -16,7 +16,7 @@
       </div> -->
       <div class="content">
         <div class="desc">
-            <h5 class="title">Remo UI</h5>
+            <h5 class="title">Remo U<span class="ele">I</span></h5>
             <div>
             <re-status-light style="margin-right:15px" :animation="true"/>
             <re-status-light style="margin-right:15px" :animation="true" status="active"/>
@@ -30,7 +30,12 @@
             源代码
             </re-button>
         </div>
-        <img class="bg_img" src="../assets/index_bg.png" alt=""/>
+        <div class="bg_img">
+           <img class="big" src="../assets/bg.png" alt="bg"/>
+           <img class="gear_1" src="../assets/gear_1.png" alt="gear">
+           <img class="gear_2" src="../assets/gear_2.png" alt="gear">
+           <img class="gear_3" src="../assets/gear_3.png" alt="gear">
+        </div>
         <!-- <img alt=""/> -->
       </div>
       <img class="bg_left1" src="../assets/left_top1.png" alt="" />
@@ -62,6 +67,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin {100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+@-moz-keyframes jump { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes jump { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes jump {
+  0% {-webkit-transform: translateY(0px); transform:translateY(0px); }
+  50% { -webkit-transform: translateY(-30px); transform:translateY(-30px);}
+  100% {-webkit-transform: translateY(0px); transform:translateY(0px);}
+
+}
+
 .index{
   // background: linear-gradient(to right top, #364f6a, #409eff );
   height: 100vh;
@@ -85,6 +103,15 @@ export default {
         color: rgba(0, 0, 0, 0.85);
         color:#fff;
         // font-family: 'skia';
+        .ele{
+          position: absolute;
+          width: 20px;
+          height: 70px;
+          // transform: rotate(45deg)
+          -webkit-animation:jump 2.5s infinite;
+          -moz-animation:jump 2.5s  infinite;
+          animation:jump 2.5s infinite;
+        }
       }
       p{
         // color: #314659;
@@ -104,6 +131,7 @@ export default {
         background: #2E8BF5;
         border: #2E8BF5;
         font-weight: 600;
+        margin-right: 15px;
         &:hover {
           background: #3292ff;
           border: #3292ff;
@@ -119,6 +147,7 @@ export default {
         color: #2E8BF5;
         border: #2E8BF5;
         font-weight: 600;
+         margin-right: 15px;
       }
       .btn_github{
           text-align: center;
@@ -139,13 +168,44 @@ export default {
     }
     .bg_img{
       position: absolute;
-      width: 550px;
+      // width: 550px;
       top: 50%;
       right: 25%;
       transform: translateX(45%) translateY(-50%);
-      z-index: 10;
-      // bottom: 150px;
-      // right: 100px;
+      z-index: 3;
+      .big{
+        width: 550px;
+        z-index: 2;
+      }
+      .gear_1{
+        position: absolute;
+        bottom:78px;
+        right:30px;
+        z-index: -1;
+        -webkit-animation:spin 3s linear infinite;
+        -moz-animation:spin 3s linear infinite;
+        animation:spin 3s linear infinite;
+      }
+      .gear_2{
+        position: absolute;
+        top:95px;
+        left:25px;
+        width: 80px;
+        z-index: -1;
+        -webkit-animation:spin 3s linear infinite;
+        -moz-animation:spin 3s linear infinite;
+        animation:spin 3s linear infinite;
+      }
+      .gear_3{
+        position: absolute;
+        top:0px;
+        left:78px;
+        width: 120px;
+        z-index: -1;
+        -webkit-animation:spin 6s linear infinite;
+        -moz-animation:spin 6s linear infinite;
+        animation:spin 6s linear infinite;
+      }
     }
   }
   .bg_left1{
