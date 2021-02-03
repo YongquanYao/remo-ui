@@ -50,12 +50,37 @@
       <div
         class="remo-img-preview-mask"
         v-if="previewImgShow"
-      ></div>
-      <div v-if="previewImgShow" class="remo-img-preview">
-        <i class="remoi remo-close"
-           @click="() => {this.previewImgShow=false}">
-        </i>
-        <img :src="previewImg" alt="prewiew_show_img" @click="() => {this.previewImgShow=false}">
+      >
+        <div v-if="previewImgShow" class="remo-img-preview">
+          <i class="remoi remo-close"
+            @click="() => {this.previewImgShow=false}">
+          </i>
+          <img :src="previewImg" alt="prewiew_show_img" @click="() => {this.previewImgShow=false}">
+        </div>
+      </div>
+
+      <!-- 图片裁剪 -->
+      <div class="remo-img-preview-mask" v-if="cropperShow&&cropper">
+          <div v-if="cropperShow&&cropper" class="remo-img-preview">
+            <div class="cropper_title">
+                <span>图片裁剪</span>
+            </div>
+            <div class="cropper_container">
+              <vue-cropper
+                :fixed="fixed"
+                :fixedNumber="fixedNumber"
+                :full="true"
+                :img="cropperImg"
+                :outputSize="outputSize"
+                autoCrop
+                ref="cropper"
+              />
+            </div>
+            <div class="cropper_bottom">
+              <re-button @click="cropperShow=false">取消</re-button>
+              <re-button @click="cropperConfirm" type="primary">确认</re-button>
+            </div>
+          </div>
       </div>
   </div>
 </template>
@@ -139,13 +164,21 @@ export default {
     changeImage (e) {
       let file = e.target.files[0]
       this.fileName = file.name
+      console.log(this.fileName)
       let reader = new FileReader()
       let _this = this
       reader.onload = function () {
         // 图片的base64格式，可以塞进<img>离
         let dataUrl = reader.result
-        _this.list.push(dataUrl)
-        _this.$emit('change', dataUrl, _this.list, _this.fileName)
+        if (_this.cropper) {
+          console.log(dataUrl)
+          _this.cropperImg = dataUrl
+          _this.cropperShow = true
+        } else {
+          _this.list.push(dataUrl)
+          _this.$emit('change', dataUrl, _this.list, _this.fileName)
+        }
+        e.target.value = ''
       }
       reader.readAsDataURL(file)
     },
@@ -158,6 +191,26 @@ export default {
     showImg (index) {
       this.previewImg = this.list[index]
       this.previewImgShow = true
+    },
+    cropperConfirm () {
+      let _this = this
+      if (this.cropType === 'base64') {
+        this.$refs.cropper.getCropData(data => {
+          _this.list.push(data)
+          _this.$emit('change', data, _this.list, _this.fileName)
+        })
+      } else if (this.cropType === 'blob') {
+        this.$refs.cropper.getCropBlob(data => {
+          _this.list.push(data)
+          _this.$emit('change', data, _this.list, _this.fileName)
+        })
+      } else {
+        this.$refs.cropper.getCropData(data => {
+          _this.list.push(data)
+          _this.$emit('change', data, _this.list, _this.fileName)
+        })
+      }
+      this.cropperShow = false
     }
   }
 }
@@ -258,41 +311,60 @@ export default {
     }
   }
   .remo-img-preview-mask{
-    z-index: 199;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: #00000557;
-  }
-  .remo-img-preview{
-    // width: 100%;
-    padding:5px 10px;
-    border: 1px solid #ebebeb;
-    box-shadow: 0 2px 4px 0 #999;
-    position: absolute;
-    margin-top: 80px;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    box-sizing: border-box;
-    z-index: 200;
-    background: #fff;
-    border-radius: 6px;
-    i{
-      cursor: pointer;
-      margin: 2px;
-      float: right;
-      &:hover{
-        color: #409EFF;
-      }
-    }
-    img{
-      width: 750px;
-      max-height: 648px;
+      z-index: 199;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: #00000557;
+      .remo-img-preview{
+      // width: 100%;
+      padding:5px 10px;
       border: 1px solid #ebebeb;
+      box-shadow: 0 2px 4px 0 #999;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      box-sizing: border-box;
+      z-index: 200;
+      background: #fff;
       border-radius: 6px;
+      i{
+        cursor: pointer;
+        margin: 2px;
+        float: right;
+        &:hover{
+          color: #409EFF;
+        }
+      }
+      img{
+        width: 750px;
+        max-height: 648px;
+        border: 1px solid #ebebeb;
+        border-radius: 6px;
+      }
+      .cropper_container{
+        width: 600px;
+        height: 500px;
+        padding: 25px 20px;
+      }
+      .cropper_title{
+        font-size:16px;
+        font-weight: 600;
+        padding: 10px 15px;
+        border-bottom: 1px solid #dbdada;
+      }
+      .cropper_bottom{
+          // margin-top: 20px;
+          padding: 10px;
+          text-align: right;
+          border-top: 1px solid #dbdada;
+          .remo-button{
+            margin-bottom: 0;
+          }
+      }
     }
   }
 }

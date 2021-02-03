@@ -22,7 +22,7 @@
     "UI",
     "Vue",
     "UI-Library",
-    "Light-UI"  
+    "Light-UI"
   ],
   "bugs": {
     "url": "https://github.com/YongquanYao/remo-ui/issues"
@@ -112,7 +112,7 @@
   ],
   "engines": {
     "node": ">= 6.0.0",
-    "npm": ">= 3.0.0" 
+    "npm": ">= 3.0.0"
   },
   "sideEffects": [
     "*.css",
