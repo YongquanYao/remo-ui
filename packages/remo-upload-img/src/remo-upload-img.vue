@@ -12,6 +12,7 @@
           <img :src="item">
           <div class="img-box-mask">
             <i
+              v-if="view"
               class="remoi remo-eye"
               @click="showImg(index)"
             >
@@ -101,11 +102,11 @@ export default {
     },
     width: {
       type: Number,
-      default: 104
+      default: 110
     },
     height: {
       type: Number,
-      default: 104
+      default: 110
     },
     view: {
       type: Boolean,
@@ -197,17 +198,17 @@ export default {
       if (this.cropType === 'base64') {
         this.$refs.cropper.getCropData(data => {
           _this.list.push(data)
-          _this.$emit('change', data, _this.list, _this.fileName)
+          // _this.$emit('change', data, _this.list, _this.fileName)
         })
       } else if (this.cropType === 'blob') {
         this.$refs.cropper.getCropBlob(data => {
           _this.list.push(data)
-          _this.$emit('change', data, _this.list, _this.fileName)
+          // _this.$emit('change', data, _this.list, _this.fileName)
         })
       } else {
         this.$refs.cropper.getCropData(data => {
           _this.list.push(data)
-          _this.$emit('change', data, _this.list, _this.fileName)
+          // _this.$emit('change', data, _this.list, _this.fileName)
         })
       }
       this.cropperShow = false

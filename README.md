@@ -58,6 +58,7 @@ Modern browsers and Internet Explorer 10+.
 - [ ] Anchor
 - [x] Input
 - [ ] Upload
+- [x] Upload Image
 - [ ] DatePicker
 - [ ] CountryPicker
 - [x] Statistic
@@ -96,7 +97,7 @@ Modern browsers and Internet Explorer 10+.
 - [X] Collapse
 - [x] ImgCard
 - [x] Statistic
-- [ ] Image Uploaer
+- [x] Image Uploaer
 - [ ] Upload
 - [x] Status Light
 

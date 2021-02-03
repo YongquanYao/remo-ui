@@ -12,7 +12,7 @@
             <tr v-for="(object,index) in data" :key="index">
                 <td v-for="(value,key) in object" :key="key">
                     <span v-if="value !== '' && value !==null "
-                    :class="{'paramter': key==='parameter'&& type==='demo','dataTypes':key === 'dataTypes'  && type === 'demo' ,'description':key === 'description'  && type === 'demo'}"
+                    :class="{'parameter': key ==='parameter'&& type==='demo','dataTypes':key === 'dataTypes'  && type === 'demo' ,'description':key === 'description'  && type === 'demo'}"
                     >
                         {{value}}
                     </span>
@@ -96,6 +96,7 @@ export default {
         }
         .parameter {
           color: #003a8c;
+          font-weight: 500;
         }
         .dataTypes {
           color: #bd6f9c;
