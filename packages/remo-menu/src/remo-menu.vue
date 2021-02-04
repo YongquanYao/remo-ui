@@ -1,8 +1,8 @@
 <template>
     <div>
       <ul class="menu-list">
-        <li v-for="(item, index) of menuList" :key="index">
-            <a :href="item.link" @click="hadnleActive(index)" :class="{'active_link': activeIndex === index ? true: false}"><i class="remoi" :class="`remo-${item.icon}`"></i>{{item.name}}</a>
+        <li v-for="(item, index) of menuList" :key="index" @click="hadnleActive(index)" >
+            <a :href="item.link" :class="{'active_link': activeIndex === index ? true: false}"><i class="remoi" :class="`remo-${item.icon}`"></i>{{item.name}}</a>
             <span :class="{'active': activeIndex === index ? true: false}"></span>
         </li>
       </ul>
@@ -63,11 +63,18 @@ export default {
     }
     .active_link{
        color: #409EFF;
+       transition: 1s;
     }
     .active{
       margin-top: 10px;
       height: 2px;
       background: #409EFF;
+      transition: 1s;
+    }
+    span{
+      margin-top: 10px;
+      height: 2px;
+      transition: 1s;
     }
   }
 }
