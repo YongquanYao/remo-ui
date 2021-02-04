@@ -59,6 +59,7 @@ Modern browsers and Internet Explorer 10+.
 - [x] Input
 - [ ] Upload
 - [x] Upload Image
+- [ ] Upload File
 - [ ] DatePicker
 - [ ] CountryPicker
 - [x] Statistic
@@ -98,7 +99,7 @@ Modern browsers and Internet Explorer 10+.
 - [x] ImgCard
 - [x] Statistic
 - [x] Image Uploaer
-- [ ] Upload
+- [ ] Upload File
 - [x] Status Light
 
 ## About

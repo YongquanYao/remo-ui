@@ -15,6 +15,7 @@ import ReImgCard from './remo-imgcard'
 import ReStatusLight from './remo-status-light'
 import ReCollapse from './remo-collapse'
 import ReUploadImg from './remo-upload-img'
+import ReUpload from './remo-upload'
 import VueCropper from './vue-cropper'
 
 // 所有组件列表
@@ -34,6 +35,7 @@ const components = [
   ReStatusLight,
   ReCollapse,
   ReUploadImg,
+  ReUpload,
   VueCropper
 ]
 
@@ -71,5 +73,6 @@ export default {
   ReStatusLight,
   ReCollapse,
   ReUploadImg,
+  ReUpload,
   VueCropper
 }

@@ -87,25 +87,25 @@ export default {
           parameter: 'animation',
           description: '是否开启点击动画效果',
           dataTypes: 'Boolean',
-          optional: 'true/false',
+          optional: 'true / false',
           default: 'true'
         },
         {
           parameter: 'disabled',
           description: '是否禁用按钮',
           dataTypes: 'Boolean',
-          optional: 'true/false',
+          optional: 'true / false',
           default: 'false'
         },
         {
           parameter: 'circle',
           description: '是否圆形按钮',
           dataTypes: 'Boolean',
-          optional: 'true/false',
+          optional: 'true / false',
           default: 'false'
         },
         {
-          parameter: 'remo',
+          parameter: 'icon',
           description: '图标类名',
           dataTypes: 'String',
           optional: '',
@@ -122,7 +122,7 @@ export default {
           parameter: 'block',
           description: '将按钮宽度调整为其父宽度的选项',
           dataTypes: 'Boolean',
-          optional: 'true/false',
+          optional: 'true / false',
           default: 'false'
         }
       ]

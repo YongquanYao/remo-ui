@@ -53,9 +53,12 @@
         v-if="previewImgShow"
       >
         <div v-if="previewImgShow" class="remo-img-preview">
-          <i class="remoi remo-close"
-            @click="() => {this.previewImgShow=false}">
-          </i>
+          <div class="preview_title">
+                <span>图片预览</span>
+                <i class="remoi remo-close"
+                  @click="() => {this.previewImgShow=false}">
+                </i>
+          </div>
           <img :src="previewImg" alt="prewiew_show_img" @click="() => {this.previewImgShow=false}">
         </div>
       </div>
@@ -320,6 +323,12 @@ export default {
       height: 100%;
       background: #00000557;
       .remo-img-preview{
+        .preview_title{
+          font-size:16px;
+          font-weight: 600;
+          padding:10px 5px;
+          // border-bottom: 1px solid #dbdada;
+        }
       // width: 100%;
       padding:5px 10px;
       border: 1px solid #ebebeb;
@@ -344,7 +353,7 @@ export default {
         width: 750px;
         max-height: 648px;
         border: 1px solid #ebebeb;
-        border-radius: 6px;
+        border-radius: 4px;
       }
       .cropper_container{
         width: 600px;
