@@ -173,7 +173,7 @@ export default {
               id: '033'
             },
             {
-              title: 'Dragger 拖拽件',
+              title: 'Dragger 拖拽弹窗',
               path: '#/component/remo-dragger',
               id: '034'
             }

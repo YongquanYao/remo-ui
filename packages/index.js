@@ -1,4 +1,5 @@
 import '../public/icon/iconfont.css'
+import '../public/css/animation.scss'
 
 import ReTip from './remo-tip'
 import ReButton from './remo-button'
@@ -16,7 +17,9 @@ import ReStatusLight from './remo-status-light'
 import ReCollapse from './remo-collapse'
 import ReUploadImg from './remo-upload-img'
 import ReUpload from './remo-upload'
+import ReDragger from './remo-dragger'
 import VueCropper from './vue-cropper'
+import VueDragger from './vue-dragger'
 
 // 所有组件列表
 const components = [
@@ -36,7 +39,9 @@ const components = [
   ReCollapse,
   ReUploadImg,
   ReUpload,
-  VueCropper
+  ReDragger,
+  VueCropper,
+  VueDragger
 ]
 
 // 定义 install 方法，接收 Vue 作为参数
@@ -74,5 +79,7 @@ export default {
   ReCollapse,
   ReUploadImg,
   ReUpload,
-  VueCropper
+  ReDragger,
+  VueCropper,
+  VueDragger
 }
