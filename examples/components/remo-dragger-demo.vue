@@ -1,9 +1,24 @@
 <template>
   <div>
-      <demo-block header="Dragger 弹窗" desc="可移动，可缩放的窗口">
+      <demo-block header="Dragger 弹窗">
+      </demo-block>
+      <demo-block title="信息类型" desc="用于显示特别信息模块">
+          <re-shadow-block width="100%" height="100%">
+            <re-tip color="blue" style="width: 90%">
+              最新公告请查看右下角的弹窗
+            </re-tip>
+              <re-dragger :visible.sync="infoShow"  :width="370" :height='180'>
+                <template slot="title">
+                  We're hiring !
+                </template>
+                <p class="hireText">If you have passion of <span>front-end </span>role, If you...<br/> We are looking forward to having you with us. 😊<br><span>Please contact us via xxxx@xxx.com.</span></p>
+              </re-dragger>
+          </re-shadow-block>
+      </demo-block>
+      <demo-block title="服务类型" desc="用于Q&A的组件模块">
           <re-shadow-block width="100%" height="100%">
               <re-button icon="remo-team" @click="handleShow">联系客服</re-button>
-              <re-dragger :visible.sync="show"  :width="370" :height='580'>
+              <re-dragger :visible.sync="chatShow"  :width="370" :height='580'>
                 <template slot="title">
                   <i class="remoi remo-desktop"></i>  Remo Live Chat
                 </template>
@@ -55,7 +70,8 @@ export default {
   },
   data () {
     return {
-      show: true,
+      infoShow: true,
+      chatShow: false,
       tabledata: [
         {
           parameter: 'visible',
@@ -113,7 +129,8 @@ export default {
   },
   methods: {
     handleShow () {
-      this.show = !this.show
+      this.infoShow = false
+      this.chatShow = !this.chatShow
     }
   }
 }
@@ -181,6 +198,13 @@ export default {
       margin-left: 10px;
       font-size: 16px;
     }
+  }
+}
+.hireText{
+  font-size: 15px;
+  line-height: 25px;
+  span{
+    font-weight: 500;
   }
 }
 </style>
