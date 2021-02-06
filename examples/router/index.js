@@ -22,6 +22,7 @@ import RemoCollapse from '@/components/remo-collapse-demo'
 import RemoDragger from '@/components/remo-dragger-demo'
 import RemoUploadImg from '@/components/remo-uploadImg-demo'
 import RemoUpload from '@/components/remo-upload-demo'
+import RemoSwitch from '@/components/remo-switch-demo'
 
 Vue.use(Router)
 
@@ -187,6 +188,14 @@ export default new Router({
           path: '/component/remo-upload',
           name: 'RemoUpload',
           component: RemoUpload,
+          meta: {
+            title: '组件|Remo'
+          }
+        },
+        {
+          path: '/component/remo-switch',
+          name: 'RemoSwitch',
+          component: RemoSwitch,
           meta: {
             title: '组件|Remo'
           }

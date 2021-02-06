@@ -1,5 +1,6 @@
 <template>
     <div>
+      <demo-block header="Button 按钮" />
       <div class="demo-block">
         <div class="title">
           <span>基础用法</span>
@@ -69,8 +70,9 @@
 
 <script>
 import remoShadowBlock from '../../packages/remo-shawdow-block/src/remo-shadow-block.vue'
+import demoBlock from './demo-block'
 export default {
-  components: { remoShadowBlock },
+  components: { remoShadowBlock, demoBlock },
   name: 'RemoBtnDemo',
   data () {
     return {

@@ -100,6 +100,11 @@ export default {
               id: '001'
             },
             {
+              title: 'Switch 开关',
+              path: '#/component/remo-switch',
+              id: '007'
+            },
+            {
               title: 'Shadow Block 阴影模块',
               path: '#/component/remo-shadow-block',
               id: '002'
