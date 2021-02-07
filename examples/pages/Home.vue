@@ -102,38 +102,43 @@ export default {
             {
               title: 'Switch 开关',
               path: '#/component/remo-switch',
-              id: '007'
+              id: '002'
+            },
+            {
+              title: 'Checkbox 选择器',
+              path: '#/component/remo-checkbox',
+              id: '003'
             },
             {
               title: 'Shadow Block 阴影模块',
               path: '#/component/remo-shadow-block',
-              id: '002'
+              id: '006'
             },
             {
               title: 'Tip 提示',
               path: '#/component/remo-tip',
-              id: '003'
+              id: '007'
             },
             {
               title: 'Divider 分割线',
               path: '#/component/remo-divider',
-              id: '004'
+              id: '008'
             },
             {
               title: 'Menu 菜单',
               path: '#/component/remo-menu',
-              id: '005'
+              id: '009'
             },
             {
               title: 'Drawer 抽屉',
               path: '#/component/remo-drawer',
-              id: '006'
+              id: '010'
             },
             {
               group: '数据录入',
               title: 'Input 输入框',
               path: '#/component/remo-input',
-              id: '010'
+              id: '011'
             },
             {
               title: 'Upload Image 图片上传',

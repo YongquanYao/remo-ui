@@ -23,6 +23,7 @@ import RemoDragger from '@/components/remo-dragger-demo'
 import RemoUploadImg from '@/components/remo-uploadImg-demo'
 import RemoUpload from '@/components/remo-upload-demo'
 import RemoSwitch from '@/components/remo-switch-demo'
+import RemoCheckbox from '@/components/remo-checkbox-demo'
 
 Vue.use(Router)
 
@@ -196,6 +197,15 @@ export default new Router({
           path: '/component/remo-switch',
           name: 'RemoSwitch',
           component: RemoSwitch,
+          meta: {
+            title: '组件|Remo'
+          }
+        }
+        ,
+        {
+          path: '/component/remo-checkbox',
+          name: 'RemoCheckbox',
+          component: RemoCheckbox,
           meta: {
             title: '组件|Remo'
           }
