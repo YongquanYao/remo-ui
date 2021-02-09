@@ -20,6 +20,8 @@ import ReUpload from './remo-upload'
 import ReDragger from './remo-dragger'
 import ReSwitch from './remo-switch'
 import ReCheckbox from './remo-checkbox'
+import ReClipboard from './remo-clipboard'
+import ReMessage from './remo-message'
 import VueCropper from './vue-cropper'
 import VueDragger from './vue-dragger'
 
@@ -44,6 +46,8 @@ const components = [
   ReDragger,
   ReSwitch,
   ReCheckbox,
+  ReClipboard,
+  ReMessage,
   VueCropper,
   VueDragger
 ]
@@ -86,6 +90,8 @@ export default {
   ReDragger,
   ReSwitch,
   ReCheckbox,
+  ReClipboard,
+  ReMessage,
   VueCropper,
   VueDragger
 }

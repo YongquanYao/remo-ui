@@ -1,31 +1,24 @@
 <template>
-  <div>
-    <label class="checkbox" >
-        <input type="checkbox" :checked="value" :disabled="disable" @click="e => handleCheck(e)" >
-        <span :class="{ 'checkmark': true, 'rounded': type === 'round', 'disable': disable }"></span>
-    </label>
-  </div>
+  <re-button @click="copyFunction" :type="type">{{text}}
+    <textarea class="clipFakeInput" id="clipFakeInput">这是幕后黑手</textarea>
+  </re-button>
 </template>
 
 <script>
 export default {
-  name: 'ReCheckbox',
+  name: 'ReClipboard',
   props: {
-    value: {
-      type: Boolean,
-      default: false
+    target: {
+      type: String,
+      default: 'remo-clipboard'
     },
-    disable: {
-      type: Boolean,
-      default: false
+    text: {
+      type: String,
+      default: 'Copy'
     },
     type: {
       type: String,
-      default: 'rect'
-    },
-    activeColor: {
-      type: String,
-      default: '#2196F3'
+      default: 'default'
     }
   },
   data () {
@@ -34,8 +27,29 @@ export default {
     }
   },
   methods: {
-    handleCheck (e) {
-      this.$emit('change', e.target.checked)
+    // 复制需要用一个text-area做承接，把要复制的内容放进去，然后再做.select()
+    copyFunction () {
+      let textElement = document.getElementById(this.target)
+      /* Select the text field */
+      console.log(textElement.innerText)
+      // 不是节点 是输入框
+      if (textElement.innerText === '') {
+        textElement.select()
+        textElement.setSelectionRange(0, 99999) /* For mobile devices */
+        /* Copy the text inside the text field */
+        document.execCommand('copy')
+        /* Alert the copied text */
+        alert('Copied the text: ' + textElement.value)
+        return
+      }
+      const fakeInput = document.getElementById('clipFakeInput')
+      fakeInput.value = textElement.innerText
+      fakeInput.select()
+      fakeInput.setSelectionRange(0, 99999) /* For mobile devices */
+      /* Copy the text inside the text field */
+      document.execCommand('copy')
+      /* Alert the copied text */
+      alert('Copied the text: ' + fakeInput.value)
     }
   }
 }
@@ -123,5 +137,8 @@ export default {
 
 .checkbox .disable{
   cursor: not-allowed;
+}
+.clipFakeInput{
+  display: none;
 }
 </style>

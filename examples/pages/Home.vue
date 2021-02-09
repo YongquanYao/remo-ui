@@ -135,6 +135,11 @@ export default {
               id: '010'
             },
             {
+              title: 'Message 消息',
+              path: '#/component/remo-message',
+              id: '004'
+            },
+            {
               group: '数据录入',
               title: 'Input 输入框',
               path: '#/component/remo-input',
@@ -186,6 +191,11 @@ export default {
               title: 'Dragger 拖拽弹窗',
               path: '#/component/remo-dragger',
               id: '034'
+            },
+            {
+              title: 'Clipboard 复制',
+              path: '#/component/remo-clipboard',
+              id: '035'
             }
           ]
         },

@@ -24,6 +24,8 @@ import RemoUploadImg from '@/components/remo-uploadImg-demo'
 import RemoUpload from '@/components/remo-upload-demo'
 import RemoSwitch from '@/components/remo-switch-demo'
 import RemoCheckbox from '@/components/remo-checkbox-demo'
+import RemoClipboard from '@/components/remo-clipboard-demo'
+import RemoMessage from '@/components/remo-message-demo'
 
 Vue.use(Router)
 
@@ -200,12 +202,27 @@ export default new Router({
           meta: {
             title: '组件|Remo'
           }
-        }
-        ,
+        },
         {
           path: '/component/remo-checkbox',
           name: 'RemoCheckbox',
           component: RemoCheckbox,
+          meta: {
+            title: '组件|Remo'
+          }
+        },
+        {
+          path: '/component/remo-clipboard',
+          name: 'RemoClipboard',
+          component: RemoClipboard,
+          meta: {
+            title: '组件|Remo'
+          }
+        },
+        {
+          path: '/component/remo-message',
+          name: 'RemoMessage',
+          component: RemoMessage,
           meta: {
             title: '组件|Remo'
           }
