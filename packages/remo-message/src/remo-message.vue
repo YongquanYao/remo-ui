@@ -2,7 +2,7 @@
 <div>
   <re-button @click="sendFunction" :type="type">{{text}}
   </re-button>
-     <transition name="remo-message-fade">
+    <transition name="remo-message-fade">
       <div
         class="message_detail"
         v-show="show"
@@ -10,11 +10,10 @@
         :style="{
           'top': messageNum === 0 ? '25px': `${25*messageNum}px`
         }"
-      messageNum
       >
         <i class="remoi remo-info-circle"></i><span>{{message}}</span>
-    </div>
-  </transition>
+      </div>
+    </transition>
 </div>
 </template>
 
@@ -39,7 +38,7 @@ export default {
     },
     duration: {
       type: Number,
-      default: 4
+      default: 2
     }
   },
   data () {
@@ -51,16 +50,21 @@ export default {
   watch: {
     show: function (val) {
       if (val) {
-        this.messageNum += 1
+        //  window.message_show 全局限制多次点击，需要等前一次消息结束才可以触发
+        window.message_show = true
         setTimeout(() => {
           this.show = false
+          window.message_show = false
         }, this.duration * 1000)
       }
     }
   },
   methods: {
-    // 复制需要用一个text-area做承接，把要复制的内容放进去，然后再做.select()
+    //  window.message_show 全局限制多次点击，需要等前一次消息结束才可以触发
     sendFunction () {
+      if (window.message_show) {
+        return
+      }
       this.show = !this.show
     }
   }

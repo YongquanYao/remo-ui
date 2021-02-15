@@ -38,7 +38,7 @@ import {
   ReButton,
   ReInput
   // ...
-} from 'element-ui'
+} from 'remo-ui'
 
 Vue.use(ReButton)
 Vue.use(ReInput)
@@ -82,6 +82,7 @@ Modern browsers and Internet Explorer 10+.
 - [ ] Avatar
 - [x] Dragger Modal
 - [x] Message
+- [ ] Mutiple Messages on screen at the same time
 
 ## Example Complete
 - [X] Button

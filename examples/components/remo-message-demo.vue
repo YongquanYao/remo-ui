@@ -58,7 +58,7 @@ export default {
           description: '持续时长',
           dataTypes: 'Number',
           optional: '',
-          default: 4
+          default: 2
         }
       ]
     }

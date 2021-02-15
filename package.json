@@ -1,6 +1,6 @@
 {
   "name": "remo-ui",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A UI Library For VUE@2.0+",
   "author": "Raymond <hi@raymondyao.info>",
   "main": "lib/index.js",
