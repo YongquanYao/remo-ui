@@ -11,8 +11,13 @@
                 <div class="header-nav">
                   <ul>
                     <li class="header-nav-item" v-for="x in headnav_data" :key="x.id">
-                        <i :class="x.icon" :style="{color: x.color}"></i>
+                      <template v-if="x.id === 990">
+                        <i :class="x.icon" :style="{color: x.color}" @click="handleLocaleChange()"></i>
+                      </template>
+                      <template v-else>
+                        <i :class="x.icon" :style="{color: x.color}" @click="handleNavJump(x.path)"></i>
                         <a :href="x.path">{{x.name}}</a>
+                      </template>
                     </li>
                   </ul>
                 </div>
@@ -48,19 +53,25 @@
 </template>
 
 <script>
+import { mapGetters, mapMutations } from 'vuex'
 export default {
   name: 'Home',
   data () {
     return {
       active: '1',
       headnav_data: [
-        // {
-        //   id: 990,
-        //   path: 'https://github.com/YongquanYao/remo-ui',
-        //   name: 'Github',
-        //   icon: 'remoi remo-github-fill',
-        //   color: '#000'
-        // }
+        {
+          id: 990,
+          icon: 'remoi remo-translate',
+          color: '#222'
+        },
+        {
+          id: 991,
+          path: 'https://github.com/YongquanYao/remo-ui',
+          // name: 'Github',
+          icon: 'remoi remo-github-fill',
+          color: '#222'
+        }
         // {
         //   id: 991,
         //   path: 'https://github.com/YongquanYao/remo-ui',
@@ -210,6 +221,12 @@ export default {
       ]
     }
   },
+  computed: {
+    ...mapGetters({
+      // map `this.doneCount` to `this.$store.getters.doneTodosCount`
+      locale: 'locale'
+    })
+  },
   mounted () {
     // 保证刷新导航匹配到刷新前的位置
     const hash = window.location.hash
@@ -226,8 +243,22 @@ export default {
     this.active = id
   },
   methods: {
+    ...mapMutations({
+      // 组件中使用改变local的方法
+      changeLocale: 'SET_LOCALE'
+    }),
     jumpIndex () {
       this.$router.push('/')
+    },
+    handleLocaleChange () {
+      const newLocale = this.locale === 'cn' ? 'en' : 'cn'
+      this.changeLocale(newLocale)
+      // 等同于
+      // this.$store.commit('SET_LOCALE', newLocale)
+      console.log(this.locale)
+    },
+    handleNavJump (link) {
+      window.open(link)
     }
   }
 }
@@ -305,8 +336,9 @@ export default {
                   //   transform: scale(1.05);
                   // }
                   i{
-                    font-size: 22px;
+                    font-size: 28px;
                     margin-right: 4px;
+                    cursor: pointer;
                   }
                   a{
                     text-decoration: none;
