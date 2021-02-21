@@ -1,5 +1,6 @@
 <template>
-    <div>
+  <div>
+    <div v-if="this.locale ==='cn'">
         <demo-block title="致谢">
             <re-tip style="width:90%" color="#c8d6fa">
               <span>
@@ -42,10 +43,54 @@
         </demo-block>
         ssr environment
     </div>
+    <div v-if="this.locale ==='en'">
+        <demo-block title="Acknowledgements">
+            <re-tip style="width:90%" color="#c8d6fa">
+              <span>
+                This project uses <b>Vue.js</b> as framework to construct.<br/>
+                <!-- 项目参考学习了 <b>Ant Design-UI</b> / <b>Element-UI</b>。 -->
+              </span>
+            </re-tip>
+        </demo-block>
+        <demo-block header="Installation"></demo-block>
+        <demo-block title="npm" desc="The npm method is recommended as it works better with the Webpack. In the project file directory, enter:">
+            <re-tip style="width:90%" color="blue">
+               <b>~$ npm i remo-ui -S </b>
+            </re-tip>
+        </demo-block>
+        <demo-block title="yarn" desc="In the project directory enter:">
+            <re-tip style="width:90%" color="blue">
+               <b>~$ yarn add remo-ui </b>
+            </re-tip>
+        </demo-block>
+        <demo-block header="Quick Start"></demo-block>
+        <demo-block title="Global import" desc="Import remo-ui in the entry file (main.js) ">
+            <re-tip style="width:90%" color="gray">
+               <b><p>import RemoUI from 'remo-ui';</p>
+                  Vue.use(RemoUI)</b>
+            </re-tip>
+        </demo-block>
+        <demo-block title="Import on Demand" desc="Remo supports tree shaking of ES modules, so using import { ReButton } from 'remo-ui'; would drop js code you didn't use.">
+            <re-tip style="width:90%" color="gray">
+               <b><p>import { &nbsp;ReButton, ReInput&nbsp; } from 'remo-ui';</p>
+                   Vue.use(ReButton)</br>
+                   Vue.use(ReInput)</b>
+            </re-tip>
+        </demo-block>
+        <demo-block title="SSR Environment" desc="If you using Nuxt.js/ Next.js should start with <client-only>">
+            <re-tip style="width:90%" color="gray">
+            <b>< client-only ><br>
+              &nbsp;&nbsp;&nbsp;< re-buttton >Remo Button</ re-buttton ><br>
+            </ client-only ></b>
+            </re-tip>
+        </demo-block>
+    </div>
+  </div>
 </template>
 
 <script>
 import demoBlock from './demo-block'
+import { mapGetters } from 'vuex'
 export default {
   name: 'installDemo',
   components: {
@@ -56,6 +101,11 @@ export default {
     return {
 
     }
+  },
+  computed: {
+    ...mapGetters({
+      locale: 'locale'
+    })
   }
 }
 </script>

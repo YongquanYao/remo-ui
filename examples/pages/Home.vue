@@ -11,10 +11,14 @@
                 <div class="header-nav">
                   <ul>
                     <li class="header-nav-item" v-for="x in headnav_data" :key="x.id">
+                      <template v-if="x.id === 989">
+                        <i :class="x.icon" :style="{color: x.color}"></i>
+                        <span><b>1.0.5</b></span>
+                      </template>
                       <template v-if="x.id === 990">
                         <i :class="x.icon" :style="{color: x.color}" @click="handleLocaleChange()"></i>
                       </template>
-                      <template v-else>
+                      <template v-if="x.id === 991">
                         <i :class="x.icon" :style="{color: x.color}" @click="handleNavJump(x.path)"></i>
                         <a :href="x.path">{{x.name}}</a>
                       </template>
@@ -25,12 +29,32 @@
         </div>
         <div class="main">
             <div class="sidebar">
-                <ul>
+                <ul  v-if="this.locale === 'cn'">
                     <li class="nav-item" :key="x.title" v-for="x in sidebar_data">
+                    <!-- <li class="nav-item" v-else :key="x.title" v-for="x in sidebar_data_en"> -->
                         <a>{{x.title}}</a>
                         <ul class="remo-menu-list" v-if="x.child_data.length !== 0">
                             <li class="nav-item" :key="y.title" v-for="y in x.child_data">
                               <div class="nav-group-title" v-if="y.group">{{y.group}}</div>
+                              <!-- 这里涉及active 和 inactive的选项 -->
+                              <a
+                                :class="{'active': active == y.id}"
+                                @click="active=y.id"
+                                :href="y.path"
+                              >
+                                {{y.title}}
+                              </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul  v-if="this.locale === 'en'">
+                    <li class="nav-item" :key="x.title" v-for="x in sidebar_data_en">
+                    <!-- <li class="nav-item" v-else :key="x.title" v-for="x in sidebar_data_en"> -->
+                        <a>{{x.title}}</a>
+                        <ul class="remo-menu-list remo-menu-list_en" v-if="x.child_data.length !== 0">
+                            <li class="nav-item" :key="y.title" v-for="y in x.child_data">
+                              <div class="nav-group-title nav-group-title_en" v-if="y.group">{{y.group}}</div>
                               <!-- 这里涉及active 和 inactive的选项 -->
                               <a
                                 :class="{'active': active == y.id}"
@@ -61,16 +85,21 @@ export default {
       active: '1',
       headnav_data: [
         {
+          id: 989,
+          icon: 'remoi remo-tags',
+          color: '#364f6a'
+        },
+        {
           id: 990,
           icon: 'remoi remo-translate',
-          color: '#222'
+          color: '#364f6a'
         },
         {
           id: 991,
           path: 'https://github.com/YongquanYao/remo-ui',
           // name: 'Github',
           icon: 'remoi remo-github-fill',
-          color: '#222'
+          color: '#364f6a'
         }
         // {
         //   id: 991,
@@ -218,6 +247,145 @@ export default {
             }
           ]
         }
+      ],
+      sidebar_data_en: [
+        {
+          title: 'Guide',
+          child_data: [
+            {
+              title: 'Installation / Quick Start',
+              id: '1',
+              path: '#/component/remo-installation'
+            },
+            {
+              title: 'Icon',
+              id: '2',
+              path: '#/component/remo-icon'
+            },
+            {
+              title: 'What is Remo?',
+              id: '3',
+              path: '#/component/remo-about'
+            }
+          ]
+        },
+        {
+          title: 'Components',
+          child_data: [
+            {
+              group: 'General',
+              title: 'Button',
+              path: '#/component/remo-button',
+              id: '001'
+            },
+            {
+              title: 'Switch',
+              path: '#/component/remo-switch',
+              id: '002'
+            },
+            {
+              title: 'Checkbox',
+              path: '#/component/remo-checkbox',
+              id: '003'
+            },
+            {
+              title: 'Shadow Block',
+              path: '#/component/remo-shadow-block',
+              id: '006'
+            },
+            {
+              title: 'Tip',
+              path: '#/component/remo-tip',
+              id: '007'
+            },
+            {
+              title: 'Divider',
+              path: '#/component/remo-divider',
+              id: '008'
+            },
+            {
+              title: 'Menu',
+              path: '#/component/remo-menu',
+              id: '009'
+            },
+            {
+              title: 'Drawer',
+              path: '#/component/remo-drawer',
+              id: '010'
+            },
+            {
+              title: 'Message',
+              path: '#/component/remo-message',
+              id: '004'
+            },
+            {
+              group: 'Data Entry',
+              title: 'Input',
+              path: '#/component/remo-input',
+              id: '011'
+            },
+            {
+              title: 'Upload Image',
+              path: '#/component/remo-upload-img',
+              id: '012'
+            },
+            {
+              title: 'Upload',
+              path: '#/component/remo-upload',
+              id: '013'
+            },
+            {
+              group: 'Data Display',
+              title: 'Statistic',
+              path: '#/component/remo-statistic',
+              id: '020'
+            },
+            {
+              title: 'Image Card',
+              path: '#/component/remo-imgcard',
+              id: '021'
+            },
+            {
+              group: 'Others',
+              title: 'Backtop',
+              path: '#/component/remo-backtop',
+              id: '030'
+            },
+            {
+              title: 'FooterBar',
+              path: '#/component/remo-footerbar',
+              id: '031'
+            },
+            {
+              title: 'StatusLight',
+              path: '#/component/remo-statuslight',
+              id: '032'
+            },
+            {
+              title: 'Collapse',
+              path: '#/component/remo-collapse',
+              id: '033'
+            },
+            {
+              title: 'Dragger',
+              path: '#/component/remo-dragger',
+              id: '034'
+            },
+            {
+              title: 'Clipboard',
+              path: '#/component/remo-clipboard',
+              id: '035'
+            }
+          ]
+        },
+        {
+          title: 'PlugIns',
+          child_data: [
+            {
+              title: 'Developing...'
+            }
+          ]
+        }
       ]
     }
   },
@@ -228,6 +396,7 @@ export default {
     })
   },
   mounted () {
+    console.log(this.locale)
     // 保证刷新导航匹配到刷新前的位置
     const hash = window.location.hash
     // console.log(hash)
@@ -253,7 +422,7 @@ export default {
     handleLocaleChange () {
       const newLocale = this.locale === 'cn' ? 'en' : 'cn'
       this.changeLocale(newLocale)
-      // 等同于
+      // 等同于commit能调用mutation的
       // this.$store.commit('SET_LOCALE', newLocale)
       console.log(this.locale)
     },
@@ -332,9 +501,11 @@ export default {
                   height: 80px;
                   transition: 0.5s;
                   line-height: 80px;
-                  // &:hover{
-                  //   transform: scale(1.05);
-                  // }
+                  span{
+                    font-family: 600;
+                    font-size: 15px;
+                    color: #409eff;
+                  }
                   i{
                     font-size: 28px;
                     margin-right: 4px;
@@ -406,6 +577,9 @@ export default {
                 margin-top: 15px;
                 font-weight: 400;
               }
+              .nav-group-title_en{
+                font-size: 14px;
+              }
             }
             .remo-menu-list{
               padding: 0;
@@ -427,6 +601,11 @@ export default {
               .active{
                   color:#409eff
               }
+            }
+            .remo-menu-list_en{
+               a{
+                 font-size: 15px;
+               }
             }
         }
         .content {

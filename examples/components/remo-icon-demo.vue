@@ -1,7 +1,8 @@
 <template>
-    <div>
+  <div>
+    <div v-if="this.locale === 'cn'" >
       <demo-block title="Remo Icon图标" desc="语义化的矢量图形">
-           <re-tip class="tip" color="blue"><span>该图标参考使用 Ant Design 官方图标库, 筛选了部分实用图标。在此感谢Ant Desig的设计团队 !</span><br/>
+           <re-tip class="tip" color="blue"><span>该图标参考使用 Ant Design 官方图标库, 筛选了部分实用图标。在此感谢Ant Design的设计团队 !</span><br/>
             <!-- <a @click="handlejump">https://ant.design/components/icon/</a> -->
            </re-tip>
       </demo-block>
@@ -32,10 +33,45 @@
         </ul>
       </demo-block>
     </div>
+    <div v-if="this.locale === 'en'" >
+      <demo-block title="Remo Icon" desc="Semantic vector graphics (SVG)">
+           <re-tip class="tip" color="blue"><span>Remo Icons refer to the official Ant Design Icon library, Which I select part of commonly used icons, Thanks to the Ant Design!</span><br/>
+            <!-- <a @click="handlejump">https://ant.design/components/icon/</a> -->
+           </re-tip>
+      </demo-block>
+      <demo-block title="Usage" desc="By setting the class name with remoi remo-xxxx">
+           <re-shadow-block height="80px" width="100%">
+            <i class="remoi remo-search demoIcon"></i>
+            <i class="remoi remo-star demoIcon"></i>
+            <i class="remoi remo-calendar demoIcon"></i>
+            <i class="remoi remo-phone demoIcon"></i>
+            <i class="remoi remo-edit demoIcon"></i>
+            <i class="remoi remo-home demoIcon"></i>
+            <i class="remoi remo-google demoIcon"></i>
+            <i class="remoi remo-alipay demoIcon"></i>
+            <i class="remoi remo-heart demoIcon"></i>
+            <i class="remoi remo-apartment demoIcon"></i>
+            <i class="remoi remo-areachart demoIcon"></i>
+            <i class="remoi remo-camera demoIcon"></i>
+           </re-shadow-block>
+      </demo-block>
+      <demo-block title="Icon Library">
+        <ul class="remo-list">
+          <li v-for="(item,index) in iconList" :key="index">
+              <div>
+                 <i class="remoi" :class="item"></i>
+                 <p>{{item}}</p>
+              </div>
+          </li>
+        </ul>
+      </demo-block>
+    </div>
+  </div>
 </template>
 
 <script>
 import demoBlock from './demo-block'
+import { mapGetters } from 'vuex'
 export default {
   name: 'RemoIconDemo',
   components: {
@@ -435,6 +471,12 @@ export default {
         'remo-ungroup'
       ]
     }
+  },
+  computed: {
+    ...mapGetters({
+      // map `this.doneCount` to `this.$store.getters.doneTodosCount`
+      locale: 'locale'
+    })
   },
   methods: {
     handlejump () {

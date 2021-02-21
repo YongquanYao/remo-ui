@@ -40,6 +40,8 @@ export default {
           return ['日期', '姓名', '地址', '操作']
         } else if (this.type === 'demo') {
           return ['参数', '说明', '类型', '可选值', '默认值']
+        } else if (this.type === 'en') {
+          return ['parameter', 'description', 'type', 'option', 'default']
         }
       }
     },

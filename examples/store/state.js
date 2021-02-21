@@ -1,5 +1,5 @@
 const state = {
-  locale: 'cn'
+  locale: 'en'
 }
 
 export default state
