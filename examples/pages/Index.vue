@@ -21,13 +21,19 @@
             <re-status-light style="margin-right:15px" :animation="true"/>
             <re-status-light style="margin-right:15px" :animation="true" status="active"/>
             </div>
-            <p>一款为Vue.js@2.0量身定做的轻量级霓裳套装</p>
-            <re-button type="primary" class="btn_start" @click="jumpComponent">开始使用
+            <p v-if="this.locale==='cn'">一款为Vue.js@2.0量身定做的轻量级霓裳套装</p>
+            <p v-else>A light UI tool-kit for Vue@2.x developemnt.</p>
+            <re-button  v-if="this.locale ==='cn'" type="primary" class="btn_start" @click="jumpComponent">开始使用
             </re-button>
-            <re-button type="primary" class="btn_about" @click="jumpAbout">官方说明
+             <re-button  v-else type="primary" class="btn_start" @click="jumpComponent">Getting Started
             </re-button>
-            <re-button  class="btn_github" @click="jumpGithub"><i class="remoi remo-github-fill"/>
-            源代码
+            <re-button  v-if="this.locale ==='cn'" type="primary" class="btn_about" @click="jumpAbout">官方说明
+            </re-button>
+            <re-button  v-else type="primary" class="btn_about" @click="jumpAbout">About Remo
+            </re-button>
+            <re-button   v-if="this.locale ==='cn'" class="btn_github" @click="jumpGithub"><i class="remoi remo-github-fill"/>源代码
+            </re-button>
+            <re-button  v-else class="btn_github" @click="jumpGithub"><i class="remoi remo-github-fill"/>Source Code
             </re-button>
         </div>
         <div class="bg_img">
@@ -42,25 +48,85 @@
       <img class="bg_left2" src="../assets/left_top2.png" alt="" />
       <img class="bg_right1" src="../assets/right_1.png" alt=""/>
       <img class="bg_right2" src="../assets/right_2.png" alt="" />
+      <re-message ref="connect_msg" class="btn_connect" text="错误消息" type="solid" message="Please submit the CONNECTION FORM first. 😊" :duration="5"></re-message>
+      <re-dragger :visible.sync="connectionShow"  :width="370" :height='350'>
+        <template slot="title">
+          <i class="remoi remo-desktop"></i>  Remo Connection Form
+        </template>
+        <div class="chat_container">
+          <div class="chat_top">
+            <div class="message_container_1">
+              <re-input pattern='frame' placeholder="Nick Name" prefixIcon="remo-user" class="input"></re-input>
+            </div>
+            <div class="message_container_1">
+              <re-input pattern='frame' placeholder="Email" prefixIcon="remo-mail" class="input"></re-input>
+            </div>
+            <div class="message_container_1">
+              <re-input pattern='frame' placeholder="Where did you heard about Remo ?" prefixIcon="remo-share" class="input"></re-input>
+            </div>
+            <div class="message_container_1">
+              <re-input pattern='frame' placeholder="Leave a message..." prefixIcon="remo-comment" class="input"></re-input>
+            </div>
+          </div>
+          <div class="chat_bottom">
+            <re-button class="send" type="primary" @click="connectionSend">Send</re-button>
+          </div>
+        </div>
+      </re-dragger>
   </div>
 </template>
 
 <script>
+import { mapGetters, mapMutations } from 'vuex'
 export default {
   data () {
     return {
-
+      connectionShow: false
     }
+  },
+  computed: {
+    ...mapGetters({
+      locale: 'locale',
+      connect: 'connect'
+    })
+  },
+  mounted () {
+    this.checkConnect()
   },
   methods: {
     jumpComponent () {
-      this.$router.push('/component/')
+      if (this.connect) {
+        this.$router.push('/component/')
+      } else {
+        // this.$refs.connect_msg.$el.click()
+        // console.log(this.$refs.connect_msg.show)
+        this.$refs.connect_msg.show = true
+        this.connectionShow = true
+      }
     },
     jumpGithub () {
       window.open('https://github.com/YongquanYao/remo-ui')
     },
     jumpAbout () {
-      this.$router.push('/component/remo-about')
+      if (this.connect) {
+        this.$router.push('/component/remo-about')
+      } else {
+        this.$refs.connect_msg.show = true
+        this.connection = true
+      }
+    },
+    checkConnect () {
+      console.log(this.connect)
+    },
+    ...mapMutations({
+      // 组件中使用改变local的方法
+      changeConnection: 'SET_CONNECT'
+    }),
+    connectionSend () {
+      // 切换全局状态
+      this.changeConnection(true)
+      // 隐藏表格
+      this.connectionShow = false
     }
   }
 }
@@ -147,7 +213,8 @@ export default {
         color: #2E8BF5;
         border: #2E8BF5;
         font-weight: 600;
-         margin-right: 15px;
+        margin-right: 15px;
+        cursor: pointer;
       }
       .btn_github{
           text-align: center;
@@ -159,9 +226,10 @@ export default {
           background: rgb(41, 41, 41);
           border: rgb(41, 41, 41);
           color: #fff;
+          cursor: pointer;
           i{
             font-size: 18px;
-            padding-right: 2px;
+            padding-right: 5px;
             color: #fff;
           }
       }
@@ -323,6 +391,77 @@ export default {
             }
           }
         }
+    }
+  }
+  .btn_connect{
+    top: -500px;
+    position: absolute;
+  }
+  .chat_container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    .chat_top{
+      width: 100%;
+      // height: 80%;
+      .message_container_1{
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        .input{
+          width: 100%;
+          margin: 0 10px;
+        }
+        // .avatar{
+        //   width: 50px;
+        //   height: 50px;
+        //   background: #ececec;
+        //   border-radius: 50%;
+        //   margin-right: 20px;
+        // }
+        // .message{
+        //   flex: 1;
+        //   height: 30px;
+        //   background: #ececec;
+        // }
+      }
+      .message_container_2{
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        .message{
+          width: calc(100% - 70px);
+          height: 30px;
+          background: #e0e0e0;
+        }
+        .avatar{
+          width: 50px;
+          height: 50px;
+          background: #e0e0e0;
+          border-radius: 50%;
+          margin-left: 20px;
+        }
+      }
+    }
+    .chat_bottom{
+      position: absolute;
+      bottom: 15px;
+      width: 100%;
+      height: 40px;
+      border-top: 1px solid #ebebeb;
+      padding: 15px 5px;
+      display: flex;
+      align-items: center;
+      .input{
+        width: 80%;
+      }
+      .send{
+        width: 100%;
+        margin: 0;
+        // margin-left: 10px;
+        font-size: 16px;
+      }
     }
   }
 }

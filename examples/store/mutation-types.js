@@ -2,3 +2,5 @@
 
 // 设置Locale的方法
 export const SET_LOCALE = 'SET_LOCALE'
+
+export const SET_CONNECT = 'SET_CONNECT'

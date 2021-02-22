@@ -9,3 +9,4 @@
 // ])
 
 export const locale = state => state.locale
+export const connect = state => state.connect

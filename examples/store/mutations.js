@@ -16,6 +16,9 @@ const mutations = {
 
   [types.SET_LOCALE] (state, locale) {
     state.locale = locale
+  },
+  [types.SET_CONNECT] (state, connect) {
+    state.connect = connect
   }
 }
 

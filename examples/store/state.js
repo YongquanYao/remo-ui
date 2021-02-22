@@ -1,5 +1,6 @@
 const state = {
-  locale: 'en'
+  locale: 'en',
+  connect: false
 }
 
 export default state
