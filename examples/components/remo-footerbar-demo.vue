@@ -1,5 +1,6 @@
 <template>
-    <div>
+  <div>
+    <div v-if="this.locale === 'cn' ">
         <demo-block header="Footer Bar" desc="固定在底部的工具栏">
            <re-footer-bar :cancelText="cancelText" @cancel="handleCancel" @confirm="handleConfirm" :show="visible"></re-footer-bar>
         </demo-block>
@@ -9,13 +10,31 @@
           <re-table :data="tabledata" type="demo" />
         </demo-block>
     </div>
+    <div v-if="this.locale === 'en' ">
+        <demo-block header="Footer Bar" desc="fixed tool in the bottom">
+           <re-footer-bar :cancelText="cancelText" @cancel="handleCancel" @confirm="handleConfirm" :show="visible"></re-footer-bar>
+        </demo-block>
+        <demo-block title="Usage" desc="Scroll down to view">
+        </demo-block>
+        <demo-block title="API" desc="The properties description are as follows: ">
+          <re-table :data="tabledata_en" type="en"></re-table>
+        </demo-block>
+    </div>
+  </div>
 </template>
 
 <script>
 import demoBlock from './demo-block'
+import { mapGetters } from 'vuex'
 export default {
+  name: 'RemoFootBarDemo',
   components: {
     demoBlock
+  },
+  computed: {
+    ...mapGetters({
+      locale: 'locale'
+    })
   },
   data () {
     return {
@@ -87,6 +106,78 @@ export default {
         {
           parameter: 'visible',
           description: '控制Footer是否显示,可配合回调事件',
+          dataTypes: 'Boolean',
+          option: 'true / false',
+          default: 'true'
+        }
+      ],
+      tabledata_en: [
+        {
+          parameter: 'target',
+          description: 'scrolling events target you want to listen',
+          dataTypes: 'String',
+          option: '',
+          default: 'window'
+        },
+        {
+          parameter: 'content',
+          description: 'left side content',
+          dataTypes: 'String',
+          option: '',
+          default: 'Notification - Extra Information'
+        },
+        {
+          parameter: 'okText',
+          description: 'text content of the cofirm button',
+          dataTypes: 'String',
+          option: '',
+          default: 'Confirm'
+        },
+        {
+          parameter: 'cancelText',
+          description: 'text content of the cancel button',
+          dataTypes: 'String',
+          option: '',
+          default: 'Cancel'
+        },
+        {
+          parameter: 'confirmButtonShow',
+          description: 'whether confirm button display',
+          dataTypes: 'Boolean',
+          option: 'true/ false',
+          default: 'true'
+        },
+        {
+          parameter: 'cancelButtonShow',
+          description: 'whether cancel button display',
+          dataTypes: 'Boolean',
+          option: 'true / fasle',
+          default: 'true'
+        },
+        {
+          parameter: '@confirm',
+          description: 'confirm button callback function',
+          dataTypes: 'Function',
+          option: '',
+          default: ''
+        },
+        {
+          parameter: '@cancel',
+          description: 'cancel button callback function',
+          dataTypes: 'Function',
+          option: '',
+          default: ''
+        },
+        {
+          parameter: 'visibleHeight',
+          description: 'the scrolling hegiht to show up the footerbar',
+          dataTypes: 'Number',
+          option: '',
+          default: '0'
+        },
+        {
+          parameter: 'visible',
+          description: 'footer visible value',
           dataTypes: 'Boolean',
           option: 'true / false',
           default: 'true'

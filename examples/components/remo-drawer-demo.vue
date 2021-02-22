@@ -1,5 +1,6 @@
 <template>
-    <div>
+  <div>
+    <div v-if="this.locale === 'cn'">
         <demo-block header="Drawer 抽屉">
         </demo-block>
         <demo-block title="基础用法" desc="点击触发">
@@ -39,14 +40,60 @@
             </re-table>
         </demo-block>
     </div>
+    <div v-if="this.locale === 'en'">
+        <demo-block header="Drawer">
+        </demo-block>
+        <demo-block title="Usage" desc="Click to trigger">
+          <re-shadow-block width='100%' height="80px">
+            <re-button type="primary" @click="handleOpen">Open</re-button>
+            <re-drawer :visible.sync="show" :close="handleClose" title="Drawer title">
+              Hi there, this is default setting drawer.
+            </re-drawer>
+          </re-shadow-block>
+        </demo-block>
+        <demo-block title="Placement" desc="Showing from right or left">
+          <re-shadow-block width='100%' height="80px">
+            <re-button type="primary" @click="rightShow = true">Right Open</re-button>
+            <re-button type="primary" @click="leftShow = true">Left Open</re-button>
+            <re-drawer :visible.sync="rightShow" placement="right" title="Right Drawer Title">
+               Hi there, this is right drawer.
+            </re-drawer>
+            <re-drawer :visible.sync="leftShow" placement="left" title="Left Drawer Title">
+              Hi there, this is left drawer.
+            </re-drawer>
+          </re-shadow-block>
+        </demo-block>
+         <demo-block title="Mask Settting" desc="Whether mask can be clicked to close or displayed">
+          <re-shadow-block width='100%' height="80px">
+            <re-button type="primary" @click="noMaskShow  = true">No mask Open</re-button>
+            <re-button type="primary" @click="closeableShow = true">MaskClosable Open</re-button>
+            <re-drawer :visible.sync="noMaskShow" :mask="false" title="Right Drawer Title">
+               Hi there, this is a drawer with no mask. Using right corner button to close the drawer
+            </re-drawer>
+            <re-drawer :visible.sync="closeableShow" :maskClosable="false" title="Left Drawer Title">
+              Hi there, this is a drawer with maskClosable false. Using right corner button to close the drawer
+            </re-drawer>
+          </re-shadow-block>
+        </demo-block>
+        <demo-block title="API" desc="The properties description are as follows: ">
+          <re-table :data="tableData_en" type="cn"></re-table>
+        </demo-block>
+    </div>
+  </div>
 </template>
 
 <script>
 import demoBlock from './demo-block'
+import { mapGetters } from 'vuex'
 export default {
   name: 'RemoDrawerDemo',
   components: {
     demoBlock
+  },
+  computed: {
+    ...mapGetters({
+      locale: 'locale'
+    })
   },
   data () {
     return {
@@ -94,6 +141,50 @@ export default {
         {
           parameter: '@close',
           description: 'Drawer 关闭时的回调',
+          dataTypes: 'Function',
+          option: '—',
+          default: '—'
+        }
+      ],
+      tableData_en: [
+        {
+          parameter: 'visible',
+          description: 'Drawer visibility, support .sync modifier',
+          dataTypes: 'Boolean',
+          option: '',
+          default: 'false'
+        },
+        {
+          parameter: 'title',
+          description: 'Title',
+          dataTypes: 'String',
+          option: '',
+          default: ''
+        },
+        {
+          parameter: 'placement',
+          description: 'Drawer Placement',
+          dataTypes: 'String',
+          option: 'left / right',
+          default: 'right'
+        },
+        {
+          parameter: 'mask',
+          description: 'Mask visibility',
+          dataTypes: 'Boolean',
+          option: 'true / false',
+          default: 'true'
+        },
+        {
+          parameter: 'maskClosable',
+          description: 'Whether mask can be clicked to close drawer',
+          dataTypes: 'Boolean',
+          option: 'true / false',
+          default: 'true'
+        },
+        {
+          parameter: '@close',
+          description: 'Drawer callback function',
           dataTypes: 'Function',
           option: '—',
           default: '—'

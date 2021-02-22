@@ -1,5 +1,7 @@
 <template>
-    <div>
+  <div>
+    <div v-if="this.locale === 'cn'">
+      <demo-block header="Shadow Block 阴影块" />
       <demo-block title="Default - 默认" desc="基础阴影效果:">
          <remo-shadow-block  width="100%">
           <span style="color:#409eff">
@@ -66,11 +68,61 @@
         <re-table :data="tabledata" type="demo"></re-table>
       </div>
     </div>
+    <div v-if="this.locale === 'en'">
+      <demo-block header="Shadow Block" />
+      <demo-block title="Default" desc="Defalut shadow effect:">
+         <remo-shadow-block  width="100%">
+          <span style="color:#409eff">
+            Hi there ! I am Default block card.
+          </span>
+        </remo-shadow-block>
+      </demo-block>
+      <demo-block title="Light" desc="Light shadow effect:">
+         <remo-shadow-block mode="light"  width="100%">
+          <span style="color:#409eff">
+            Hi there ! I am Light block card.
+          </span>
+        </remo-shadow-block>
+      </demo-block>
+      <demo-block title="Deep" desc="Deep shadow effect:">
+        <remo-shadow-block mode="deep"  width="100%">
+          <span style="color:#409eff">
+            Hi there ! I am Deep block card.
+          </span>
+        </remo-shadow-block>
+      </demo-block>
+      <demo-block title="Curve" desc="Curve shadow effect:">
+        <remo-shadow-block mode="curve"  width="100%">
+          <span style="color:#409eff">
+            Hi there ! I am Curve block card.
+          </span>
+        </remo-shadow-block>
+      </demo-block>
+      <demo-block title="Sharp" desc="Sharp shadow effect:">
+        <remo-shadow-block mode="sharp" width="100%">
+          <span style="color:#409eff">
+            Hi there ! I am Sharp block card.
+          </span>
+        </remo-shadow-block>
+      </demo-block>
+      <demo-block title="Customize" desc="Customize width and height:">
+        <remo-shadow-block mode="curve" width="600px" height="200px">
+          <span style="color:#409eff">
+            Hi there ! I am block with 600px Width and 200px Height.
+          </span>
+        </remo-shadow-block>
+      </demo-block>
+      <demo-block title="API" desc="The properties description are as follows: ">
+        <re-table :data="tabledata_en" type="en"></re-table>
+      </demo-block>
+    </div>
+  </div>
 </template>
 
 <script>
 import RemoShadowBlock from '../../packages/remo-shawdow-block/src/remo-shadow-block.vue'
 import demoBlock from './demo-block.vue'
+import { mapGetters } from 'vuex'
 export default {
   name: 'RemoShadowBlkDemo',
   components: {
@@ -101,8 +153,36 @@ export default {
           optional: '',
           default: '150px'
         }
+      ],
+      tabledata_en: [
+        {
+          parameter: 'mode',
+          description: 'Setting mode',
+          dataTypes: 'String',
+          optional: 'default / light / deep / curve / sharp',
+          default: 'default'
+        },
+        {
+          parameter: 'width',
+          description: 'Customize block width',
+          dataTypes: 'String',
+          optional: '',
+          default: '400px'
+        },
+        {
+          parameter: 'height',
+          description: 'Customize block height',
+          dataTypes: 'String',
+          optional: '',
+          default: '150px'
+        }
       ]
     }
+  },
+  computed: {
+    ...mapGetters({
+      locale: 'locale'
+    })
   }
 }
 </script>

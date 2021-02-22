@@ -1,72 +1,140 @@
 <template>
   <div>
-      <demo-block header="Dragger 弹窗">
-      </demo-block>
-      <demo-block title="信息类型" desc="用于显示特别信息模块">
-          <re-shadow-block width="100%" height="100%">
-            <re-tip color="blue" style="width: 90%">
-              最新公告请查看右下角的弹窗
-            </re-tip>
-              <re-dragger :visible.sync="infoShow"  :width="370" :height='180'>
-                <template slot="title">
-                  We're hiring !
-                </template>
-                <p class="hireText">If you have passion of <span>front-end </span>role, If you...<br/> We are looking forward to having you with us. 😊<br><span>Please contact us via xxxx@xxx.com.</span></p>
-              </re-dragger>
-          </re-shadow-block>
-      </demo-block>
-      <demo-block title="服务类型" desc="用于Q&A的组件模块">
-          <re-shadow-block width="100%" height="100%">
-              <re-button icon="remo-team" @click="handleShow">联系客服</re-button>
-              <re-dragger :visible.sync="chatShow"  :width="370" :height='580'>
-                <template slot="title">
-                  <i class="remoi remo-desktop"></i>  Remo Live Chat
-                </template>
-              <div class="chat_container">
-                <div class="chat_top">
-                  <div class="message_container_1">
-                    <div class="avatar"></div>
-                    <div class="message"></div>
+    <div v-if="this.locale==='cn'">
+        <demo-block header="Dragger 弹窗">
+        </demo-block>
+        <demo-block title="信息类型" desc="用于显示特别信息模块">
+            <re-shadow-block width="100%" height="100%">
+              <re-tip color="blue" style="width: 90%">
+                最新公告请查看右下角的弹窗
+              </re-tip>
+                <re-dragger :visible.sync="infoShow"  :width="370" :height='180'>
+                  <template slot="title">
+                    We're hiring !
+                  </template>
+                  <p class="hireText">If you have passion of <span>front-end </span>role, If you...<br/> We are looking forward to having you with us. 😊<br><span>Please contact us via xxxx@xxx.com.</span></p>
+                </re-dragger>
+            </re-shadow-block>
+        </demo-block>
+        <demo-block title="服务类型" desc="用于Q&A的组件模块">
+            <re-shadow-block width="100%" height="100%">
+                <re-button icon="remo-team" @click="handleShow">联系客服</re-button>
+                <re-dragger :visible.sync="chatShow"  :width="370" :height='580'>
+                  <template slot="title">
+                    <i class="remoi remo-desktop"></i>  Remo Live Chat
+                  </template>
+                <div class="chat_container">
+                  <div class="chat_top">
+                    <div class="message_container_1">
+                      <div class="avatar"></div>
+                      <div class="message"></div>
+                    </div>
+                    <div class="message_container_1">
+                      <div class="avatar"></div>
+                      <div class="message"></div>
+                    </div>
+                    <div class="message_container_2">
+                      <div class="message"></div>
+                      <div class="avatar"></div>
+                    </div>
+                    <div class="message_container_1">
+                      <div class="avatar"></div>
+                      <div class="message"></div>
+                    </div>
+                    <div class="message_container_2">
+                      <div class="message"></div>
+                      <div class="avatar"></div>
+                    </div>
                   </div>
-                  <div class="message_container_1">
-                    <div class="avatar"></div>
-                    <div class="message"></div>
-                  </div>
-                  <div class="message_container_2">
-                    <div class="message"></div>
-                    <div class="avatar"></div>
-                  </div>
-                  <div class="message_container_1">
-                    <div class="avatar"></div>
-                    <div class="message"></div>
-                  </div>
-                  <div class="message_container_2">
-                    <div class="message"></div>
-                    <div class="avatar"></div>
+                  <div class="chat_bottom">
+                    <re-input pattern='frame' placeholder="请输入信息" class="input"></re-input><re-button class="send" type="primary">发送</re-button>
                   </div>
                 </div>
-                <div class="chat_bottom">
-                  <re-input pattern='frame' placeholder="请输入信息" class="input"></re-input><re-button class="send" type="primary">发送</re-button>
+                </re-dragger>
+            </re-shadow-block>
+        </demo-block>
+        <demo-block title="API" desc="属性说明如下：">
+          <re-table :data="tabledata" type="demo"></re-table>
+        </demo-block>
+        <demo-block title="Slot" desc="插槽:">
+          <re-table :data="slotTabledata" type="demo"></re-table>
+        </demo-block>
+    </div>
+    <div v-if="this.locale==='en'">
+        <demo-block header="Dragger">
+        </demo-block>
+        <demo-block title="Information" desc="Using as information component">
+            <re-shadow-block width="100%" height="100%">
+              <re-tip color="blue" style="width: 90%">
+                The updated notification is show in the bottom right corner.
+              </re-tip>
+                <re-dragger :visible.sync="infoShow"  :width="370" :height='180'>
+                  <template slot="title">
+                    We're hiring !
+                  </template>
+                  <p class="hireText">If you have passion of <span>front-end </span>role, If you...<br/> We are looking forward to having you with us. 😊<br><span>Please contact us via xxxx@xxx.com.</span></p>
+                </re-dragger>
+            </re-shadow-block>
+        </demo-block>
+        <demo-block title="Service" desc="Using as a Q&A component">
+            <re-shadow-block width="100%" height="100%">
+                <re-button icon="remo-team" @click="handleShow">Customer Service</re-button>
+                <re-dragger :visible.sync="chatShow"  :width="370" :height='580'>
+                  <template slot="title">
+                    <i class="remoi remo-desktop"></i>  Remo Live Chat
+                  </template>
+                <div class="chat_container">
+                  <div class="chat_top">
+                    <div class="message_container_1">
+                      <div class="avatar"></div>
+                      <div class="message"></div>
+                    </div>
+                    <div class="message_container_1">
+                      <div class="avatar"></div>
+                      <div class="message"></div>
+                    </div>
+                    <div class="message_container_2">
+                      <div class="message"></div>
+                      <div class="avatar"></div>
+                    </div>
+                    <div class="message_container_1">
+                      <div class="avatar"></div>
+                      <div class="message"></div>
+                    </div>
+                    <div class="message_container_2">
+                      <div class="message"></div>
+                      <div class="avatar"></div>
+                    </div>
+                  </div>
+                  <div class="chat_bottom">
+                    <re-input pattern='frame' placeholder="请输入信息" class="input"></re-input><re-button class="send" type="primary">发送</re-button>
+                  </div>
                 </div>
-              </div>
-              </re-dragger>
-          </re-shadow-block>
-      </demo-block>
-      <demo-block title="API" desc="属性说明如下：">
-         <re-table :data="tabledata" type="demo"></re-table>
-      </demo-block>
-      <demo-block title="Slot" desc="插槽:">
-         <re-table :data="slotTabledata" type="demo"></re-table>
-      </demo-block>
+                </re-dragger>
+            </re-shadow-block>
+        </demo-block>
+        <demo-block title="API" desc="The properties description are as follows: ">
+          <re-table :data="tableData_en" type="en"></re-table>
+        </demo-block>
+        <demo-block title="Slot">
+          <re-table :data="tableData_en" type="en"></re-table>
+        </demo-block>
+    </div>
   </div>
 </template>
 
 <script>
 import demoBlock from './demo-block'
+import { mapGetters } from 'vuex'
 export default {
   name: 'RemoDraggerDemo',
   components: {
     demoBlock
+  },
+  computed: {
+    ...mapGetters({
+      locale: 'locale'
+    })
   },
   data () {
     return {
@@ -116,10 +184,63 @@ export default {
           default: 'false'
         }
       ],
+      tableData_en: [
+        {
+          parameter: 'visible',
+          description: 'Drawer visible value, support .sync',
+          dataTypes: 'Boolean',
+          option: 'true / false',
+          default: 'false'
+        },
+        {
+          parameter: 'width',
+          description: 'dragger width',
+          dataTypes: 'Number',
+          option: '',
+          default: '450'
+        },
+        {
+          parameter: 'height',
+          description: 'dragger height',
+          dataTypes: 'Number',
+          option: '',
+          default: '200'
+        },
+        {
+          parameter: 'isDraggable',
+          description: 'enable draggable',
+          dataTypes: 'Boolean',
+          option: 'true / false',
+          default: 'true'
+        },
+        {
+          parameter: 'isResizable',
+          description: 'enable resizable',
+          dataTypes: 'Boolean',
+          option: 'true / false',
+          default: 'true'
+        },
+        {
+          parameter: 'aspectRatio',
+          description: 'enable ratio',
+          dataTypes: 'Boolean',
+          option: 'true / false',
+          default: 'false'
+        }
+      ],
       slotTabledata: [
         {
           parameter: 'title',
           description: '标题',
+          dataTypes: 'node',
+          option: '',
+          default: 'I’m remo modal'
+        }
+      ],
+      slotTabledata_en: [
+        {
+          parameter: 'title',
+          description: 'dragger title',
           dataTypes: 'node',
           option: '',
           default: 'I’m remo modal'

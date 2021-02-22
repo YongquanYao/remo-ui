@@ -47,11 +47,11 @@
             </div>
         </re-shadow-block>
       </demo-block>
-      <demo-block title="API" desc="The property description is as follows: ">
-          <re-table :data="tabledata" type="en"></re-table>
+      <demo-block title="API" desc="The properties description are as follows: ">
+          <re-table :data="tabledata_en" type="en"></re-table>
       </demo-block>
-      <demo-block title="Event" desc="The event description is as follows: ">
-          <re-table :data="eventTabledata" type="en"></re-table>
+      <demo-block title="Event" desc="The events description are as follows: ">
+          <re-table :data="eventTabledata_en" type="en"></re-table>
       </demo-block>
     </div>
   </div>
@@ -102,6 +102,38 @@ export default {
           description: '值改变时',
           dataTypes: 'Function',
           optional: '会传递当前值进去',
+          default: ''
+        }
+      ],
+      tabledata_en: [
+        {
+          parameter: 'value / v-model',
+          description: 'binding value',
+          dataTypes: 'Boolean',
+          optional: 'true / false',
+          default: 'false'
+        },
+        {
+          parameter: 'disable',
+          description: 'whether Switch is disabled',
+          dataTypes: 'Boolean',
+          optional: 'true / false',
+          default: 'false'
+        },
+        {
+          parameter: 'type',
+          description: 'two types of Switch',
+          dataTypes: 'Boolean',
+          optional: 'rect / round',
+          default: 'rect'
+        }
+      ],
+      eventTabledata_en: [
+        {
+          parameter: '@Change',
+          description: 'triggers when the selected value changes',
+          dataTypes: 'Function',
+          optional: 'pass current value as parameter',
           default: ''
         }
       ]

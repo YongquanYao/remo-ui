@@ -1,5 +1,7 @@
 <template>
-    <div>
+  <div>
+    <div v-if="this.locale === 'cn'">
+       <demo-block header="Backtop 回到顶部"/>
         <demo-block title="默认" desc="页面滚动到一定高度时会出现在右下端，以下是一个测试模块:">
           <re-tip color="blue">本组件需配合<b> Button RemoUI组件 </b>一并使用。若使用按需引用方式，需一并引入。</re-tip>
           <re-backtop></re-backtop>
@@ -18,14 +20,42 @@
           <re-table :data="tabledata" type="demo"></re-table>
         </demo-block>
     </div>
+     <div v-if="this.locale === 'en'">
+        <demo-block header="Backtop"/>
+        <demo-block title="Usage" desc="The tool will show up when scorll down the page in certain height. A test area below:">
+          <!-- <re-tip color="blue">本组件需配合<b> Button RemoUI组件 </b>一并使用。若使用按需引用方式，需一并引入。</re-tip> -->
+          <re-tip color="blue">Using this component must import<b> RemoUI Button</b> as well.</re-tip>
+          <re-backtop></re-backtop>
+        </demo-block>
+        <div class="testarea">
+             Height Test Area
+        </div>
+        <demo-block title="Customize" desc="position / conetent / icon">
+          <div class="diycontainer">
+            <re-backtop type='customize' icon='remo-totop'>Back to top</re-backtop>
+            <re-backtop type='customize' color="#555" icon='remo-up-circle'>Go Back To Top</re-backtop>
+            <re-backtop type='customize' color='rgb(250, 67, 67)' circle icon='remo-rocket'>Top</re-backtop>
+          </div>
+        </demo-block>
+        <demo-block title="API" desc="The properties description are as follow:">
+          <re-table :data="tabledata_en" type="en"></re-table>
+        </demo-block>
+    </div>
+  </div>
 </template>
 
 <script>
 import demoBlock from './demo-block'
+import { mapGetters } from 'vuex'
 export default {
   name: 'RemoBacktopDemo',
   components: {
     demoBlock
+  },
+  computed: {
+    ...mapGetters({
+      locale: 'locale'
+    })
   },
   data () {
     return {
@@ -68,6 +98,50 @@ export default {
         {
           parameter: 'showHeight',
           description: '滚动高度达到此参数值才出现按钮，为0时不隐藏按钮',
+          dataTypes: 'Number',
+          option: '',
+          default: '100'
+        }
+      ],
+      tabledata_en: [
+        {
+          parameter: 'type',
+          description: 'Type',
+          dataTypes: 'String',
+          option: 'default / customize',
+          default: 'default'
+        },
+        {
+          parameter: 'icon',
+          description: 'Icon',
+          dataTypes: 'String',
+          option: 'Remo Icon classname',
+          default: 'remo-up'
+        },
+        {
+          parameter: 'color',
+          description: 'must be used with type=customize',
+          dataTypes: 'String',
+          option: '',
+          default: '#409eff'
+        },
+        {
+          parameter: 'circle',
+          description: 'shape',
+          dataTypes: 'Boolean',
+          option: 'true / false',
+          default: 'false'
+        },
+        {
+          parameter: 'target',
+          description: 'scrolling events target you want to listen',
+          dataTypes: 'String',
+          option: '',
+          default: 'window'
+        },
+        {
+          parameter: 'showHeight',
+          description: 'the scrolling height of show up, 0 will not show up',
           dataTypes: 'Number',
           option: '',
           default: '100'
