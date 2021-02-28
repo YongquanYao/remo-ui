@@ -5,8 +5,8 @@
             :h="height"
             :isDraggable="isDraggable"
             :isResizable="isResizable"
-            :minh="200"
-            :minw="360"
+            :minh="height"
+            :minw="width"
             :w="width"
             :x="x"
             :y="y"
@@ -165,6 +165,8 @@ export default {
     line-height: 22px;
     word-wrap: break-word;
     text-align: center;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
   }
   .remo-widget-modal-content-body {
     cursor: default;

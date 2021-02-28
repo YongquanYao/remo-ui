@@ -48,31 +48,42 @@
       <img class="bg_left2" src="../assets/left_top2.png" alt="" />
       <img class="bg_right1" src="../assets/right_1.png" alt=""/>
       <img class="bg_right2" src="../assets/right_2.png" alt="" />
+       <!-- 给Form跳转的 -->
+      <iframe src="" frameborder="0" width="0" height="0" name="sendFrame"></iframe>
       <re-message ref="connect_msg" class="btn_connect" text="错误消息" type="solid" message="Please submit the CONNECTION FORM first. 😊" :duration="5"></re-message>
       <re-dragger :visible.sync="connectionShow"  :width="370" :height='350'>
         <template slot="title">
           <i class="remoi remo-desktop"></i>  Remo Connection Form
         </template>
         <div class="chat_container">
-          <div class="chat_top">
-            <div class="message_container_1">
-              <re-input pattern='frame' placeholder="Nick Name" prefixIcon="remo-user" class="input"></re-input>
+            <div class="chat_top">
+              <div class="message_container_1">
+                <re-input pattern='frame' id="name" name="name" placeholder="Nick Name" prefixIcon="remo-user" class="input"></re-input>
+              </div>
+              <div class="message_container_1">
+                <re-input pattern='frame' id="email" name="email" placeholder="Email" prefixIcon="remo-mail" class="input"></re-input>
+              </div>
+              <div class="message_container_1">
+                <re-input pattern='frame' id="from" name="from" placeholder="Where did you heard about Remo ?" prefixIcon="remo-share" class="input"></re-input>
+              </div>
+              <div class="message_container_1">
+                <re-input pattern='frame' id="message" name="message" placeholder="Leave a message..." prefixIcon="remo-comment" class="input"></re-input>
+              </div>
             </div>
-            <div class="message_container_1">
-              <re-input pattern='frame' placeholder="Email" prefixIcon="remo-mail" class="input"></re-input>
+            <div class="chat_bottom">
+                <re-button  class="send" type="submit" @click="connectionSend">Send</re-button>
             </div>
-            <div class="message_container_1">
-              <re-input pattern='frame' placeholder="Where did you heard about Remo ?" prefixIcon="remo-share" class="input"></re-input>
-            </div>
-            <div class="message_container_1">
-              <re-input pattern='frame' placeholder="Leave a message..." prefixIcon="remo-comment" class="input"></re-input>
-            </div>
-          </div>
-          <div class="chat_bottom">
-            <re-button class="send" type="primary" @click="connectionSend">Send</re-button>
-          </div>
         </div>
       </re-dragger>
+      <div class="realForm">
+        <form action="https://submit-form.com/23wigQ4D">
+          <input type="text" id="name" name="name" placeholder="Name" />
+          <input type="email" id="email" name="email" placeholder="Email" />
+          <input type="text" id="message" name="email" placeholder="Email" />
+      
+          <button type="submit">Send</button>
+        </form>
+      </div>
   </div>
 </template>
 
@@ -112,7 +123,7 @@ export default {
         this.$router.push('/component/remo-about')
       } else {
         this.$refs.connect_msg.show = true
-        this.connection = true
+        this.connectionShow = true
       }
     },
     checkConnect () {
@@ -219,7 +230,7 @@ export default {
       .btn_github{
           text-align: center;
           padding:10px 20px;
-          height: 45px;
+          height: 46px;
           font-size: 15px;
           line-height: 5px;
           font-weight: 600;
@@ -404,7 +415,6 @@ export default {
     position: relative;
     .chat_top{
       width: 100%;
-      // height: 80%;
       .message_container_1{
         display: flex;
         align-items: center;
@@ -461,8 +471,14 @@ export default {
         margin: 0;
         // margin-left: 10px;
         font-size: 16px;
+        background: #409eff;
+        color: #fff;
+        border-color: #409eff;
       }
     }
+  }
+  .realForm{
+    display: none;
   }
 }
 </style>
