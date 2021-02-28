@@ -6,7 +6,7 @@
       <div
         class="message_detail"
         v-show="show"
-        :class="{'default_type': type ==='default', 'success_type': type ==='success', 'warn_type': type ==='warning', 'danger_type': type ==='danger', 'solid_type': type ==='solid', }"
+        :class="{'default_type': type ==='default', 'success_type': type ==='success', 'warn_type': type ==='warning', 'danger_type': type ==='danger', 'solid_type': type ==='solid', 'solid_fail_type': type === 'solid_fail', 'solid_success_type': type === 'solid_success'}"
         :style="{
           'top': messageNum === 0 ? '25px': `${25*messageNum}px`
         }"
@@ -83,7 +83,7 @@ export default {
   transition: opacity 0.3s, transform .4s, top 0.4s;
   overflow: hidden;
   box-sizing: border-box;
-  min-width: 325px;
+  min-width: 335px;
   height: 40px;
   border-radius: 4px;
   opacity: 1;
@@ -125,6 +125,17 @@ export default {
   background-color: mix(#fff, #fff, 20%);
   border-color: mix(#fff, #409EFF, 20%);
   color: mix(#fff, #409EFF, 20%);
+}
+.solid_success_type{
+  background-color: mix(#fff, #fff, 20%);
+  border-color: mix(#fff, #67c23a, 20%);
+  color: mix(#fff, #67c23a, 20%);
+  min-width: 235px;
+}
+.solid_fail_type{
+  background-color: mix(#fff, #fff, 20%);
+  border-color: mix(#fff, #f56c6c, 20%);
+  color: mix(#fff, #f56c6c, 20%);
 }
 .remo-message-fade-enter,
 .remo-message-fade-leave-active {

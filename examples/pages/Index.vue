@@ -49,8 +49,7 @@
       <img class="bg_right1" src="../assets/right_1.png" alt=""/>
       <img class="bg_right2" src="../assets/right_2.png" alt="" />
        <!-- 给Form跳转的 -->
-      <iframe src="" frameborder="0" width="0" height="0" name="sendFrame"></iframe>
-      <re-message ref="connect_msg" class="btn_connect" text="错误消息" type="solid" message="Please submit the CONNECTION FORM first. 😊" :duration="5"></re-message>
+      <iframe width="1px" height="1px" id="frame" name="sendframe" class="sendFrame"></iframe>
       <re-dragger :visible.sync="connectionShow"  :width="370" :height='350'>
         <template slot="title">
           <i class="remoi remo-desktop"></i>  Remo Connection Form
@@ -58,16 +57,16 @@
         <div class="chat_container">
             <div class="chat_top">
               <div class="message_container_1">
-                <re-input pattern='frame' id="name" name="name" placeholder="Nick Name" prefixIcon="remo-user" class="input"></re-input>
+                <re-input pattern='frame' v-model="name" placeholder="Name" prefixIcon="remo-user" class="input"></re-input>
               </div>
               <div class="message_container_1">
-                <re-input pattern='frame' id="email" name="email" placeholder="Email" prefixIcon="remo-mail" class="input"></re-input>
+                <re-input pattern='frame'  v-model="email"  placeholder="Email" prefixIcon="remo-mail" class="input"></re-input>
               </div>
               <div class="message_container_1">
-                <re-input pattern='frame' id="from" name="from" placeholder="Where did you heard about Remo ?" prefixIcon="remo-share" class="input"></re-input>
+                <re-input pattern='frame' v-model="heardFrom"  placeholder="Where did you heard about Remo ?" prefixIcon="remo-share" class="input"></re-input>
               </div>
               <div class="message_container_1">
-                <re-input pattern='frame' id="message" name="message" placeholder="Leave a message..." prefixIcon="remo-comment" class="input"></re-input>
+                <re-input pattern='frame' v-model="message" placeholder="Leave me a message..." prefixIcon="remo-comment" class="input"></re-input>
               </div>
             </div>
             <div class="chat_bottom">
@@ -76,14 +75,19 @@
         </div>
       </re-dragger>
       <div class="realForm">
-        <form action="https://submit-form.com/23wigQ4D">
-          <input type="text" id="name" name="name" placeholder="Name" />
-          <input type="email" id="email" name="email" placeholder="Email" />
-          <input type="text" id="message" name="email" placeholder="Email" />
-      
-          <button type="submit">Send</button>
+        <form action="https://submit-form.com/23wigQ4D" target="sendframe"> 
+          <input ref="formSubmitName" type="text" id="name" name="name" placeholder="Name" />
+          <input ref="formSubmitEmail" type="email" id="email" name="email" placeholder="Email" />
+          <input ref="formSubmitMsg" type="text" id="message" name="message" placeholder="Message" />
+          <input ref="formSubmitHeardForm" type="text" id="heard" name="heardForm" placeholder="Heard From" />
+          <button ref="formSubmitBtn" type="submit">Send</button>
         </form>
       </div>
+      <!-- 提醒信息 -->
+       <re-message ref="connect_msg" class="btn_connect" text="提醒消息" type="solid" message="Please submit the Connection Form first. 😊" :duration="5"></re-message>
+       <re-message ref="connect_success_msg" class="btn_connect" text="成功消息" type="solid_success" message="Welcome to Remo !! 😊" :duration="4"></re-message>
+       <re-message ref="connect_fail_validate1" class="btn_connect" text="失败消息" type="solid_fail" message="Please input your name and email." :duration="3"></re-message>
+       <re-message ref="connect_fail_validate2" class="btn_connect" text="失败消息" type="solid_fail" message="Please input a vaild email address." :duration="3"></re-message>
   </div>
 </template>
 
@@ -92,7 +96,11 @@ import { mapGetters, mapMutations } from 'vuex'
 export default {
   data () {
     return {
-      connectionShow: false
+      connectionShow: false,
+      name: null,
+      email: null,
+      heardFrom: null,
+      message: null
     }
   },
   computed: {
@@ -106,7 +114,8 @@ export default {
   },
   methods: {
     jumpComponent () {
-      if (this.connect) {
+      const previousConnect = window.localStorage.getItem('__Remo__')
+      if (this.connect || previousConnect === 'Jst7egxcvzaT87o93ds0od_dsewD712Essad13m_sqwesdVueMdsd2Evvdcq2nsdPsa1wsc') {
         this.$router.push('/component/')
       } else {
         // this.$refs.connect_msg.$el.click()
@@ -119,7 +128,8 @@ export default {
       window.open('https://github.com/YongquanYao/remo-ui')
     },
     jumpAbout () {
-      if (this.connect) {
+      const previousConnect = window.localStorage.getItem('__Remo__')
+      if (this.connect || previousConnect === 'Jst7egxcvzaT87o93ds0od_dsewD712Essad13m_sqwesdVueMdsd2Evvdcq2nsdPsa1wsc') {
         this.$router.push('/component/remo-about')
       } else {
         this.$refs.connect_msg.show = true
@@ -133,8 +143,37 @@ export default {
       // 组件中使用改变local的方法
       changeConnection: 'SET_CONNECT'
     }),
+    ValidateEmail(email) {
+      if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email)){
+        return (true)
+      }
+        return (false)
+    },
     connectionSend () {
-      // 切换全局状态
+      if(this.name === null || this.email === null) {
+        // 为空
+        this.$refs.connect_fail_validate1.show = true
+        return null
+      }
+      const emailVaidate = this.ValidateEmail(this.email)
+      if(!emailVaidate) {
+        // Email不通过
+        this.$refs.connect_fail_validate2.show = true
+        return null
+      }
+      // // console.log(this.$refs)
+
+      // 值转换到真实form上
+      this.$refs.formSubmitName.value  = this.name
+      this.$refs.formSubmitEmail.value  = this.email
+      this.$refs.formSubmitHeardForm.value  = this.heardFrom
+      this.$refs.formSubmitMsg.value  = this.message
+      this.$refs.formSubmitBtn.click()
+
+      // 成功提示
+      this.$refs.connect_success_msg.show = true
+      // 切换全局状态 设置local
+      window.localStorage.setItem('__Remo__', 'Jst7egxcvzaT87o93ds0od_dsewD712Essad13m_sqwesdVueMdsd2Evvdcq2nsdPsa1wsc')
       this.changeConnection(true)
       // 隐藏表格
       this.connectionShow = false
@@ -478,6 +517,9 @@ export default {
     }
   }
   .realForm{
+    display: none;
+  }
+  .sendFrame{
     display: none;
   }
 }
