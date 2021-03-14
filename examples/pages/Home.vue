@@ -13,7 +13,7 @@
                     <li class="header-nav-item" v-for="x in headnav_data" :key="x.id">
                       <template v-if="x.id === 989">
                         <i :class="x.icon" :style="{color: x.color}"></i>
-                        <span><b>1.0.5</b></span>
+                        <span><b><a :href="x.path">1.0.6</a></b></span>
                       </template>
                       <template v-if="x.id === 990">
                         <i :class="x.icon" :style="{color: x.color}" @click="handleLocaleChange()"></i>
@@ -87,7 +87,8 @@ export default {
         {
           id: 989,
           icon: 'remoi remo-tags',
-          color: '#364f6a'
+          color: '#364f6a',
+          path:'https://www.npmjs.com/package/remo-ui?activeTab=versions'
         },
         {
           id: 990,
@@ -507,14 +508,14 @@ export default {
                     color: #409eff;
                   }
                   i{
-                    font-size: 28px;
+                    font-size: 25px;
                     margin-right: 4px;
                     cursor: pointer;
                   }
                   a{
                     text-decoration: none;
                     color: #555;
-                    font-size: 16px;
+                    font-size: 15px;
                     font-weight: 450;
                   }
                 }
@@ -585,8 +586,8 @@ export default {
               padding: 0;
               a{
                 display: block;
-                height: 40px;
-                line-height: 40px;
+                height: 38px;
+                line-height: 38px;
                 color: #555;
                 font-size: 14px;
                 overflow: hidden;
@@ -595,11 +596,15 @@ export default {
                 font-weight: 500;
                 cursor: pointer;
                 &:hover{
-                  color:#409eff
+                  color:#409eff;
+                  border-left: 3px solid #409eff;
+                  padding-left: 10px;
                 }
               }
               .active{
-                  color:#409eff
+                color:#409eff;
+                border-left: 3px solid #409eff;
+                padding-left: 8px;
               }
             }
             .remo-menu-list_en{
