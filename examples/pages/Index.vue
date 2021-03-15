@@ -35,6 +35,7 @@
             </re-button>
             <re-button  v-else class="btn_github" @click="jumpGithub"><i class="remoi remo-github-fill"/>Source Code
             </re-button>
+            <re-button class="btn_github-mobile" @click="jumpGithub"><i class="remoi remo-github-fill"/></re-button>
         </div>
         <div class="bg_img">
            <img class="big" src="../assets/bg.png" alt="bg"/>
@@ -202,6 +203,10 @@ export default {
   width: 100%;
   background: linear-gradient(195.55deg, #AADBAC -16.04%, #2E8BF5 99.28%);
   position: relative;
+  box-sizing: border-box;
+  @media (max-width:1024px) {
+    margin:  0 auto;
+  }
   .content{
     .desc{
       position: absolute;
@@ -209,6 +214,16 @@ export default {
       top: 30%;
       left: 25%;
       transform: translateX(-35%) translateY(-30%);
+      @media (max-width:1023px) {
+        left: 35%
+      }
+      @media (max-width:767px) {
+        width: 450px;
+      }
+      @media (max-width:550px) {
+        width: 300px;
+        top: 30%;
+      }
       h5{
         margin: 8px 0;
         font-weight: 600;
@@ -219,6 +234,17 @@ export default {
         color: rgba(0, 0, 0, 0.85);
         color:#fff;
         // font-family: 'skia';
+        @media (max-width:1280px) {
+          font-size: 58px;
+        }
+        @media (max-width:767px) {
+          font-size: 48px;
+          line-height: 46px;
+        }
+        @media (max-width:550px) {
+          font-size: 38px;
+          line-height: 31px;
+        }
         .ele{
           position: absolute;
           width: 20px;
@@ -237,6 +263,17 @@ export default {
         letter-spacing: 1px;
         //  font-family: 'skia';
         margin-top: 0;
+        @media (max-width:1280px) {
+          font-size: 20px;
+        }
+        @media (max-width:767px) {
+          font-size: 17px;
+        }
+        @media (max-width:550px) {
+          width: 200px;
+          font-size: 15px;
+          line-height: 30px;
+        }
       }
       .btn_start{
         padding:10px 20px;
@@ -248,6 +285,20 @@ export default {
         border: #2E8BF5;
         font-weight: 600;
         margin-right: 15px;
+        @media (max-width:1280px) {
+          padding:8px 12px;
+          font-size: 14px;
+        }
+        @media (max-width:767px) {
+          padding:4px 8px;
+          font-size: 13px;
+          height: 40px;
+        }
+        @media (max-width:550px) {
+          padding:2px 8px;
+          font-size: 13px;
+          height: 35px;
+        }
         &:hover {
           background: #3292ff;
           border: #3292ff;
@@ -265,11 +316,25 @@ export default {
         font-weight: 600;
         margin-right: 15px;
         cursor: pointer;
+        @media (max-width:1280px) {
+          padding:8px 12px;
+          font-size: 14px;
+        }
+        @media (max-width:767px) {
+          padding:4px 8px;
+          font-size: 13px;
+          height: 40px;
+        }
+        @media (max-width:550px) {
+          padding:2px 8px;
+          font-size: 13px;
+          height: 35px;
+        }
       }
       .btn_github{
-          text-align: center;
           padding:10px 20px;
-          height: 46px;
+          text-align: center;
+          height: 45px;
           font-size: 15px;
           line-height: 5px;
           font-weight: 600;
@@ -282,6 +347,34 @@ export default {
             padding-right: 5px;
             color: #fff;
           }
+        @media (max-width:1280px) {
+          padding: 10px 11px;
+          font-size: 14px;
+        }
+        @media (max-width:767px) {
+          padding:4px 8px;
+          font-size: 13px;
+          height: 40px;
+        }
+        @media (max-width:550px) {
+          display: none;
+        }
+      }
+      .btn_github-mobile{
+        display: none;
+        @media (max-width:550px) {
+          display: inline-block;
+          padding:4px 10px;
+          text-align: center;
+          height: 35px;
+          font-size: 15px;
+          line-height: 5px;
+          font-weight: 600;
+          background: rgb(41, 41, 41);
+          border: rgb(41, 41, 41);
+          color: #fff;
+          cursor: pointer;
+        }
       }
     }
     .bg_img{
@@ -291,9 +384,31 @@ export default {
       right: 25%;
       transform: translateX(45%) translateY(-50%);
       z-index: 3;
+      @media (max-width:1280px) {
+        top: 70%;
+        right: 22%;
+      }
+      @media (max-width:1023px) {
+        right: 30%;
+      }
+      @media (max-width:550px) {
+        right: 35%;
+      }
       .big{
         width: 550px;
         z-index: 2;
+        @media (max-width:1280px) {
+          width: 450px;
+        }
+        @media (max-width:1023px) {
+          width: 350px;
+        }
+        @media (max-width:767px) {
+          width: 300px;
+        }
+        @media (max-width:550px) {
+          width: 250px;
+        }
       }
       .gear_1{
         position: absolute;
@@ -313,6 +428,20 @@ export default {
         -webkit-animation:spin 3s linear infinite;
         -moz-animation:spin 3s linear infinite;
         animation:spin 3s linear infinite;
+        @media (max-width:1280px) {
+          // width: 450px;
+        }
+        @media (max-width:1023px) {
+          // width: 350px;
+        }
+        @media (max-width:767px) {
+          // width: 300px;
+        }
+        @media (max-width:550px) {
+          width: 40px;
+          top:35px;
+          left:15px;
+        }
       }
       .gear_3{
         position: absolute;
@@ -332,6 +461,14 @@ export default {
       width: 484.02px;
       height: 178px;
       left: 0;
+      @media (max-width:1280px) {
+        width: 404.02px;
+        height: 138px;
+      }
+      @media (max-width:550px) {
+        width: 204.02px;
+        height: 88px;
+      }
   }
   .bg_left2{
       position: absolute;
@@ -339,6 +476,14 @@ export default {
       width: 209.1px;
       height: 123px;
       left: 0;
+      @media (max-width:1280px) {
+        width: 150.1px;
+        height: 110px;
+      }
+      @media (max-width:550px) {
+        width: 100.1px;
+        height: 50px;
+      }
   }
   .bg_right1{
       position: absolute;
@@ -346,6 +491,14 @@ export default {
       top:0;
       width:666.21px;
       height:394.49px;
+      @media (max-width:1280px) {
+        width: 500.1px;
+        height: 294px;
+      }
+      @media (max-width:550px) {
+        width: 200.1px;
+        height: 194px;
+      }
   }
   .bg_right2{
       position: absolute;
@@ -353,6 +506,14 @@ export default {
       top:0;
       width:287.8px;
       height:170px;
+      @media (max-width:1280px) {
+        width: 207.1px;
+        height: 120px;
+      }
+      @media (max-width:550px) {
+        width: 120.1px;
+        height: 70px;
+      }
   }
   .status_1{
     position: absolute;
