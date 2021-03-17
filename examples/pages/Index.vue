@@ -677,6 +677,9 @@ export default {
   }
   .sendFrame{
     display: none;
+    .remo-desktop{
+      font-size: 15px;
+    }
   }
 }
 </style>

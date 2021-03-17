@@ -131,10 +131,12 @@ export default {
     &.prefix-icon {
       position: absolute;
       left: 10px;
+      top: 0px;
     }
     &.suffix-icon {
       position: absolute;
       right: 10px;
+      top: 0px;
     }
   }
   .remo-input__inner {
