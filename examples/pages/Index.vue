@@ -31,11 +31,11 @@
             </re-button>
             <re-button  v-else type="primary" class="btn_about" @click="jumpAbout">About Remo
             </re-button>
-            <re-button   v-if="this.locale ==='cn'" class="btn_github" @click="jumpGithub"><i class="remoi remo-github-fill"/>源代码
+            <re-button type="primary"   v-if="this.locale ==='cn'" class="btn_github" @click="jumpGithub"><i class="remoi remo-github-fill"/>源代码
             </re-button>
-            <re-button  v-else class="btn_github" @click="jumpGithub"><i class="remoi remo-github-fill"/>Source Code
+            <re-button  type="primary" v-else class="btn_github" @click="jumpGithub" icon="remo-github-fill">Source Code
             </re-button>
-            <re-button class="btn_github-mobile" @click="jumpGithub"><i class="remoi remo-github-fill"/></re-button>
+            <!-- <re-button  type="primary" class="btn_github-mobile" @click="jumpGithub"><i class="remoi remo-github-fill"/></re-button> -->
         </div>
         <div class="bg_img">
            <img class="big" src="../assets/bg.png" alt="bg"/>
@@ -85,7 +85,7 @@
         </form>
       </div>
       <!-- 提醒信息 -->
-       <re-message ref="connect_msg" class="btn_connect" text="提醒消息" type="solid" message="Please submit the Connection Form first. 😊" :duration="5"></re-message>
+       <re-message ref="connect_msg" class="btn_connect" text="提醒消息" type="solid" message="Please submit the connection form. 😊" :duration="5"></re-message>
        <re-message ref="connect_success_msg" class="btn_connect" text="成功消息" type="solid_success" message="Welcome to Remo !! 😊" :duration="4"></re-message>
        <re-message ref="connect_fail_validate1" class="btn_connect" text="失败消息" type="solid_fail" message="Please input your name and email." :duration="3"></re-message>
        <re-message ref="connect_fail_validate2" class="btn_connect" text="失败消息" type="solid_fail" message="Please input a vaild email address." :duration="3"></re-message>
@@ -280,7 +280,7 @@ export default {
         text-align: center;
         height: 45px;
         font-size: 16px;
-        line-height: 5px;
+        // line-height: 45px;
         background: #2E8BF5;
         border: #2E8BF5;
         font-weight: 600;
@@ -309,7 +309,7 @@ export default {
         text-align: center;
         height: 45px;
         font-size: 15px;
-        line-height: 5px;
+        // line-height: 5px;
         background: #fff;
         color: #2E8BF5;
         border: #2E8BF5;
@@ -336,17 +336,11 @@ export default {
           text-align: center;
           height: 45px;
           font-size: 15px;
-          line-height: 5px;
           font-weight: 600;
           background: rgb(41, 41, 41);
           border: rgb(41, 41, 41);
           color: #fff;
           cursor: pointer;
-          i{
-            font-size: 18px;
-            padding-right: 5px;
-            color: #fff;
-          }
         @media (max-width:1280px) {
           padding: 10px 11px;
           font-size: 14px;
@@ -357,25 +351,26 @@ export default {
           height: 40px;
         }
         @media (max-width:550px) {
-          display: none;
-        }
-      }
-      .btn_github-mobile{
-        display: none;
-        @media (max-width:550px) {
-          display: inline-block;
-          padding:4px 10px;
-          text-align: center;
+          padding:2px 8px;
+          font-size: 13px;
           height: 35px;
-          font-size: 15px;
-          line-height: 5px;
-          font-weight: 600;
-          background: rgb(41, 41, 41);
-          border: rgb(41, 41, 41);
-          color: #fff;
-          cursor: pointer;
         }
       }
+      // .btn_github-mobile{
+      //   display: none;
+      //   @media (max-width:550px) {
+      //     display: inline-block;
+      //     padding:2px 8px;
+      //     text-align: center;
+      //     height: 35px;
+      //     font-size: 15px;
+      //     font-weight: 600;
+      //     background: rgb(41, 41, 41);
+      //     border: rgb(41, 41, 41);
+      //     color: #fff;
+      //     cursor: pointer;
+      //   }
+      // }
     }
     .bg_img{
       position: absolute;

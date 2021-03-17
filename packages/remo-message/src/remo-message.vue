@@ -93,6 +93,11 @@ export default {
   color: #fff;
   word-spacing: 1px;
   font-weight: 500;
+  @media (max-width:768px) {
+    min-width: 75%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
   i{
     font-size: 20px;
     // color: #000;
