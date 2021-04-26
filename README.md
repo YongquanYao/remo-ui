@@ -83,6 +83,7 @@ Modern browsers and Internet Explorer 10+.
 - [x] Dragger Modal
 - [x] Message
 - [ ] Mutiple Messages on screen at the same time
+- [x] Loading
 
 ## Example Complete
 - [X] Button

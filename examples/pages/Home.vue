@@ -88,7 +88,7 @@ export default {
           id: 989,
           icon: 'remoi remo-tags',
           color: '#364f6a',
-          path:'https://www.npmjs.com/package/remo-ui?activeTab=versions'
+          path: 'https://www.npmjs.com/package/remo-ui?activeTab=versions'
         },
         {
           id: 990,
@@ -212,6 +212,11 @@ export default {
               title: 'Backtop 回到顶部',
               path: '#/component/remo-backtop',
               id: '030'
+            },
+            {
+              title: 'Loading 加载条',
+              path: '#/component/remo-loadingbar',
+              id: '036'
             },
             {
               title: 'FooterBar 底部工具栏',
@@ -353,7 +358,12 @@ export default {
               id: '030'
             },
             {
-              title: 'FooterBar',
+              title: 'Loading Bar',
+              path: '#/component/remo-loadingbar',
+              id: '036'
+            },
+            {
+              title: 'Footer Bar',
               path: '#/component/remo-footerbar',
               id: '031'
             },
@@ -445,8 +455,8 @@ export default {
         top: 0;
         left:0;
         width: 100%;
-        height: 80px;
-        line-height: 80px;  // 字体居中
+        height: 65px;
+        line-height: 65px;  // 字体居中
         background: #fff;
         box-shadow: 1px 1px 5px 1px #ebebeb;
         .container{ //里面的容器
@@ -499,9 +509,9 @@ export default {
                 margin: 0;
                 .header-nav-item{
                   padding: 0 15px;
-                  height: 80px;
+                  height: 65px;
                   transition: 0.5s;
-                  line-height: 80px;
+                  line-height: 65px;
                   span{
                     font-family: 600;
                     font-size: 15px;
@@ -526,9 +536,9 @@ export default {
     .main{
         position: relative;
         width: 1140px;
-        height: -webkit-calc(100%-80px);
-        height: -moz-calc(100%-80px);
-        height: calc(100%-80px);
+        height: -webkit-calc(100%-65px);
+        height: -moz-calc(100%-65px);
+        height: calc(100%-65px);
         margin: 0 auto;
         padding: 10px 0;
         top: 80px;
@@ -538,7 +548,7 @@ export default {
             margin-right: 40px;
             width: 200px;
             height: 80%;
-            top: 135px;
+            top: 100px;
             // visibility: hidden; // 鼠标在才触发滚动条
             border-right: 1px solid #dcdfe6; // 分界线
             overflow: auto;
@@ -616,7 +626,7 @@ export default {
         .content {
             flex: 1;
             width: 100%;
-            padding: 10px 50px 50px 10px;
+            padding: 0px 50px 50px 10px;
             margin-left: 240px;
         }
     }

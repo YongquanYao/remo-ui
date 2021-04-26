@@ -22,6 +22,7 @@ import ReSwitch from './remo-switch'
 import ReCheckbox from './remo-checkbox'
 import ReClipboard from './remo-clipboard'
 import ReMessage from './remo-message'
+import gobalLoadingBar from './remo-loading-bar'
 import VueCropper from './vue-cropper'
 import VueDragger from './vue-dragger'
 
@@ -61,6 +62,7 @@ const install = function (Vue) {
   components.map(component => Vue.component(component.name, component))
   // 下面这个写法也可以
   // components.map(component => Vue.use(component))
+  Vue.prototype.$loading = gobalLoadingBar // 全局loading绑定
 }
 
 // 检测到 Vue 才执行，毕竟我们是基于 Vue 的
@@ -93,5 +95,6 @@ export default {
   ReClipboard,
   ReMessage,
   VueCropper,
-  VueDragger
+  VueDragger,
+  gobalLoadingBar
 }

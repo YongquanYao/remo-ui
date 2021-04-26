@@ -26,6 +26,7 @@ import RemoSwitch from '@/components/remo-switch-demo'
 import RemoCheckbox from '@/components/remo-checkbox-demo'
 import RemoClipboard from '@/components/remo-clipboard-demo'
 import RemoMessage from '@/components/remo-message-demo'
+import RemoLoadingBar from '@/components/remo-loadingbar-demo'
 
 Vue.use(Router)
 
@@ -223,6 +224,14 @@ export default new Router({
           path: '/component/remo-message',
           name: 'RemoMessage',
           component: RemoMessage,
+          meta: {
+            title: '组件|Remo'
+          }
+        },
+        {
+          path: '/component/remo-loadingbar',
+          name: 'RemoLoading',
+          component: RemoLoadingBar,
           meta: {
             title: '组件|Remo'
           }

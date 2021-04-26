@@ -1,7 +1,7 @@
 <template>
   <div>
       <div v-if="this.locale === 'cn'">
-       <demo-block header="标题" />
+       <demo-block header="Loading Bar 加载条" />
        <demo-block title="基础" desc="">
        </demo-block>
        <demo-block title="自定义" desc="">
@@ -11,8 +11,13 @@
        </demo-block>
     </div>
     <div v-if="this.locale === 'en'">
-       <demo-block header="Header" />
+       <demo-block header="Loading Bar" />
        <demo-block title="Usage" desc="">
+         <re-shadow-block width="100%" height="100%">
+          <re-button type="primary" @click="start">开始 Loading</re-button>
+          <re-button @click="end">结束 Loading</re-button>
+          <re-button type="danger" @click="error">错误 Loading</re-button>
+         </re-shadow-block>
        </demo-block>
        <demo-block title="Customize" desc="">
        </demo-block>
@@ -41,6 +46,19 @@ export default {
     ...mapGetters({
       locale: 'locale'
     })
+  },
+  methods: {
+    start () {
+      // Vue.prototype.$loading = 1
+      console.log(this.$loading)
+      this.$loading.start()
+    },
+    end () {
+      this.$loading.end()
+    },
+    error () {
+      this.$loading.error()
+    }
   }
 }
 </script>
