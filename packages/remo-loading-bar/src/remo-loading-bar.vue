@@ -43,7 +43,7 @@ export default {
     top: 0;
     left: 0;
     width: 100%;
-    height: 2px;
+    height: 0.155rem;
     z-index: 9999;
     transition: all 200ms ease;
     transform: translate3d(-100%, 0, 0);
@@ -72,7 +72,7 @@ export default {
       width: 18px;
       height: 18px;
       box-sizing: border-box;
-      border: solid 2px transparent;
+      border: solid 3px transparent;
       border-top-color: #3FAAF5;
       border-left-color: #3FAAF5;
       border-radius: 50%;

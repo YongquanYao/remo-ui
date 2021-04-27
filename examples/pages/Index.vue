@@ -31,9 +31,9 @@
             </re-button>
             <re-button  v-else type="primary" class="btn_about" @click="jumpAbout">About Remo
             </re-button>
-            <re-button type="primary"   v-if="this.locale ==='cn'" class="btn_github" @click="jumpGithub"><i class="remoi remo-github-fill"/>源代码
+            <re-button type="primary"   v-if="this.locale ==='cn'" class="btn_github" icon="remo-github-fill" @click="jumpGithub">源代码
             </re-button>
-            <re-button  type="primary" v-else class="btn_github" @click="jumpGithub" icon="remo-github-fill">Source Code
+            <re-button  type="primary"  v-else class="btn_github" @click="jumpGithub" icon="remo-github-fill">Source Code
             </re-button>
             <!-- <re-button  type="primary" class="btn_github-mobile" @click="jumpGithub"><i class="remoi remo-github-fill"/></re-button> -->
         </div>
@@ -413,6 +413,20 @@ export default {
         -webkit-animation:spin 3s linear infinite;
         -moz-animation:spin 3s linear infinite;
         animation:spin 3s linear infinite;
+        @media (max-width:1023px) {
+          bottom: 62px;
+          right: 20px;
+        }
+        @media (max-width:767px) {
+          bottom: 39px;
+          right: 15px;
+          width: 35px;
+        }
+        @media (max-width:550px) {
+          bottom: 35px;
+          right: 15px;
+          width: 25px;
+        }
       }
       .gear_2{
         position: absolute;
@@ -424,18 +438,24 @@ export default {
         -moz-animation:spin 3s linear infinite;
         animation:spin 3s linear infinite;
         @media (max-width:1280px) {
-          // width: 450px;
+          top:95px;
+          left:12px;
+          width: 80px;
         }
         @media (max-width:1023px) {
-          // width: 350px;
+          width: 45px;
+          top: 65px;
+          left: 20px;
         }
         @media (max-width:767px) {
-          // width: 300px;
+          width: 45px;
+          top: 55px;
+          left: 15px;
         }
         @media (max-width:550px) {
-          width: 40px;
-          top:35px;
-          left:15px;
+          width: 30px;
+          top: 35px;
+          left: 16px;
         }
       }
       .gear_3{
@@ -447,6 +467,22 @@ export default {
         -webkit-animation:spin 6s linear infinite;
         -moz-animation:spin 6s linear infinite;
         animation:spin 6s linear infinite;
+        @media (max-width:1280px) {
+          left: 70px;
+          width: 90px;
+        }
+        @media (max-width:1023px) {
+          left: 70px;
+          width: 60px;
+        }
+        @media (max-width:767px) {
+          left: 60px;
+          width: 50px;
+        }
+        @media (max-width:550px) {
+          left: 55px;
+          width: 40px;
+        }
       }
     }
   }
@@ -678,7 +714,7 @@ export default {
   .sendFrame{
     display: none;
     .remo-desktop{
-      font-size: 15px;
+      font-size: 13px;
     }
   }
 }

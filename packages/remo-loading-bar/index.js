@@ -23,6 +23,9 @@ LoadingBarModel.prototype.init = function () {
   clearTimeout(timer)
   this.totalProgress = 0
   this.isError = false
+  this.speed = 5
+  this.percentNum = 0
+  this.showSpinner = true
   this.vm = this.$mount()
   document.body.appendChild(this.vm.$el)
   return this

@@ -518,7 +518,7 @@ export default {
                     color: #409eff;
                   }
                   i{
-                    font-size: 25px;
+                    font-size: 24px;
                     margin-right: 4px;
                     cursor: pointer;
                   }
@@ -551,14 +551,15 @@ export default {
             top: 100px;
             // visibility: hidden; // 鼠标在才触发滚动条
             border-right: 1px solid #dcdfe6; // 分界线
-            overflow: auto;
+            overflow: hidden;
             // padding-left: 10px;
             @media (max-width: 1160px) {
-                 padding-left: 10px;
+              padding-left: 10px;
             }
             &:hover{
                 visibility: visible; // 鼠标在才触发滚动条
                 border-right: 1px solid #dcdfe6; // 分界线
+                overflow: auto;
             }
             > ul{
                 visibility: visible; // 始终显示列表
@@ -605,10 +606,11 @@ export default {
                 text-overflow: ellipsis;
                 font-weight: 500;
                 cursor: pointer;
+                margin: 1px 0;
                 &:hover{
                   color:#409eff;
                   border-left: 3px solid #409eff;
-                  padding-left: 10px;
+                  padding-left: 8px;
                 }
               }
               .active{
