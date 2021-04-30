@@ -4,36 +4,25 @@
         <demo-block header="Statistic 统计数值">
         </demo-block>
         <demo-block title="基础用法" desc="自动精确到小数点后两位">
-            <re-shadow-block width="100%" height="80px">
               <re-stat v-model='value1'></re-stat>
-            </re-shadow-block>
         </demo-block>
         <demo-block title="配前置单位" desc="自定义单位">
-            <re-shadow-block width="100%" height="80px">
               <re-stat unit="$" v-model='value2'></re-stat>
-            </re-shadow-block>
         </demo-block>
         <demo-block title="配前置符号" desc="自定义单位符号与颜色">
-            <re-shadow-block width="100%" height="80px">
               <re-stat class="demostat" prefix="remo-arrowup" iconColor="MediumSeaGreen" v-model='value3'></re-stat>
               <re-stat prefix="remo-arrowdown" iconColor="red" v-model='value4'></re-stat>
-            </re-shadow-block>
         </demo-block>
          <demo-block title="配后置符号" desc="自定义单位符号与颜色">
-            <re-shadow-block width="100%" height="80px">
               <re-stat class="demostat" suffix="remo-linechart" iconColor="#409EFF" v-model='value5'></re-stat>
               <!-- <re-stat prefix="remo-arrowdown" iconColor="red" v-model='value4'></re-stat> -->
-            </re-shadow-block>
         </demo-block>
         <demo-block title="自定义" desc="小数点位 / 符号 / 数值大小">
-            <re-shadow-block width="100%" height="100px">
               <re-stat class="demostat"  prefix="remo-arrowup" :decimal="false" fontSize="13px" v-model='value3'></re-stat>
               <re-stat prefix="remo-arrowdown" fontSize="40px" iconColor="pink" fontColor='pink' v-model='value4'></re-stat>
-            </re-shadow-block>
         </demo-block>
-        <demo-block title="API" desc="属性说明如下：">
+        <demo-block title="API" desc="属性说明如下：" type="table">
             <re-table :data="tabledata" type="demo">
-
             </re-table>
         </demo-block>
     </div>
@@ -41,34 +30,24 @@
         <demo-block header="Statistic">
         </demo-block>
         <demo-block title="Usage" desc="Accurate to two decimal places">
-            <re-shadow-block width="100%" height="80px">
               <re-stat v-model='value1'></re-stat>
-            </re-shadow-block>
         </demo-block>
         <demo-block title="Unit" desc="Customize unit">
-            <re-shadow-block width="100%" height="80px">
               <re-stat unit="$" v-model='value2'></re-stat>
-            </re-shadow-block>
         </demo-block>
         <demo-block title="Prefix Icon" desc="Customize prefix icon and its color">
-            <re-shadow-block width="100%" height="80px">
               <re-stat class="demostat" prefix="remo-arrowup" iconColor="MediumSeaGreen" v-model='value3'></re-stat>
               <re-stat prefix="remo-arrowdown" iconColor="red" v-model='value4'></re-stat>
-            </re-shadow-block>
         </demo-block>
          <demo-block title="Suffix Icon" desc="Customize suffix icon and its color">
-            <re-shadow-block width="100%" height="80px">
               <re-stat class="demostat" suffix="remo-linechart" iconColor="#409EFF" v-model='value5'></re-stat>
               <!-- <re-stat prefix="remo-arrowdown" iconColor="red" v-model='value4'></re-stat> -->
-            </re-shadow-block>
         </demo-block>
         <demo-block title="Customize" desc="Decimal place / Icon / Numeric">
-            <re-shadow-block width="100%" height="100px">
               <re-stat class="demostat"  prefix="remo-arrowup" :decimal="false" fontSize="13px" v-model='value3'></re-stat>
               <re-stat prefix="remo-arrowdown" fontSize="40px" iconColor="pink" fontColor='pink' v-model='value4'></re-stat>
-            </re-shadow-block>
         </demo-block>
-        <demo-block title="API" desc="The properties description are as follows: ">
+        <demo-block title="API" desc="The properties description are as follows: " type="table">
           <re-table :data="tableData_en" type="en"></re-table>
         </demo-block>
     </div>

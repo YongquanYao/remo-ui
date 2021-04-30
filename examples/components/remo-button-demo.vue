@@ -2,12 +2,7 @@
   <div>
     <div v-if="this.locale === 'cn' ">
       <demo-block header="Button 按钮" />
-      <div class="demo-block">
-        <div class="title">
-          <span>基础用法</span>
-          <span class="desc">常用的7种Type:</span>
-        </div>
-        <remo-shadow-block width="100%" height="90px">
+      <demo-block height="190" title="基础用法" desc="常用的7种Type:" >
           <re-button>default</re-button>
           <re-button type="primary">Primary</re-button>
           <re-button type="success">Success</re-button>
@@ -15,14 +10,11 @@
           <re-button type="danger">Danger</re-button>
           <re-button type="dashed" >dashed</re-button>
           <re-button type="dotted" >dotted</re-button>
-        </remo-shadow-block>
-      </div>
-      <div class="demo-block">
-        <div class="title">
-          <span >禁用</span>
-          <span class="desc">无法点击模式:</span>
-        </div>
-        <remo-shadow-block width="100%" height="90px">
+          <template slot="code">
+            <code class="html">{{fCode(simple.code.html)}}</code>
+          </template>
+      </demo-block>
+      <demo-block height="190" title="禁用" desc="无法点击模式:" >
           <re-button :disabled="true">default</re-button>
           <re-button :disabled="true" type="primary">Primary</re-button>
           <re-button :disabled="true" type="success">Success</re-button>
@@ -30,51 +22,36 @@
           <re-button :disabled="true" type="danger">Danger</re-button>
           <re-button :disabled="true" type="dashed" >dashed</re-button>
           <re-button :disabled="true" type="dotted" >dotted</re-button>
-        </remo-shadow-block>
-      </div>
-      <div class="demo-block">
-        <div class="title">
-          <span>圆形</span>
-          <span class="desc">配合icon使用:</span>
-        </div>
-        <remo-shadow-block width="100%" height="90px">
+           <template slot="code">
+               <code class="html">{{fCode(disabled.code.html)}}</code>
+          </template>
+      </demo-block>
+      <demo-block  height="190" title="圆形" desc="配合icon使用:" >
           <re-button type="primary" circle  icon="remo-user"></re-button>
           <re-button type="warning" circle  icon="remo-phone"></re-button>
           <re-button type="success" circle  icon="remo-plus"></re-button>
           <re-button type="danger" circle  icon="remo-shop"></re-button>
           <re-button type="dashed" circle  icon="remo-download"></re-button>
-        </remo-shadow-block>
-      </div>
-      <div class="demo-block">
-        <div class="title">
-          <span>自定义</span>
-          <span class="desc">颜色图标自定义, type必须为customize: </span>
-        </div>
-        <remo-shadow-block width="100%" height="90px">
-           <re-button type="customize" :color="'#1AAD19'"  icon="remo-wechat-fill">Customize Color</re-button>
+          <template slot="code">
+              <code class="html">{{fCode(round.code.html)}}</code>
+          </template>
+      </demo-block>
+      <demo-block title="自定义" height="140" desc="颜色图标自定义, type必须为customize:" >
+          <re-button type="customize" :color="'#1AAD19'"  icon="remo-wechat-fill">Customize Color</re-button>
           <re-button type="customize" icon="remo-alipay">Customize Color</re-button>
           <re-button type="customize" color="red"  icon="remo-google">Customize Color</re-button>
-           <re-button type="customize" :color="'#0067a5'"  icon="remo-facebook">Customize Color</re-button>
-        </remo-shadow-block>
-      </div>
-      <div class="demo-block">
-        <div class="title">
-          <span>API</span>
-          <span class="desc">属性说明如下: </span>
-        </div>
-        <div>
+          <re-button type="customize" :color="'#0067a5'"  icon="remo-facebook">Customize Color</re-button>
+          <template slot="code">
+              <code class="html">{{fCode(customize.code.html)}}</code>
+          </template>
+      </demo-block>
+      <demo-block title="API" desc="属性说明如下: " type="table">
           <re-table type="demo" :data="tableData"></re-table>
-        </div>
-      </div>
+      </demo-block>
     </div>
     <div v-if="this.locale === 'en' ">
-      <demo-block header="Button" />
-      <div class="demo-block">
-        <div class="title">
-          <span>Usage</span>
-          <span class="desc">Seven different types:</span>
-        </div>
-        <remo-shadow-block width="100%" height="90px">
+      <demo-block header="Button"/>
+      <demo-block height="190" title="Usage" desc="Seven different types:" >
           <re-button>default</re-button>
           <re-button type="primary">Primary</re-button>
           <re-button type="success">Success</re-button>
@@ -82,14 +59,11 @@
           <re-button type="danger">Danger</re-button>
           <re-button type="dashed" >dashed</re-button>
           <re-button type="dotted" >dotted</re-button>
-        </remo-shadow-block>
-      </div>
-      <div class="demo-block">
-        <div class="title">
-          <span >Disabled</span>
-          <span class="desc">Unable to click:</span>
-        </div>
-        <remo-shadow-block width="100%" height="90px">
+          <template slot="code">
+            <code class="html">{{fCode(simple.code.html)}}</code>
+          </template>
+      </demo-block>
+      <demo-block height="190" title="Disabled" desc="Unable to click:" >
           <re-button :disabled="true">default</re-button>
           <re-button :disabled="true" type="primary">Primary</re-button>
           <re-button :disabled="true" type="success">Success</re-button>
@@ -97,42 +71,32 @@
           <re-button :disabled="true" type="danger">Danger</re-button>
           <re-button :disabled="true" type="dashed" >dashed</re-button>
           <re-button :disabled="true" type="dotted" >dotted</re-button>
-        </remo-shadow-block>
-      </div>
-      <div class="demo-block">
-        <div class="title">
-          <span>Round</span>
-          <span class="desc">Use with icon:</span>
-        </div>
-        <remo-shadow-block width="100%" height="90px">
+          <template slot="code">
+              <code class="html">{{fCode(disabled.code.html)}}</code>
+          </template>
+      </demo-block>
+      <demo-block  height="150" title="Round" desc="Use with icon:" >
           <re-button type="primary" circle  icon="remo-user"></re-button>
           <re-button type="warning" circle  icon="remo-phone"></re-button>
           <re-button type="success" circle  icon="remo-plus"></re-button>
           <re-button type="danger" circle  icon="remo-shop"></re-button>
           <re-button type="dashed" circle  icon="remo-download"></re-button>
-        </remo-shadow-block>
-      </div>
-      <div class="demo-block">
-        <div class="title">
-          <span>Customize</span>
-          <span class="desc">Customize color and icon with type="customize": </span>
-        </div>
-        <remo-shadow-block width="100%" height="90px">
-           <re-button type="customize" :color="'#1AAD19'"  icon="remo-wechat-fill">Customize Color</re-button>
+          <template slot="code">
+              <code class="html">{{fCode(round.code.html)}}</code>
+          </template>
+      </demo-block>
+      <demo-block  height="140" title="Customize" desc='Customize color and icon with type="customize": ' >
+          <re-button type="customize" :color="'#1AAD19'"  icon="remo-wechat-fill">Customize Color</re-button>
           <re-button type="customize" icon="remo-alipay">Customize Color</re-button>
           <re-button type="customize" color="red"  icon="remo-google">Customize Color</re-button>
-           <re-button type="customize" :color="'#0067a5'"  icon="remo-facebook">Customize Color</re-button>
-        </remo-shadow-block>
-      </div>
-      <div class="demo-block">
-        <div class="title">
-          <span>API</span>
-          <span class="desc">The property description is as follows: </span>
-        </div>
-        <div>
+          <re-button type="customize" :color="'#0067a5'"  icon="remo-facebook">Customize Color</re-button>
+          <template slot="code">
+              <code class="html">{{fCode(customize.code.html)}}</code>
+          </template>
+      </demo-block>
+      <demo-block title="API" desc="The property description is as follows: " type="table">
           <re-table type="en" :data="tableData_en"></re-table>
-        </div>
-      </div>
+      </demo-block>
     </div>
   </div>
 </template>
@@ -141,11 +105,60 @@
 import remoShadowBlock from '../../packages/remo-shawdow-block/src/remo-shadow-block.vue'
 import demoBlock from './demo-block'
 import { mapGetters } from 'vuex'
+import Demo from './demo.vue'
+import DemoBlock from './demo-block.vue'
 export default {
-  components: { remoShadowBlock, demoBlock },
+  components: { remoShadowBlock, demoBlock, Demo, DemoBlock },
   name: 'RemoBtnDemo',
   data () {
     return {
+      simple: {
+        code: {
+          html: `
+            <re-button>default</re-button>
+            <re-button type="primary">Primary</re-button>
+            <re-button type="success">Success</re-button>
+            <re-button type="warning">Warning</re-button>
+            <re-button type="danger">Danger</re-button>
+            <re-button type="dashed" >dashed</re-button>
+            <re-button type="dotted" >dotted</re-button>
+          `
+        }
+      },
+      disabled: {
+        code: {
+          html: `
+            <re-button :disabled="true">default</re-button>
+            <re-button :disabled="true" type="primary">Primary</re-button>
+            <re-button :disabled="true" type="success">Success</re-button>
+            <re-button :disabled="true" type="warning">Warning</re-button>
+            <re-button :disabled="true" type="danger">Danger</re-button>
+            <re-button :disabled="true" type="dashed" >dashed</re-button>
+            <re-button :disabled="true" type="dotted" >dotted</re-button>
+          `
+        }
+      },
+      round: {
+        code: {
+          html: `
+            <re-button type="primary" circle  icon="remo-user"></re-button>
+            <re-button type="warning" circle  icon="remo-phone"></re-button>
+            <re-button type="success" circle  icon="remo-plus"></re-button>
+            <re-button type="danger" circle  icon="remo-shop"></re-button>
+            <re-button type="dashed" circle  icon="remo-download"></re-button>
+            `
+        }
+      },
+      customize: {
+        code: {
+          html: `
+            <re-button type="customize" :color="'#1AAD19'"  icon="remo-wechat-fill">Customize Color</re-button>
+            <re-button type="customize" icon="remo-alipay">Customize Color</re-button>
+            <re-button type="customize" color="red"  icon="remo-google">Customize Color</re-button>
+            <re-button type="customize" :color="'#0067a5'"  icon="remo-facebook">Customize Color</re-button>
+            `
+        }
+      },
       tableData: [
         {
           parameter: 'type',

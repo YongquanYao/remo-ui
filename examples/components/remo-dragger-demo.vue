@@ -3,8 +3,7 @@
     <div v-if="this.locale==='cn'">
         <demo-block header="Dragger 弹窗">
         </demo-block>
-        <demo-block title="信息类型" desc="用于显示特别信息模块">
-            <re-shadow-block width="100%" height="100%">
+        <demo-block title="信息类型" desc="用于显示特别信息模块" type="normal">
               <re-tip color="blue" style="width: 90%">
                 最新公告请查看右下角的弹窗
               </re-tip>
@@ -14,10 +13,8 @@
                   </template>
                   <p class="hireText">If you have passion of <span>front-end </span>role, If you...<br/> We are looking forward to having you with us. 😊<br><span>Please contact us via xxxx@xxx.com.</span></p>
                 </re-dragger>
-            </re-shadow-block>
         </demo-block>
         <demo-block title="服务类型" desc="用于Q&A的组件模块">
-            <re-shadow-block width="100%" height="100%">
                 <re-button icon="remo-team" @click="handleShow">联系客服</re-button>
                 <re-dragger :visible.sync="chatShow"  :width="370" :height='580'>
                   <template slot="title">
@@ -51,20 +48,18 @@
                   </div>
                 </div>
                 </re-dragger>
-            </re-shadow-block>
         </demo-block>
-        <demo-block title="API" desc="属性说明如下：">
+        <demo-block title="API" desc="属性说明如下：" type="table">
           <re-table :data="tabledata" type="demo"></re-table>
         </demo-block>
-        <demo-block title="Slot" desc="插槽:">
+        <demo-block title="Slot" desc="插槽:" type="table">
           <re-table :data="slotTabledata" type="demo"></re-table>
         </demo-block>
     </div>
     <div v-if="this.locale==='en'">
         <demo-block header="Dragger">
         </demo-block>
-        <demo-block title="Information" desc="Using as information component">
-            <re-shadow-block width="100%" height="100%">
+        <demo-block title="Information" desc="Using as information component" type="normal">
               <re-tip color="blue" style="width: 90%">
                 The updated notification is show in the bottom right corner.
               </re-tip>
@@ -74,10 +69,8 @@
                   </template>
                   <p class="hireText">If you have passion of <span>front-end </span>role, If you...<br/> We are looking forward to having you with us. 😊<br><span>Please contact us via xxxx@xxx.com.</span></p>
                 </re-dragger>
-            </re-shadow-block>
         </demo-block>
         <demo-block title="Service" desc="Using as a Q&A component">
-            <re-shadow-block width="100%" height="100%">
                 <re-button icon="remo-team" @click="handleShow">Customer Service</re-button>
                 <re-dragger :visible.sync="chatShow"  :width="370" :height='580'>
                   <template slot="title">
@@ -111,12 +104,11 @@
                   </div>
                 </div>
                 </re-dragger>
-            </re-shadow-block>
         </demo-block>
-        <demo-block title="API" desc="The properties description are as follows: ">
+        <demo-block title="API" desc="The properties description are as follows: " type="table">
           <re-table :data="tableData_en" type="en"></re-table>
         </demo-block>
-        <demo-block title="Slot">
+        <demo-block title="Slot" type="table">
           <re-table :data="tableData_en" type="en"></re-table>
         </demo-block>
     </div>

@@ -4,21 +4,15 @@
       <demo-block header="Upload 上传文件">
       </demo-block>
       <demo-block title="基础" desc="文件上传">
-          <re-shadow-block width='100%' height="100%">
                 <re-upload v-model="list" ></re-upload>
-          </re-shadow-block>
       </demo-block>
       <demo-block title="限制文件大小" desc="默认单个文件不超过10MB，可根据需求修改">
-          <re-shadow-block width='100%' height="100%">
                 <re-upload v-model="list1" :fileSize="102400" uploadText="100kb文件上传"></re-upload>
-          </re-shadow-block>
       </demo-block>
       <demo-block title="限制文件类型" desc="默认可上传任务文件类型，可根据需求修改">
-          <re-shadow-block width='100%' height="100%">
                 <re-upload v-model="list2" :fileType="'image'" uploadText="图片上传"></re-upload>
-          </re-shadow-block>
       </demo-block>
-      <demo-block title='API' desc="属性说明如下：">
+      <demo-block title='API' desc="属性说明如下：" type="table">
             <re-table :data="tableData" type="demo"></re-table>
       </demo-block>
     </div>
@@ -26,21 +20,15 @@
       <demo-block header="Upload">
       </demo-block>
       <demo-block title="Usage" desc="Upload file">
-          <re-shadow-block width='100%' height="100%">
                 <re-upload v-model="list_en" uploadText="choose file"></re-upload>
-          </re-shadow-block>
       </demo-block>
       <demo-block title="Size Limitation" desc="Default settinng is 10MB per file, which can be modified according to requirements">
-          <re-shadow-block width='100%' height="100%">
                 <re-upload v-model="list1" :fileSize="102400" uploadText="100kb Upload"></re-upload>
-          </re-shadow-block>
       </demo-block>
       <demo-block title="File Type" desc="The default type of file can be uploaded, which can be modified according to requirements">
-          <re-shadow-block width='100%' height="100%">
                 <re-upload v-model="list2_en" :fileType="'.pdf'" uploadText="pdf upload"></re-upload>
-          </re-shadow-block>
       </demo-block>
-       <demo-block title="API" desc="The properties description are as follows: ">
+       <demo-block title="API" desc="The properties description are as follows: " type="table">
           <re-table :data="tableData_en" type="en"></re-table>
         </demo-block>
     </div>

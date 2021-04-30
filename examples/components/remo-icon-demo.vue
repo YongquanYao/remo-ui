@@ -1,13 +1,13 @@
 <template>
   <div>
     <div v-if="this.locale === 'cn'" >
-      <demo-block title="Remo Icon图标" desc="语义化的矢量图形">
+      <demo-block title="Remo Icon图标" desc="语义化的矢量图形" type="normal">
            <re-tip class="tip" color="blue"><span>该图标参考使用 Ant Design 官方图标库, 筛选了部分实用图标。在此感谢Ant Design的设计团队 !</span><br/>
             <!-- <a @click="handlejump">https://ant.design/components/icon/</a> -->
            </re-tip>
       </demo-block>
-      <demo-block title="使用方法" desc="直接通过设置类class名为 remoi remo-xxxx">
-           <re-shadow-block height="80px" width="100%">
+      <demo-block title="使用方法" height="295" desc="直接通过设置类class名为 remoi remo-xxxx">
+           <!-- <re-shadow-block height="80px" width="100%"> -->
             <i class="remoi remo-search demoIcon"></i>
             <i class="remoi remo-star demoIcon"></i>
             <i class="remoi remo-calendar demoIcon"></i>
@@ -20,9 +20,12 @@
             <i class="remoi remo-apartment demoIcon"></i>
             <i class="remoi remo-areachart demoIcon"></i>
             <i class="remoi remo-camera demoIcon"></i>
-           </re-shadow-block>
+            <!-- </re-shadow-block> -->
+            <template slot="code">
+              <code>{{fCode(simple.code.html)}}</code>
+            </template>
       </demo-block>
-      <demo-block title="常用图标">
+      <demo-block title="常用图标" type="normal">
         <ul class="remo-list">
           <li v-for="(item,index) in iconList" :key="index">
               <div>
@@ -34,13 +37,12 @@
       </demo-block>
     </div>
     <div v-if="this.locale === 'en'" >
-      <demo-block title="Remo Icon" desc="Semantic vector graphics (SVG)">
+      <demo-block title="Remo Icon" desc="Semantic vector graphics (SVG)" type="normal">
            <re-tip class="tip" color="blue"><span>Remo Icons refer to the official Ant Design Icon library, Which I select part of commonly used icons, Thanks to the Ant Design!</span><br/>
             <!-- <a @click="handlejump">https://ant.design/components/icon/</a> -->
            </re-tip>
       </demo-block>
-      <demo-block title="Usage" desc="By setting the class name with remoi remo-xxxx">
-           <re-shadow-block height="80px" width="100%">
+      <demo-block title="Usage" :height="295" desc="By setting the class name with remoi remo-xxxx">
             <i class="remoi remo-search demoIcon"></i>
             <i class="remoi remo-star demoIcon"></i>
             <i class="remoi remo-calendar demoIcon"></i>
@@ -53,9 +55,11 @@
             <i class="remoi remo-apartment demoIcon"></i>
             <i class="remoi remo-areachart demoIcon"></i>
             <i class="remoi remo-camera demoIcon"></i>
-           </re-shadow-block>
+            <template slot="code">
+              <code>{{fCode(simple.code.html)}}</code>
+            </template>
       </demo-block>
-      <demo-block title="Icon Library">
+      <demo-block title="Icon Library" type="normal">
         <ul class="remo-list">
           <li v-for="(item,index) in iconList" :key="index">
               <div>
@@ -82,6 +86,27 @@ export default {
   },
   data () {
     return {
+      simple: {
+        code: {
+          html:
+            `
+            <template>
+              <i class="remoi remo-search demoIcon"></i>
+              <i class="remoi remo-star demoIcon"></i>
+              <i class="remoi remo-calendar demoIcon"></i>
+              <i class="remoi remo-phone demoIcon"></i>
+              <i class="remoi remo-edit demoIcon"></i>
+              <i class="remoi remo-home demoIcon"></i>
+              <i class="remoi remo-google demoIcon"></i>
+              <i class="remoi remo-alipay demoIcon"></i>
+              <i class="remoi remo-heart demoIcon"></i>
+              <i class="remoi remo-apartment demoIcon"></i>
+              <i class="remoi remo-areachart demoIcon"></i>
+              <i class="remoi remo-camera demoIcon"></i>
+            </template>
+            `
+        }
+      },
       iconList: [
         'remo-check-circle',
         'remo-CI',

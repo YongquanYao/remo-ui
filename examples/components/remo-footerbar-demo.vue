@@ -1,22 +1,22 @@
 <template>
   <div>
     <div v-if="this.locale === 'cn' ">
-        <demo-block header="Footer Bar" desc="固定在底部的工具栏">
+        <demo-block header="Footer Bar" desc="固定在底部的工具栏" type="normal">
            <re-footer-bar :cancelText="cancelText" @cancel="handleCancel" @confirm="handleConfirm" :show="visible"></re-footer-bar>
         </demo-block>
-        <demo-block title="基础用法" desc="滚动页面查看下方工具栏">
+        <demo-block title="基础用法" desc="滚动页面查看下方工具栏" type="normal">
         </demo-block>
         <demo-block title="API" desc="属性说明如下：">
           <re-table :data="tabledata" type="demo" />
         </demo-block>
     </div>
     <div v-if="this.locale === 'en' ">
-        <demo-block header="Footer Bar" desc="fixed tool in the bottom">
+        <demo-block header="Footer Bar" desc="fixed tool in the bottom" type="normal">
            <re-footer-bar :cancelText="cancelText" @cancel="handleCancel" @confirm="handleConfirm" :show="visible"></re-footer-bar>
         </demo-block>
-        <demo-block title="Usage" desc="Scroll down to view">
+        <demo-block title="Usage" desc="Scroll down to view" type="normal">
         </demo-block>
-        <demo-block title="API" desc="The properties description are as follows: ">
+        <demo-block title="API" desc="The properties description are as follows: " type="table">
           <re-table :data="tabledata_en" type="en"></re-table>
         </demo-block>
     </div>

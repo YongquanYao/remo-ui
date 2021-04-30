@@ -3,36 +3,30 @@
       <div v-if="this.locale === 'cn'">
        <demo-block header="Loading Bar 加载条" />
        <demo-block title="基础" desc="">
-        <re-shadow-block width="100%" height="100%">
           <re-button type="primary" @click="start">开始 Loading</re-button>
           <re-button type="warning" @click="end">结束 Loading</re-button>
           <re-button type="danger" @click="error">错误 Loading</re-button>
-        </re-shadow-block>
        </demo-block>
        <demo-block title="自定义" desc="">
        </demo-block>
-       <demo-block title="API" desc="属性说明如下: ">
+       <demo-block title="API" desc="属性说明如下: " type="table">
          <re-table :data="tabledata" type="demo"></re-table>
        </demo-block>
     </div>
     <div v-if="this.locale === 'en'">
        <demo-block header="Loading Bar" />
        <demo-block title="Usage" desc="">
-        <re-shadow-block width="100%" height="100%">
           <re-button type="primary" @click="start">Start Loading</re-button>
           <re-button type="warning" @click="end">End Loading</re-button>
           <re-button type="danger" @click="error">Error Loading</re-button>
-        </re-shadow-block>
        </demo-block>
        <demo-block title="Customize" desc="multiple customize property">
-        <re-shadow-block width="100%" height="100%">
           <re-button  @click="CustomizeOne">Set Speed 1</re-button>
           <re-button  @click="CustomizeTwo">Spinner off</re-button>
           <re-button  @click="CustomizeThird">Spinner on</re-button>
           <re-button  @click="CustomizeFourth">Loading Percentage per second</re-button>
-        </re-shadow-block>
        </demo-block>
-       <demo-block title="API" desc="The properties description are as follows: ">
+       <demo-block title="API" desc="The properties description are as follows: " type="table">
          <re-table :data="tabledata_en" type="en"></re-table>
        </demo-block>
     </div>

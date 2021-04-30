@@ -3,54 +3,60 @@
     <div v-if="this.locale ==='cn'">
       <demo-block header="Checkbox 选择器" />
       <demo-block title="基础使用">
-        <re-shadow-block width="100%" height="100%">
-            <re-checkbox :value="true"></re-checkbox>
-        </re-shadow-block>
+        <re-checkbox :value="true"></re-checkbox>
+        <template slot="code">
+            <code>{{fCode(simple.code.html)}}</code>
+        </template>
       </demo-block>
       <demo-block title="圆形">
-        <re-shadow-block width="100%" height="100%">
-            <re-checkbox type="round" :valUe="false" @change="e => show(e)"></re-checkbox>
-        </re-shadow-block>
+        <re-checkbox type="round" :valUe="false" @change="e => show(e)"></re-checkbox>
+        <template slot="code">
+          <code>{{fCode(round.code.html)}}</code>
+        </template>
       </demo-block>
       <demo-block title="禁用">
-        <re-shadow-block width="100%" height="100%">
-            <div class="disable_container">
-                <re-checkbox type="round" :value="true" :disable="true"></re-checkbox>
-                <re-checkbox type="round" :value="false" :disable="true"></re-checkbox>
-            </div>
-        </re-shadow-block>
+        <div class="disable_container">
+            <re-checkbox type="round" :value="true" :disable="true"></re-checkbox>
+            <re-checkbox type="round" :value="false" :disable="true"></re-checkbox>
+        </div>
+        <template slot="code">
+          <code>{{fCode(disable.code.html)}}</code>
+        </template>
       </demo-block>
-      <demo-block title="API" desc="属性说明如下：">
+      <demo-block title="API" desc="属性说明如下：" type="table">
           <re-table :data="tabledata" type="demo"></re-table>
       </demo-block>
-      <demo-block title="Event" desc="事件说明如下：">
+      <demo-block title="Event" desc="事件说明如下：" type="table">
           <re-table :data="eventTabledata" type="demo"></re-table>
       </demo-block>
     </div>
     <div v-if="this.locale ==='en'">
       <demo-block header="Checkbox" />
       <demo-block title="Usage">
-        <re-shadow-block width="100%" height="100%">
-            <re-checkbox :value="true"></re-checkbox>
-        </re-shadow-block>
+        <re-checkbox :value="true"></re-checkbox>
+         <template slot="code">
+            <code>{{fCode(simple.code.html)}}</code>
+        </template>
       </demo-block>
       <demo-block title="Round">
-        <re-shadow-block width="100%" height="100%">
-            <re-checkbox type="round" :valUe="false" @change="e => show(e)"></re-checkbox>
-        </re-shadow-block>
+        <re-checkbox type="round" :value="false" @change="e => show(e)"></re-checkbox>
+         <template slot="code">
+            <code>{{fCode(round.code.html)}}</code>
+        </template>
       </demo-block>
       <demo-block title="Disabled">
-        <re-shadow-block width="100%" height="100%">
-            <div class="disable_container">
-                <re-checkbox type="round" :value="true" :disable="true"></re-checkbox>
-                <re-checkbox type="round" :value="false" :disable="true"></re-checkbox>
-            </div>
-        </re-shadow-block>
+        <div class="disable_container">
+            <re-checkbox type="round" :value="true" :disable="true"></re-checkbox>
+            <re-checkbox type="round" :value="false" :disable="true"></re-checkbox>
+        </div>
+        <template slot="code">
+            <code>{{fCode(disable.code.html)}}</code>
+        </template>
       </demo-block>
-      <demo-block title="API" desc="The properties description are as follows: ">
+      <demo-block title="API" desc="The properties description are as follows: " type="table">
           <re-table :data="tabledata_en" type="en"></re-table>
       </demo-block>
-      <demo-block title="Event" desc="The trigger events description are as follows: ">
+      <demo-block title="Event" desc="The trigger events description are as follows: " type="table">
           <re-table :data="eventTabledata_en" type="en"></re-table>
       </demo-block>
     </div>
@@ -67,6 +73,28 @@ export default {
   },
   data () {
     return {
+      simple: {
+        code:{
+          html: `
+            <re-checkbox :value="true" />
+          `
+        }
+      },
+      round: {
+        code:{
+          html: `
+            <re-checkbox :value="false" type="round" />
+          `
+        }
+      },
+      disable: {
+        code:{
+          html: `
+            <re-checkbox type="round" :value="true" :disable="true" />
+            <re-checkbox type="round" :value="false" :disable="true" />
+          `
+        }
+      },
       tabledata: [
         {
           parameter: 'value / v-model',

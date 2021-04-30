@@ -8,7 +8,7 @@
         v-show="show"
         :class="{'default_type': type ==='default', 'success_type': type ==='success', 'warn_type': type ==='warning', 'danger_type': type ==='danger', 'solid_type': type ==='solid', 'solid_fail_type': type === 'solid_fail', 'solid_success_type': type === 'solid_success'}"
         :style="{
-          'top': messageNum === 0 ? '25px': `${25*messageNum}px`
+          'top': messageNum === 0 ? '20px': `${20*messageNum}px`
         }"
       >
         <i class="remoi remo-info-circle"></i><span>{{message}}</span>

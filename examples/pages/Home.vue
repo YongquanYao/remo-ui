@@ -554,7 +554,7 @@ export default {
             overflow: hidden;
             // padding-left: 10px;
             @media (max-width: 1160px) {
-              padding-left: 10px;
+              padding-left: 20px;
             }
             &:hover{
                 visibility: visible; // 鼠标在才触发滚动条

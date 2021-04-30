@@ -63,6 +63,27 @@ const install = function (Vue) {
   // 下面这个写法也可以
   // components.map(component => Vue.use(component))
   Vue.prototype.$loading = gobalLoadingBar // 全局loading绑定
+
+  Vue.prototype.fCode = function (code) {
+    let codeList = []
+    code.trim().split('\n').forEach(function (v) {
+      codeList.push(v)
+    })
+    let fcode = ''
+    if (codeList.length > 1) {
+      let length = codeList[codeList.length - 1].match(/(^(?:\s|\t)+)/)
+      length = length[0].length
+      for (let i = 1; i < codeList.length; i++) {
+        codeList[i] = codeList[i].slice(length)
+      }
+      for (let i = 0; i < codeList.length; i++) {
+        fcode = fcode + codeList[i] + '\n'
+      }
+    } else {
+      fcode = codeList[0]
+    }
+    return fcode
+  }
 }
 
 // 检测到 Vue 才执行，毕竟我们是基于 Vue 的

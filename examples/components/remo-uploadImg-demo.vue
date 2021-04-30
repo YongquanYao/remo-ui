@@ -4,26 +4,18 @@
         <demo-block header="Upload Image 上传图片">
         </demo-block>
         <demo-block title="基础" desc="图片上传">
-          <re-shadow-block width='100%' height="100%">
                 <re-upload-img v-model="list1" :view="false" addText="上传图片"></re-upload-img>
-          </re-shadow-block>
         </demo-block>
         <demo-block title="预览" desc="图片预览/上传">
-          <re-shadow-block width='100%' height="100%">
                 <re-upload-img v-model="list2" addText="上传/预览图片"></re-upload-img>
-          </re-shadow-block>
         </demo-block>
         <demo-block title="剪裁" desc="图片线裁剪/上传">
-          <re-shadow-block width='100%' height="350px">
                 <re-upload-img :width="300" :height="300"  addText="裁剪图片/上传" :cropper="true" v-model="list3"></re-upload-img>
-          </re-shadow-block>
         </demo-block>
         <demo-block title="压缩" desc="图片0.5X压缩/上传">
-          <re-shadow-block width='100%' height="350px">
                 <re-upload-img :width="300" :height="300" :outputSize='0.5' addText="裁剪/压缩图片" :cropper="true" v-model="list4"></re-upload-img>
-          </re-shadow-block>
         </demo-block>
-        <demo-block title='API' desc="属性说明如下：">
+        <demo-block title='API' desc="属性说明如下：" type="table">
             <re-table :data="tableData" type="demo"></re-table>
         </demo-block>
     </div>
@@ -31,26 +23,18 @@
         <demo-block header="Upload Image">
         </demo-block>
         <demo-block title="Usage" desc="Image upload">
-          <re-shadow-block width='100%' height="100%">
                 <re-upload-img v-model="list1" :view="false" addText="upload"></re-upload-img>
-          </re-shadow-block>
         </demo-block>
         <demo-block title="Preview" desc="Image upload / preview">
-          <re-shadow-block width='100%' height="100%">
                 <re-upload-img v-model="list2" addText="upload / preview"></re-upload-img>
-          </re-shadow-block>
         </demo-block>
         <demo-block title="Crop" desc="Image upload / crop">
-          <re-shadow-block width='100%' height="350px">
                 <re-upload-img :width="300" :height="300"  addText="upload / crop" :cropper="true" v-model="list3"></re-upload-img>
-          </re-shadow-block>
         </demo-block>
         <demo-block title="Compress" desc="Image compress 0.5x / upload">
-          <re-shadow-block width='100%' height="350px">
                 <re-upload-img :width="300" :height="300" :outputSize='0.5' addText="compress / upload" :cropper="true" v-model="list4"></re-upload-img>
-          </re-shadow-block>
         </demo-block>
-         <demo-block title="API" desc="The properties description are as follows: ">
+         <demo-block title="API" desc="The properties description are as follows: " type="table">
           <re-table :data="tableData_en" type="en"></re-table>
         </demo-block>
     </div>

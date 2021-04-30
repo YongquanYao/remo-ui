@@ -3,54 +3,60 @@
     <div v-if="this.locale=== 'cn' ">
       <demo-block header="Switch 开关" />
       <demo-block title="基础使用">
-        <re-shadow-block width="100%" height="100%">
             <re-switch :value="true"></re-switch>
-        </re-shadow-block>
+            <template slot="code">
+              <code class="html">{{fCode(simple.code.html)}}</code>
+            </template>
       </demo-block>
       <demo-block title="圆形">
-        <re-shadow-block width="100%" height="100%">
             <re-switch type="round" :valUe="false" @change="e => show(e)"></re-switch>
-        </re-shadow-block>
+            <template slot="code">
+               <code class="html">{{fCode(round.code.html)}}</code>
+            </template>
       </demo-block>
       <demo-block title="禁用">
-        <re-shadow-block width="100%" height="100%">
             <div class="disable_container">
                 <re-switch type="round" :value="true" :disable="true"></re-switch>
                 <re-switch type="round" :value="false" :disable="true"></re-switch>
             </div>
-        </re-shadow-block>
+            <template slot="code">
+               <code class="html">{{fCode(disable.code.html)}}</code>
+            </template>
       </demo-block>
-      <demo-block title="API" desc="属性说明如下：">
+      <demo-block title="API" desc="属性说明如下：" type="table">
           <re-table :data="tabledata" type="demo"></re-table>
       </demo-block>
-      <demo-block title="Event" desc="事件说明如下：">
+      <demo-block title="Event" desc="事件说明如下：" type="table">
           <re-table :data="eventTabledata" type="demo"></re-table>
       </demo-block>
     </div>
     <div v-if="this.locale=== 'en' ">
       <demo-block header="Switch" />
       <demo-block title="Usage">
-        <re-shadow-block width="100%" height="100%">
             <re-switch :value="true"></re-switch>
-        </re-shadow-block>
+            <template slot="code">
+               <code class="html">{{fCode(simple.code.html)}}</code>
+            </template>
       </demo-block>
       <demo-block title="Round">
-        <re-shadow-block width="100%" height="100%">
-            <re-switch type="round" :valUe="false" @change="e => show(e)"></re-switch>
-        </re-shadow-block>
+            <re-switch type="round" :value="false" @change="e => show(e)"></re-switch>
+            <template slot="code">
+               <code class="html">{{fCode(round.code.html)}}</code>
+            </template>
       </demo-block>
       <demo-block title="Disabled">
-        <re-shadow-block width="100%" height="100%">
             <div class="disable_container">
                 <re-switch type="round" :value="true" :disable="true"></re-switch>
                 <re-switch type="round" :value="false" :disable="true"></re-switch>
             </div>
-        </re-shadow-block>
+            <template slot="code">
+               <code class="html">{{fCode(disable.code.html)}}</code>
+            </template>
       </demo-block>
-      <demo-block title="API" desc="The properties description are as follows: ">
+      <demo-block title="API" desc="The properties description are as follows: " type="table">
           <re-table :data="tabledata_en" type="en"></re-table>
       </demo-block>
-      <demo-block title="Event" desc="The events description are as follows: ">
+      <demo-block title="Event" desc="The events description are as follows: " type="table">
           <re-table :data="eventTabledata_en" type="en"></re-table>
       </demo-block>
     </div>
@@ -66,6 +72,27 @@ export default {
   },
   data () {
     return {
+      simple: {
+        code: {
+          html: ` <re-switch :value="true"></re-switch>
+          `
+        }
+      },
+      disable: {
+        code: {
+          html: `
+            <re-switch type="round" :value="true" :disable="true"></re-switch>
+            <re-switch type="round" :value="false" :disable="true"></re-switch>
+          `
+        }
+      },
+      round: {
+        code: {
+          html:`
+            <re-switch type="round" :value="false" @change="e => show(e)"></re-switch>
+          `
+        }
+      },
       tabledata: [
         {
           parameter: 'value / v-model',

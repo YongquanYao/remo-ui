@@ -101,10 +101,10 @@
                     </template>
                 </re-img-card>
             </demo-block>
-            <demo-block title='API' desc="属性说明如下：">
+            <demo-block title='API' desc="属性说明如下：" type="table">
             <re-table :data="tableData" type="demo"></re-table>
             </demo-block>
-            <demo-block title='Slot' desc="插槽：">
+            <demo-block title='Slot' desc="插槽：" type="table">
             <re-table :data="slotData" type="demo"></re-table>
             </demo-block>
 
@@ -210,10 +210,10 @@
                     </template>
                 </re-img-card>
             </demo-block>
-            <demo-block title='API' desc="属性说明如下：">
+            <demo-block title='API' desc="属性说明如下：" type="table">
             <re-table :data="tableData_en" type="en"></re-table>
             </demo-block>
-            <demo-block title='Slot'>
+            <demo-block title='Slot' type="table">
             <re-table :data="slotData_en" type="en"></re-table>
             </demo-block>
 

@@ -4,37 +4,42 @@
       <demo-block header="Input 输入框">
       </demo-block>
       <demo-block title="基础用法">
-        <re-shadow-block width="100%" height="130px">
             <re-input v-model="text"></re-input>
             <span class="showtext">{{text}}</span>
-        </re-shadow-block>
+            <template slot="code">
+                <code class="html">{{fCode(simple.code.html)}}</code>
+            </template>
       </demo-block>
       <demo-block title="输入框模式" desc="pattern=frame：">
-        <re-shadow-block width="100%" height="110px">
             <re-input v-model="text1" pattern='frame'></re-input>
             <span class="showtext">{{text1}}</span>
-        </re-shadow-block>
+        <template slot="code">
+          <code class="html">{{fCode(simple.code.html)}}</code>
+        </template>
       </demo-block>
       <demo-block title="禁用模式" desc="disabled=true：">
-        <re-shadow-block width="100%" height="90px">
-              <re-input  pattern='frame' :disabled="true"></re-input>
-        </re-shadow-block>
+          <re-input  pattern='frame' :disabled="true"></re-input>
+          <template slot="code">
+                <code class="html">{{fCode(simple.code.html)}}</code>
+          </template>
       </demo-block>
       <demo-block title="Icon模式" desc="pattern=frame && 添加suffixIcon或者prefixIcon属性：">
-        <re-shadow-block width="100%" height="90px">
             <div style="display: flex; justify-content: space-around;" >
               <re-input  pattern='frame' placeholder="请输入密码"  suffixIcon="remo-lock"></re-input>
               <re-input  pattern='frame' placeholder="请输入用户名"  prefixIcon="remo-user"></re-input>
             </div>
-        </re-shadow-block>
+            <template slot="code">
+                <code class="html">{{fCode(simple.code.html)}}</code>
+             </template>
       </demo-block>
-      <demo-block title="Number模式" desc="type=number：" >
-        <re-shadow-block width="100%" height="130px">
+      <demo-block title="Number模式" desc="type=number：">
           <re-input  type="number" v-model="text2" placeholder="请输入数字"></re-input>
-            <span class="showtext">{{text2}}</span>
-        </re-shadow-block>
+          <span class="showtext">{{text2}}</span>
+          <template slot="code">
+            <code class="html">{{fCode(simple.code.html)}}</code>
+          </template>
       </demo-block>
-      <demo-block title='API' desc="属性说明如下：">
+      <demo-block title='API' desc="属性说明如下：" type="table">
             <re-table :data="tableData" type="demo"></re-table>
       </demo-block>
     </div>
@@ -42,37 +47,30 @@
       <demo-block header="Input" placeholder="Input">
       </demo-block>
       <demo-block title="Usage">
-        <re-shadow-block width="100%" height="130px">
             <re-input v-model="text" placeholder="Input"></re-input>
             <span class="showtext">{{text}}</span>
-        </re-shadow-block>
+          <template slot="code">
+            <code class="html">{{fCode(simple.code.html)}}</code>
+          </template>
       </demo-block>
       <demo-block title="Frame Pattern">
-        <re-shadow-block width="100%" height="110px">
             <re-input v-model="text1" pattern='frame' placeholder="Input" ></re-input>
             <span class="showtext">{{text1}}</span>
-        </re-shadow-block>
       </demo-block>
       <demo-block title="Disable" >
-        <re-shadow-block width="100%" height="90px">
-              <re-input  pattern='frame' :disabled="true" placeholder="Input"></re-input>
-        </re-shadow-block>
+            <re-input  pattern='frame' :disabled="true" placeholder="Input"></re-input>
       </demo-block>
       <demo-block title="Suffix /Prefix Icon" >
-        <re-shadow-block width="100%" height="90px">
             <div style="display: flex; justify-content: space-around;" >
               <re-input  pattern='frame' placeholder="Password"  suffixIcon="remo-lock"></re-input>
               <re-input  pattern='frame' placeholder="Username"  prefixIcon="remo-user"></re-input>
             </div>
-        </re-shadow-block>
       </demo-block>
       <demo-block title="Number">
-        <re-shadow-block width="100%" height="130px">
           <re-input  type="number" v-model="text2" placeholder="number"></re-input>
-            <span class="showtext">{{text2}}</span>
-        </re-shadow-block>
+          <span class="showtext">{{text2}}</span>
       </demo-block>
-      <demo-block title="API" desc="The properties description are as follows: ">
+      <demo-block title="API" desc="The properties description are as follows: " type="table">
           <re-table :data="tableData_en" type="en"></re-table>
       </demo-block>
     </div>
@@ -94,6 +92,13 @@ export default {
   },
   data () {
     return {
+      simple:{
+        code:{
+          html:`
+          
+          `
+        }
+      },
       text: '',
       text1: '',
       text2: null,

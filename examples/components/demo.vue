@@ -6,7 +6,7 @@
        </demo-block>
        <demo-block title="自定义" desc="">
        </demo-block>
-       <demo-block title="API" desc="属性说明如下: ">
+       <demo-block title="API" desc="属性说明如下: " type="table">
          <re-table :data="tabledata" type="demo"></re-table>
        </demo-block>
     </div>
@@ -16,7 +16,7 @@
        </demo-block>
        <demo-block title="Customize" desc="">
        </demo-block>
-       <demo-block title="API" desc="The properties description are as follows: ">
+       <demo-block title="API" desc="The properties description are as follows: " type="table">
          <re-table :data="tabledata_en" type="en"></re-table>
        </demo-block>
     </div>

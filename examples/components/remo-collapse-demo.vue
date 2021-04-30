@@ -4,7 +4,6 @@
       <demo-block header="Collapse 折叠盒子">
       </demo-block>
       <demo-block title="基础" desc="通过折叠盒子收缩或展示内容：">
-          <re-shadow-block width="100%" height="100%" :bodyClose='false'>
             <p class="classic" @click="handleshow">点击查看详情 <i class="remoi remo-down"></i></p>
             <re-collapse :show.sync="show">
               <p>这就是详情啦啦啦啦 ♪(^∇^*)</p>
@@ -19,10 +18,8 @@
                 <p>Check it out, this is detail (#^.^#)</p>
                 <p>Check it out, this is detail (＾Ｕ＾)ノ~ＹＯ</p>
               </re-collapse>
-          </re-shadow-block>
       </demo-block>
       <demo-block title="嵌套" desc="可嵌套多层点击控制隐藏：">
-          <re-shadow-block width="100%" height="100%" :bodyClose='true'>
             <re-button @click="handleshow2">Mutil-layer View</re-button>
             <re-collapse :show.sync="show2">
               <p>点内容不可关闭 ♪(^∇^*)</p>
@@ -37,9 +34,8 @@
               <p>点内容不可关闭 (#^.^#)</p>
               <p>点内容不可关闭 (＾Ｕ＾)ノ~ＹＯ</p>
             </re-collapse>
-          </re-shadow-block>
       </demo-block>
-       <demo-block title='API' desc="属性说明如下：">
+       <demo-block title='API' desc="属性说明如下：" type="table">
           <re-table :data="tableData" type="demo"></re-table>
       </demo-block>
     </div>
@@ -47,7 +43,6 @@
       <demo-block header="Collapse">
       </demo-block>
       <demo-block title="Usage" desc="Shrink or display the details：">
-          <re-shadow-block width="100%" height="100%" :bodyClose='false'>
             <p class="classic" @click="handleshow">Click to View Detail <i class="remoi remo-down"></i></p>
             <re-collapse :show.sync="show">
               <p>This is detail ♪(^∇^*)</p>
@@ -62,10 +57,8 @@
                 <p>Check it out, this is detail (#^.^#)</p>
                 <p>Check it out, this is detail (＾Ｕ＾)ノ~ＹＯ</p>
               </re-collapse>
-          </re-shadow-block>
       </demo-block>
       <demo-block title="Nested" desc="">
-          <re-shadow-block width="100%" height="100%" :bodyClose='true'>
             <re-button @click="handleshow2">Mutil-layer View</re-button>
             <re-collapse :show.sync="show2">
               <p>cant click to close ♪(^∇^*)</p>
@@ -80,9 +73,8 @@
               <p>cant click to close (#^.^#)</p>
               <p>cant click to close (＾Ｕ＾)ノ~ＹＯ</p>
             </re-collapse>
-          </re-shadow-block>
       </demo-block>
-       <demo-block title="API" desc="The properties description are as follows: ">
+       <demo-block title="API" desc="The properties description are as follows: " type="table">
           <re-table :data="tableData_en" type="en"></re-table>
       </demo-block>
     </div>

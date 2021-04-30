@@ -2,19 +2,25 @@
   <div>
     <div v-if="this.locale === 'cn'">
         <demo-block header='Menu 菜单'></demo-block>
-        <demo-block title='基础用法' desc="通过点击不同选项进行跳转">
+        <demo-block height="530" title='基础用法' desc="通过点击不同选项进行跳转">
             <re-menu :menuList="data"></re-menu>
+            <template slot="code">
+              <code class="html">{{fCode(simple_cn.code.html)}}</code>
+            </template>
         </demo-block>
-        <demo-block title='API' desc="属性说明如下：">
+        <demo-block title='API' desc="属性说明如下：" type="table">
           <re-table :data="tableData" type="demo"></re-table>
         </demo-block>
     </div>
     <div v-if="this.locale === 'en'">
         <demo-block header='Menu'></demo-block>
-        <demo-block title='Usage' desc="navigate by clicking the menu item">
+        <demo-block height="530" title='Usage' desc="navigate by clicking the menu item">
             <re-menu :menuList="data_en"></re-menu>
+            <template slot="code">
+              <code class="html">{{fCode(simple.code.html)}}</code>
+            </template>
         </demo-block>
-        <demo-block title="API" desc="The properties description are as follows: ">
+        <demo-block title="API" desc="The properties description are as follows: " type="table">
           <re-table :data="tableData_en" type="en"></re-table>
         </demo-block>
     </div>
@@ -36,6 +42,74 @@ export default {
   },
   data () {
     return {
+      simple:{
+        code: {
+          html:`
+            <re-menu :menuList="data"></re-menu>
+            
+                data() {
+                  return {
+                    data: [
+                      {
+                        icon: 'home',
+                        name: 'Home',
+                        link: '#/component/remo-menu'
+                      },
+                      {
+                        icon: 'phone',
+                        name: 'Contact',
+                        link: '#/component/remo-menu'
+                      },
+                      {
+                        icon: 'scan',
+                        name: 'Scan',
+                        link: '#/component/remo-menu'
+                      },
+                      {
+                        icon: 'setting',
+                        name: 'Setting',
+                        link: '#/component/remo-menu'
+                      }
+                    ],
+                  }
+                }
+          `
+        }
+      },
+      simple_cn:{
+        code: {
+          html:`
+            <re-menu :menuList="data"></re-menu>
+            
+                data() {
+                  return {
+                    data: [
+                      {
+                        icon: 'home',
+                        name: '主页',
+                        link: '#/component/remo-menu'
+                      },
+                      {
+                        icon: 'phone',
+                        name: '联系',
+                        link: '#/component/remo-menu'
+                      },
+                      {
+                        icon: 'scan',
+                        name: '扫码',
+                        link: '#/component/remo-menu'
+                      },
+                      {
+                        icon: 'setting',
+                        name: '设置',
+                        link: '#/component/remo-menu'
+                      }
+                    ],
+                  }
+                }
+          `
+        }
+      },
       data: [
         {
           icon: 'home',
