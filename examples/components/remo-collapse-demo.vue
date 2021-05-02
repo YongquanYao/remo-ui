@@ -3,7 +3,7 @@
     <div v-if="this.locale === 'cn'">
       <demo-block header="Collapse 折叠盒子">
       </demo-block>
-      <demo-block title="基础" desc="通过折叠盒子收缩或展示内容：">
+      <demo-block height="200" title="基础" desc="通过折叠盒子收缩或展示内容：">
             <p class="classic" @click="handleshow">点击查看详情 <i class="remoi remo-down"></i></p>
             <re-collapse :show.sync="show">
               <p>这就是详情啦啦啦啦 ♪(^∇^*)</p>
@@ -19,7 +19,7 @@
                 <p>Check it out, this is detail (＾Ｕ＾)ノ~ＹＯ</p>
               </re-collapse>
       </demo-block>
-      <demo-block title="嵌套" desc="可嵌套多层点击控制隐藏：">
+      <demo-block height="200" title="嵌套" desc="可嵌套多层点击控制隐藏：">
             <re-button @click="handleshow2">Mutil-layer View</re-button>
             <re-collapse :show.sync="show2">
               <p>点内容不可关闭 ♪(^∇^*)</p>
@@ -42,7 +42,7 @@
     <div v-if="this.locale === 'en'">
       <demo-block header="Collapse">
       </demo-block>
-      <demo-block title="Usage" desc="Shrink or display the details：">
+      <demo-block height="310" title="Usage" desc="Shrink or display the details：">
             <p class="classic" @click="handleshow">Click to View Detail <i class="remoi remo-down"></i></p>
             <re-collapse :show.sync="show">
               <p>This is detail ♪(^∇^*)</p>
@@ -56,9 +56,12 @@
                 <p>Check it out, this is detail \(^o^)/~</p>
                 <p>Check it out, this is detail (#^.^#)</p>
                 <p>Check it out, this is detail (＾Ｕ＾)ノ~ＹＯ</p>
-              </re-collapse>
+            </re-collapse>
+            <template slot="code">
+              <code>{{fCode(simple.code.html)}}</code>
+            </template>
       </demo-block>
-      <demo-block title="Nested" desc="">
+      <demo-block height="310" title="Nested" desc="">
             <re-button @click="handleshow2">Mutil-layer View</re-button>
             <re-collapse :show.sync="show2">
               <p>cant click to close ♪(^∇^*)</p>
@@ -73,6 +76,9 @@
               <p>cant click to close (#^.^#)</p>
               <p>cant click to close (＾Ｕ＾)ノ~ＹＯ</p>
             </re-collapse>
+            <template slot="code">
+              <code>{{fCode(nested.code.html)}}</code>
+            </template>
       </demo-block>
        <demo-block title="API" desc="The properties description are as follows: " type="table">
           <re-table :data="tableData_en" type="en"></re-table>
@@ -96,6 +102,46 @@ export default {
   },
   data () {
     return {
+      simple:{
+        code:{
+          html:`
+          <p class="classic" @click="handleshow">Click to View Detail <i class="remoi remo-down"></i></p>
+          <re-collapse :show.sync="show">
+            <p>This is detail ♪(^∇^*)</p>
+            <p>his is detail  \(^o^)/~</p>
+            <p>his is detail  (#^.^#)</p>
+            <p>his is detail  (＾Ｕ＾)ノ~ＹＯ</p>
+          </re-collapse>
+          <re-button @click="handleshow1">Click to view </re-button>
+            <re-collapse :show.sync="show1" :bodyClose='true'>
+              <p>Check it out, this is detail ♪(^∇^*)</p>
+              <p>Check it out, this is detail \(^o^)/~</p>
+              <p>Check it out, this is detail (#^.^#)</p>
+              <p>Check it out, this is detail (＾Ｕ＾)ノ~ＹＯ</p>
+          </re-collapse>
+          `
+        }
+      },
+      nested:{
+        code:{
+          html:`
+          <re-button @click="handleshow2">Mutil-layer View</re-button>
+            <re-collapse :show.sync="show2">
+            <p>cant click to close ♪(^∇^*)</p>
+            <p>cant click to close \(^o^)/~</p>
+              <re-button @click="handleshow3">Click to View Detail</re-button>
+            <re-collapse :show.sync="show3" :bodyClose='true'>
+              <p>cant click to close ♪(^∇^*)</p>
+              <p>cant click to close \(^o^)/~</p>
+              <p>cant click to close (#^.^#)</p>
+              <p>cant click to close (＾Ｕ＾)ノ~ＹＯ</p>
+            </re-collapse>
+            <p>cant click to close (#^.^#)</p>
+            <p>cant click to close (＾Ｕ＾)ノ~ＹＯ</p>
+          </re-collapse>
+          `
+        }
+      },
       tableData: [
         {
           parameter: 'show.sync',

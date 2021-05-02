@@ -9,12 +9,15 @@
         <div class="testarea">
              Height Test Area
         </div>
-        <demo-block title="自定义" desc="可选择放置位置，文案，图片">
+        <demo-block height="120" title="自定义" desc="可选择放置位置，文案，图片">
           <div class="diycontainer">
             <re-backtop type='customize' icon='remo-totop'>Back to top</re-backtop>
             <re-backtop type='customize' color="#555" icon='remo-up-circle'>Go Back To Top</re-backtop>
             <re-backtop type='customize' color='rgb(250, 67, 67)' circle icon='remo-rocket'>Top</re-backtop>
           </div>
+          <template slot="code">
+            <code>{{fCode(customize.code.html)}}</code>
+          </template>
         </demo-block>
         <demo-block title="API" desc="属性说明如下:" type="table">
           <re-table :data="tabledata" type="demo"></re-table>
@@ -30,12 +33,15 @@
         <div class="testarea">
              Height Test Area
         </div>
-        <demo-block title="Customize" desc="position / conetent / icon">
+        <demo-block height="120" title="Customize" desc="position / conetent / icon">
           <div class="diycontainer">
             <re-backtop type='customize' icon='remo-totop'>Back to top</re-backtop>
             <re-backtop type='customize' color="#555" icon='remo-up-circle'>Go Back To Top</re-backtop>
             <re-backtop type='customize' color='rgb(250, 67, 67)' circle icon='remo-rocket'>Top</re-backtop>
           </div>
+          <template slot="code">
+            <code>{{fCode(customize.code.html)}}</code>
+          </template>
         </demo-block>
         <demo-block title="API" desc="The properties description are as follow:" type="table">
           <re-table :data="tabledata_en" type="en"></re-table>
@@ -59,6 +65,15 @@ export default {
   },
   data () {
     return {
+      customize:{
+        code:{
+          html:`
+          <re-backtop type='customize' icon='remo-totop'>Back to top</re-backtop>
+          <re-backtop type='customize' color="#555" icon='remo-up-circle'>Go Back To Top</re-backtop>
+          <re-backtop type='customize' color='rgb(250, 67, 67)' circle icon='remo-rocket'>Top</re-backtop>
+          `
+        }
+      },
       tabledata: [
         {
           parameter: 'type',

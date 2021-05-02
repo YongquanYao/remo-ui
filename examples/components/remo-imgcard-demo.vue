@@ -3,7 +3,7 @@
         <div v-if="this.locale ==='cn'">
             <demo-block header="Image Card 图卡">
             </demo-block>
-            <demo-block title="基础" desc="静态展示：">
+            <demo-block  height="460" title="基础" desc="静态展示：">
                 <!-- <re-tip color="blue">敬请期待,开发ing....</re-tip> -->
                 <re-img-card one="123">
                     <template v-slot:img>
@@ -29,8 +29,11 @@
                         <p style="margin-top: 30px">This is description Powered by Remo UI. </p>
                     </template>
                 </re-img-card>
+                <template slot="code">
+                    <code>{{fCode(simple.code.html)}}</code>
+                </template>
             </demo-block>
-            <demo-block title="动态显示" desc="设置type为dynamic：">
+            <demo-block height="460" title="动态显示" desc="设置type为dynamic：">
                 <re-img-card  type="dynamic">
                     <template slot="img">
                         <img src="../assets/1.jpg"  alt="">
@@ -55,8 +58,11 @@
                         <p style="margin-top: 30px">Dynamic image card Powered by Remo UI. </p>
                     </template>
                 </re-img-card>
+                <template slot="code">
+                    <code>{{fCode(dynamic.code.html)}}</code>
+                </template>
             </demo-block>
-            <demo-block title="自定义" desc="可设置图片高度与右上角icon图标：">
+            <demo-block height="720" title="自定义" desc="可设置图片高度与右上角icon图标：">
                 <re-img-card feature="off">
                     <template slot="img">
                         <img src="../assets/8.jpg"  alt="">
@@ -100,6 +106,9 @@
                         <p style="margin-top: 30px"> 125px</p>
                     </template>
                 </re-img-card>
+                <template slot="code">
+                    <code>{{fCode(customize.code.html)}}</code>
+                </template>
             </demo-block>
             <demo-block title='API' desc="属性说明如下：" type="table">
             <re-table :data="tableData" type="demo"></re-table>
@@ -112,7 +121,7 @@
         <div v-if="this.locale ==='en'">
             <demo-block header="Image Card">
             </demo-block>
-            <demo-block title="Usage" desc="Static">
+            <demo-block  height="460" title="Usage" desc="Static">
                 <!-- <re-tip color="blue">敬请期待,开发ing....</re-tip> -->
                 <re-img-card one="123">
                     <template v-slot:img>
@@ -138,8 +147,11 @@
                         <p style="margin-top: 30px">This is description Powered by Remo UI. </p>
                     </template>
                 </re-img-card>
+                <template slot="code">
+                    <code>{{fCode(simple.code.html)}}</code>
+                </template>
             </demo-block>
-            <demo-block title="Dynamic" desc="Responsive image card">
+            <demo-block height="460" title="Dynamic" desc="Responsive image card">
                 <re-img-card  type="dynamic">
                     <template slot="img">
                         <img src="../assets/1.jpg"  alt="">
@@ -164,8 +176,11 @@
                         <p style="margin-top: 30px">Dynamic image card Powered by Remo UI. </p>
                     </template>
                 </re-img-card>
+                <template slot="code">
+                    <code>{{fCode(dynamic.code.html)}}</code>
+                </template>
             </demo-block>
-            <demo-block title="Customize" desc="Setting image card width / heigth / icon：">
+            <demo-block height="720" title="Customize" desc="Setting image card width / heigth / icon：">
                 <re-img-card feature="off">
                     <template slot="img">
                         <img src="../assets/8.jpg"  alt="">
@@ -209,6 +224,9 @@
                         <p style="margin-top: 30px"> 125px</p>
                     </template>
                 </re-img-card>
+                <template slot="code">
+                    <code>{{fCode(customize.code.html)}}</code>
+                </template>
             </demo-block>
             <demo-block title='API' desc="属性说明如下：" type="table">
             <re-table :data="tableData_en" type="en"></re-table>
@@ -236,6 +254,112 @@ export default {
   },
   data () {
     return {
+      simple:{
+        code:{
+          html:`
+          <re-img-card one="123">
+            <template v-slot:img>
+                <img src="../assets/4.jpg" alt="">
+            </template>
+            <template slot="desc">
+                <p style="margin-top: 30px">This is description Powered by Remo UI. </p>
+            </template>
+         </re-img-card>
+         <re-img-card >
+            <template v-slot:img>
+                <img src="../assets/5.jpg" alt="">
+            </template>
+            <template slot="desc">
+                <p style="margin-top: 30px">This is description Powered by Remo UI. </p>
+            </template>
+         </re-img-card>
+         <re-img-card >
+            <template v-slot:img>
+                <img src="../assets/6.jpg" alt="">
+            </template>
+            <template slot="desc">
+                <p style="margin-top: 30px">This is description Powered by Remo UI. </p>
+            </template>
+         </re-img-card>
+        `
+        }
+      },
+      dynamic:{
+        code:{
+          html:`
+          <re-img-card  type="dynamic">
+            <template slot="img">
+                <img src="../assets/1.jpg"  alt="">
+            </template>
+            <template slot="desc">
+                <p style="margin-top: 30px">Dynamic image card Powered by Remo UI. </p>
+            </template>
+         </re-img-card>
+         <re-img-card type="dynamic" >
+                <template v-slot:img>
+                    <img src="../assets/2.jpg"  alt="">
+                </template>
+                <template slot="desc">
+                    <p style="margin-top: 30px">Dynamic image card Powered by Remo UI. </p>
+                </template>
+          </re-img-card>
+          <re-img-card type="dynamic">
+                <template v-slot:img>
+                    <img src="../assets/3.jpg" alt="">
+                </template>
+                <template slot="desc">
+                    <p style="margin-top: 30px">Dynamic image card Powered by Remo UI. </p>
+                </template>
+          </re-img-card>
+          `
+        }
+      },
+      customize:{
+        code:{
+          html:`
+          <re-img-card feature="off">
+            <template slot="img">
+                <img src="../assets/8.jpg"  alt="">
+            </template>
+            <template slot="desc">
+                <p style="margin-top: 30px"> Image card without right top feature. </p>
+            </template>
+            </re-img-card>
+            <re-img-card type="static" iconTop="remo-zoomin" iconBottom="remo-delete" >
+                <template v-slot:img>
+                    <img src="../assets/8.jpg"  alt="">
+                </template>
+                <template slot="desc">
+                    <p style="margin-top: 30px"> Personal setting right top feature.</p>
+                </template>
+            </re-img-card>
+            <re-img-card type="static" feature="off">
+                <template v-slot:img>
+                    <img src="../assets/7.jpg" style='height: 355px'  alt="">
+                </template>
+                <template slot="desc">
+                    <p style="margin-top: 30px; width: 330px;"> Personal setting image heght 355px.</p>
+                </template>
+            </re-img-card>
+            <re-img-card type="static">
+                <template v-slot:img>
+                    <img src="../assets/7.jpg" style='height: 275px'  alt="">
+                </template>
+                <template slot="desc">
+                    <p style="margin-top: 30px; width: 250px;"> Personal setting image heght 275px.</p>
+                </template>
+            </re-img-card>
+            <re-img-card type="dynamic">
+                <template v-slot:img>
+                    <img src="../assets/7.jpg" style='height: 125px'  alt="">
+                </template>
+                <template slot="desc">
+                    <p style="margin-top: 30px"> 125px</p>
+                </template>
+            </re-img-card>
+          `
+        }
+      },
       tableData: [
         {
           parameter: 'type',

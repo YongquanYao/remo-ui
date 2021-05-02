@@ -7,14 +7,14 @@
               <re-tip color="blue" style="width: 90%">
                 最新公告请查看右下角的弹窗
               </re-tip>
-                <re-dragger :visible.sync="infoShow"  :width="370" :height='180'>
-                  <template slot="title">
-                    We're hiring !
-                  </template>
-                  <p class="hireText">If you have passion of <span>front-end </span>role, If you...<br/> We are looking forward to having you with us. 😊<br><span>Please contact us via xxxx@xxx.com.</span></p>
-                </re-dragger>
+              <re-dragger :visible.sync="infoShow"  :width="370" :height='180'>
+                <template slot="title">
+                  We're hiring !
+                </template>
+                <p class="hireText">If you have passion of <span>front-end </span>role, If you...<br/> We are looking forward to having you with us. 😊<br><span>Please contact us via xxxx@xxx.com.</span></p>
+              </re-dragger>
         </demo-block>
-        <demo-block title="服务类型" desc="用于Q&A的组件模块">
+        <demo-block height="640" title="服务类型" desc="用于Q&A的组件模块">
                 <re-button icon="remo-team" @click="handleShow">联系客服</re-button>
                 <re-dragger :visible.sync="chatShow"  :width="370" :height='580'>
                   <template slot="title">
@@ -48,6 +48,9 @@
                   </div>
                 </div>
                 </re-dragger>
+                <template slot="code">
+                  <code>{{fCode(customize.code.html)}}</code>
+                </template>
         </demo-block>
         <demo-block title="API" desc="属性说明如下：" type="table">
           <re-table :data="tabledata" type="demo"></re-table>
@@ -70,7 +73,7 @@
                   <p class="hireText">If you have passion of <span>front-end </span>role, If you...<br/> We are looking forward to having you with us. 😊<br><span>Please contact us via xxxx@xxx.com.</span></p>
                 </re-dragger>
         </demo-block>
-        <demo-block title="Service" desc="Using as a Q&A component">
+        <demo-block height="640" title="Service" desc="Using as a Q&A component">
                 <re-button icon="remo-team" @click="handleShow">Customer Service</re-button>
                 <re-dragger :visible.sync="chatShow"  :width="370" :height='580'>
                   <template slot="title">
@@ -104,6 +107,9 @@
                   </div>
                 </div>
                 </re-dragger>
+                <template slot="code">
+                  <code>{{fCode(customize.code.html)}}</code>
+                </template>
         </demo-block>
         <demo-block title="API" desc="The properties description are as follows: " type="table">
           <re-table :data="tableData_en" type="en"></re-table>
@@ -130,6 +136,46 @@ export default {
   },
   data () {
     return {
+      customize:{
+        code:{
+          html:`
+          <re-button icon="remo-team" @click="handleShow">联系客服</re-button>
+          <re-dragger :visible.sync="chatShow"  :width="370" :height='580'>
+            <template slot="title">
+              <i class="remoi remo-desktop"></i>  Remo Live Chat
+            </template>
+          <div class="chat_container">
+            <div class="chat_top">
+              <div class="message_container_1">
+                <div class="avatar"></div>
+                <div class="message"></div>
+              </div>
+              <div class="message_container_1">
+                <div class="avatar"></div>
+                <div class="message"></div>
+              </div>
+              <div class="message_container_2">
+                <div class="message"></div>
+                <div class="avatar"></div>
+              </div>
+              <div class="message_container_1">
+                <div class="avatar"></div>
+                <div class="message"></div>
+              </div>
+              <div class="message_container_2">
+                <div class="message"></div>
+                <div class="avatar"></div>
+              </div>
+            </div>
+            <div class="chat_bottom">
+              <re-input pattern='frame' placeholder="请输入信息" class="input"></re-input>
+              re-button class="send" type="primary">发送</re-button>
+            </div>
+          </div>
+          </re-dragger>
+          `
+        }
+      },
       infoShow: true,
       chatShow: false,
       tabledata: [

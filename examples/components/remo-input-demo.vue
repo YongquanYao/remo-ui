@@ -14,13 +14,13 @@
             <re-input v-model="text1" pattern='frame'></re-input>
             <span class="showtext">{{text1}}</span>
         <template slot="code">
-          <code class="html">{{fCode(simple.code.html)}}</code>
+          <code class="html">{{fCode(frame.code.html)}}</code>
         </template>
       </demo-block>
       <demo-block title="禁用模式" desc="disabled=true：">
           <re-input  pattern='frame' :disabled="true"></re-input>
           <template slot="code">
-                <code class="html">{{fCode(simple.code.html)}}</code>
+                <code class="html">{{fCode(disabled.code.html)}}</code>
           </template>
       </demo-block>
       <demo-block title="Icon模式" desc="pattern=frame && 添加suffixIcon或者prefixIcon属性：">
@@ -29,14 +29,14 @@
               <re-input  pattern='frame' placeholder="请输入用户名"  prefixIcon="remo-user"></re-input>
             </div>
             <template slot="code">
-                <code class="html">{{fCode(simple.code.html)}}</code>
+                <code class="html">{{fCode(icon.code.html)}}</code>
              </template>
       </demo-block>
       <demo-block title="Number模式" desc="type=number：">
           <re-input  type="number" v-model="text2" placeholder="请输入数字"></re-input>
           <span class="showtext">{{text2}}</span>
           <template slot="code">
-            <code class="html">{{fCode(simple.code.html)}}</code>
+            <code class="html">{{fCode(number.code.html)}}</code>
           </template>
       </demo-block>
       <demo-block title='API' desc="属性说明如下：" type="table">
@@ -56,19 +56,31 @@
       <demo-block title="Frame Pattern">
             <re-input v-model="text1" pattern='frame' placeholder="Input" ></re-input>
             <span class="showtext">{{text1}}</span>
+            <template slot="code">
+              <code class="html">{{fCode(frame.code.html)}}</code>
+            </template>
       </demo-block>
       <demo-block title="Disable" >
             <re-input  pattern='frame' :disabled="true" placeholder="Input"></re-input>
+            <template slot="code">
+              <code class="html">{{fCode(disabled.code.html)}}</code>
+            </template>
       </demo-block>
       <demo-block title="Suffix /Prefix Icon" >
             <div style="display: flex; justify-content: space-around;" >
               <re-input  pattern='frame' placeholder="Password"  suffixIcon="remo-lock"></re-input>
               <re-input  pattern='frame' placeholder="Username"  prefixIcon="remo-user"></re-input>
             </div>
+            <template slot="code">
+              <code class="html">{{fCode(icon.code.html)}}</code>
+            </template>
       </demo-block>
       <demo-block title="Number">
           <re-input  type="number" v-model="text2" placeholder="number"></re-input>
           <span class="showtext">{{text2}}</span>
+           <template slot="code">
+            <code class="html">{{fCode(number.code.html)}}</code>
+          </template>
       </demo-block>
       <demo-block title="API" desc="The properties description are as follows: " type="table">
           <re-table :data="tableData_en" type="en"></re-table>
@@ -95,7 +107,36 @@ export default {
       simple:{
         code:{
           html:`
-          
+          <re-input v-model="text"></re-input>
+          `
+        }
+      },
+      frame:{
+        code:{
+          html:`
+          <re-input v-model="text1" pattern='frame'></re-input>
+          `
+        }
+      },
+      disabled:{
+        code:{
+          html:`
+          <re-input  pattern='frame' :disabled="true"></re-input>
+          `
+        }
+      },
+      icon:{
+        code:{
+          html:`
+          <re-input  pattern='frame' placeholder="Password"  suffixIcon="remo-lock"></re-input>
+          <re-input  pattern='frame' placeholder="Username"  prefixIcon="remo-user"></re-input>  
+          `
+        }
+      },
+      number:{
+        code:{
+          html:`
+          <re-input  type="number" v-model="text2" placeholder="请输入数字"></re-input>
           `
         }
       },

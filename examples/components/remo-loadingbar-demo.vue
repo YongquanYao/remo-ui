@@ -2,12 +2,22 @@
   <div>
       <div v-if="this.locale === 'cn'">
        <demo-block header="Loading Bar 加载条" />
-       <demo-block title="基础" desc="">
+       <demo-block height="120" title="基础" desc="">
           <re-button type="primary" @click="start">开始 Loading</re-button>
           <re-button type="warning" @click="end">结束 Loading</re-button>
           <re-button type="danger" @click="error">错误 Loading</re-button>
+          <template slot="code">
+            <code>{{fCode(simple.code.html)}}</code>
+          </template>
        </demo-block>
-       <demo-block title="自定义" desc="">
+       <demo-block height="140" title="自定义" desc="多种自定义属性">
+         <re-button  @click="CustomizeOne">设置速度为1</re-button>
+          <re-button  @click="CustomizeTwo">隐藏加载图标</re-button>
+          <re-button  @click="CustomizeThird">显示加载图标</re-button>
+          <re-button  @click="CustomizeFourth">每秒加载进度比例</re-button>
+          <template slot="code">
+            <code>{{fCode(customize.code.html)}}</code>
+          </template>
        </demo-block>
        <demo-block title="API" desc="属性说明如下: " type="table">
          <re-table :data="tabledata" type="demo"></re-table>
@@ -15,16 +25,22 @@
     </div>
     <div v-if="this.locale === 'en'">
        <demo-block header="Loading Bar" />
-       <demo-block title="Usage" desc="">
+       <demo-block height="120" title="Usage" desc="">
           <re-button type="primary" @click="start">Start Loading</re-button>
           <re-button type="warning" @click="end">End Loading</re-button>
           <re-button type="danger" @click="error">Error Loading</re-button>
+          <template slot="code">
+            <code>{{fCode(simple.code.html)}}</code>
+          </template>
        </demo-block>
-       <demo-block title="Customize" desc="multiple customize property">
+       <demo-block height="140" title="Customize" desc="multiple customize property">
           <re-button  @click="CustomizeOne">Set Speed 1</re-button>
           <re-button  @click="CustomizeTwo">Spinner off</re-button>
           <re-button  @click="CustomizeThird">Spinner on</re-button>
           <re-button  @click="CustomizeFourth">Loading Percentage per second</re-button>
+          <template slot="code">
+            <code>{{fCode(customize.code.html)}}</code>
+          </template>
        </demo-block>
        <demo-block title="API" desc="The properties description are as follows: " type="table">
          <re-table :data="tabledata_en" type="en"></re-table>
@@ -43,6 +59,25 @@ export default {
   },
   data () {
     return {
+      simple:{
+        code:{
+          html:`
+          <re-button type="primary" @click="start">Start Loading</re-button>
+          <re-button type="warning" @click="end">End Loading</re-button>
+          <re-button type="danger" @click="error">Error Loading</re-button>
+          `
+        }
+      },
+      customize:{
+        code:{
+          html:`
+          <re-button  @click="CustomizeOne">Set Speed 1</re-button>
+          <re-button  @click="CustomizeTwo">Spinner off</re-button>
+          <re-button  @click="CustomizeThird">Spinner on</re-button>
+          <re-button  @click="CustomizeFourth">Loading Percentage per second</re-button>
+          `
+        }
+      },
       tabledata: [
         {
           parameter: 'speed',
