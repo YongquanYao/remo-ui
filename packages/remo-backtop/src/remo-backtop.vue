@@ -110,7 +110,7 @@ export default {
   transition: opacity 0.3s;
   position: fixed;
   right: 80px;
-  bottom: 50px;
+  bottom: 100px;
   z-index: 101;
 }
 </style>

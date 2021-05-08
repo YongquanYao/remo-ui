@@ -9,6 +9,9 @@
             <re-status-light style="margin-right:15px" status="positive"/>
             <re-status-light style="margin-right:15px" status="intermediary"/>
             <re-status-light style="margin-right:15px" status="negative"/>
+            <template slot="code">
+              <code>{{fCode(simple.code.html)}}</code>
+            </template>
       </demo-block>
       <demo-block height="160" title="基础" desc="6种状态动态展示：">
             <re-status-light style="margin-right:15px" :animation="true" />

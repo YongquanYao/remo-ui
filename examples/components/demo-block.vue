@@ -71,8 +71,8 @@ export default {
       default: ''
     },
     height: {
-      type: Number,
-      default: 100
+      type: String,
+      default: '100'
     },
     arrowAnimation: {
       type: Boolean,

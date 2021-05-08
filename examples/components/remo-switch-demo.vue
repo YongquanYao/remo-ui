@@ -4,15 +4,15 @@
       <demo-block header="Switch 开关" />
       <demo-block title="基础使用">
             <re-switch :value="true"></re-switch>
-            <template slot="code">
-              <code class="html">{{fCode(simple.code.html)}}</code>
+             <template slot="code">
+                <code>{{fCode(simple.code.html)}}</code>
             </template>
       </demo-block>
       <demo-block title="圆形">
-            <re-switch type="round" :valUe="false" @change="e => show(e)"></re-switch>
-            <template slot="code">
-               <code class="html">{{fCode(round.code.html)}}</code>
-            </template>
+          <re-switch type="round" :valUe="false" @change="e => show(e)"></re-switch>
+          <template slot="code">
+              <code class="html">{{fCode(round.code.html)}}</code>
+          </template>
       </demo-block>
       <demo-block title="禁用">
             <div class="disable_container">
@@ -32,7 +32,7 @@
     </div>
     <div v-if="this.locale=== 'en' ">
       <demo-block header="Switch" />
-      <demo-block title="Usage">
+      <demo-block  title="Usage">
             <re-switch :value="true"></re-switch>
             <template slot="code">
                <code class="html">{{fCode(simple.code.html)}}</code>

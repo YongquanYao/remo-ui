@@ -13,7 +13,7 @@
                     <li class="header-nav-item" v-for="x in headnav_data" :key="x.id">
                       <template v-if="x.id === 989">
                         <i :class="x.icon" :style="{color: x.color}"></i>
-                        <span><b><a :href="x.path">1.0.6</a></b></span>
+                        <span><b><a :href="x.path">1.0.7</a></b></span>
                       </template>
                       <template v-if="x.id === 990">
                         <i :class="x.icon" :style="{color: x.color}" @click="handleLocaleChange()"></i>
@@ -72,7 +72,9 @@
                 <router-view></router-view>
             </div>
         </div>
-        <div class="footer"></div>
+        <div class="footer" :class="{'show': this.toBottom === true}">
+            © 2021 Remo 
+        </div>
     </div>
 </template>
 
@@ -82,6 +84,7 @@ export default {
   name: 'Home',
   data () {
     return {
+      toBottom: false,
       active: '1',
       headnav_data: [
         {
@@ -406,7 +409,14 @@ export default {
       locale: 'locale'
     })
   },
+  watch:{
+    // window.innerHeight
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.handleFootershow)
+  },
   mounted () {
+    window.addEventListener('scroll', this.handleFootershow)
     console.log(this.locale)
     // 保证刷新导航匹配到刷新前的位置
     const hash = window.location.hash
@@ -439,6 +449,47 @@ export default {
     },
     handleNavJump (link) {
       window.open(link)
+    },
+    handleFootershow () {
+      // const pageDefaultHeight = window.innerHeight
+      // const poistion = this.getElementTop(this.$refs.backtop.$el)
+      if(this.getScrollTop() + this.getWindowHeight() == this.getScrollHeight()){
+        this.toBottom = true
+      }else{
+        this.toBottom = false
+      }
+      console.log(this.getScrollTop())
+      console.log(this.getWindowHeight())
+      console.log(this.getScrollHeight())
+    },
+    getScrollTop() {
+      var scrollTop = 0, bodyScrollTop = 0, documentScrollTop = 0;      if (document.documentElement && document.documentElement.scrollTop) {
+        documentScrollTop = document.documentElement.scrollTop;
+      } else if (document.body) {
+        bodyScrollTop = document.body.scrollTop;
+      }
+      scrollTop = (bodyScrollTop - documentScrollTop > 0) ? bodyScrollTop : documentScrollTop;
+      return scrollTop;
+    },
+    getScrollHeight(){
+    　　var scrollHeight = 0, bSH = 0, dSH= 0
+    　　if(document.body){
+    　　　　bSH = document.body.scrollHeight;
+    　　}
+    　　if(document.documentElement){
+    　　　　dSH = document.documentElement.scrollHeight;
+    　　}
+        scrollHeight = (bSH - dSH > 0) ? bSH : dSH ;
+    　　return scrollHeight;
+    },
+    getWindowHeight(){
+    　　var windowHeight = 0;
+    　　if(document.compatMode == "CSS1Compat"){
+    　　　　windowHeight = document.documentElement.clientHeight;
+    　　}else{
+    　　　　windowHeight = document.body.clientHeight;
+    　　}
+    　　return windowHeight;
     }
   }
 }
@@ -630,7 +681,27 @@ export default {
             width: 100%;
             padding: 0px 50px 50px 10px;
             margin-left: 240px;
+            margin-bottom: 120px;
         }
+    }
+    .footer {
+        // 不会被覆盖属于置顶
+        z-index: 1;
+        display: none;
+        position: fixed;
+        bottom: 0;
+        left:0;
+        width: 100%;
+        height: 45px;
+        line-height: 45px;  // 字体居中
+        background: #fff;
+        box-shadow: 1px 1px 5px 1px #ebebeb;
+        text-align: center;
+        font-size: 14px;
+        color: #a8a8a8;
+    }
+    .show{
+      display: block;
     }
 }
 </style>
