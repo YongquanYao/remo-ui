@@ -27,6 +27,10 @@ import RemoCheckbox from '@/components/remo-checkbox-demo'
 import RemoClipboard from '@/components/remo-clipboard-demo'
 import RemoMessage from '@/components/remo-message-demo'
 import RemoLoadingBar from '@/components/remo-loadingbar-demo'
+import RemoIi8n from '@/components/remo-Ii8n-demo'
+import RemoLazyload from '@/components/remo-lazyload-demo'
+import RemoInfinityLoading from '@/components/remo-infinityloading-demo'
+import RemoPersistedState from '@/components/remo-persisted-state-demo'
 
 Vue.use(Router)
 
@@ -232,6 +236,38 @@ export default new Router({
           path: '/component/remo-loadingbar',
           name: 'RemoLoading',
           component: RemoLoadingBar,
+          meta: {
+            title: '组件|Remo'
+          }
+        },
+        {
+          path: '/component/remo-lazyload',
+          name: 'RemoLazyload',
+          component: RemoLazyload,
+          meta: {
+            title: '组件|Remo'
+          }
+        },
+        {
+          path: '/component/remo-Ii8n',
+          name: 'RemoIi8n',
+          component: RemoIi8n,
+          meta: {
+            title: '组件|Remo'
+          }
+        },
+        {
+          path: '/component/remo-infinite-loading',
+          name: 'RemoInfinityLoading',
+          component: RemoInfinityLoading,
+          meta: {
+            title: '组件|Remo'
+          }
+        },
+        {
+          path: '/component/remo-persisted-state',
+          name: 'RemoPersistedState',
+          component: RemoPersistedState,
           meta: {
             title: '组件|Remo'
           }

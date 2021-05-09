@@ -245,14 +245,31 @@ export default {
               title: 'Clipboard 复制',
               path: '#/component/remo-clipboard',
               id: '035'
-            }
+            },
           ]
         },
         {
           title: '实用插件',
           child_data: [
             {
-              title: '开发ing...'
+              title: 'I18n 国际化',
+              path: '#/component/remo-Ii8n',
+              id: '040'
+            },
+            {
+              title: 'Lazyload 懒加载',
+              path: '#/component/remo-lazyload',
+              id: '041'
+            },
+            {
+              title: 'Infinite Loading 无限加载',
+              path: '#/component/remo-infinite-loading',
+              id: '042'
+            },
+            {
+              title: 'Persisted State 状态保存',
+              path: '#/component/remo-persisted-state',
+              id: '043'
             }
           ]
         }
@@ -396,7 +413,24 @@ export default {
           title: 'PlugIns',
           child_data: [
             {
-              title: 'Developing...'
+              title: 'I18n',
+              path: '#/component/remo-Ii8n',
+              id: '040'
+            },
+            {
+              title: 'Lazyload',
+              path: '#/component/remo-lazyload',
+              id: '041'
+            },
+            {
+              title: 'Infinite Loading',
+              path: '#/component/remo-infinite-loading',
+              id: '042'
+            },
+            {
+              title: 'Persisted State',
+              path: '#/component/remo-persisted-state',
+              id: '043'
             }
           ]
         }

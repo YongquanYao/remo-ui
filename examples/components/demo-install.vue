@@ -41,7 +41,6 @@
             </ client-only ></b>
             </re-tip>
         </demo-block>
-        ssr environment
     </div>
     <div v-if="this.locale ==='en'">
         <demo-block title="Acknowledgements" type="normal">
