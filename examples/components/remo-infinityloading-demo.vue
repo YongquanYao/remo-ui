@@ -30,7 +30,7 @@
         </div>
         <div v-if="this.locale=== 'en' ">
             <demo-block header="Infinite Loading" />
-            <re-tip color="blue"> <i class="remoi remo-github-fill"/>  vue-lazyload: <a href="https://github.com/hilongjw/vue-lazyload"> https://github.com/hilongjw/vue-lazyload</a></re-tip>
+            <re-tip color="blue"> <i class="remoi remo-github-fill"/>  vue-infinite-loading: <a href="https://peachscript.github.io/vue-infinite-loading/"> https://peachscript.github.io/vue-infinite-loading/</a></re-tip>
             <demo-block>
                 Install
                 <template slot="code">

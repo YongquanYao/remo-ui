@@ -30,7 +30,7 @@
         </div>
         <div v-if="this.locale=== 'en' ">
             <demo-block header="Persisted State" />
-            <re-tip color="blue"> <i class="remoi remo-github-fill"/>  vue-lazyload: <a href="https://github.com/hilongjw/vue-lazyload"> https://github.com/hilongjw/vue-lazyload</a></re-tip>
+            <re-tip color="blue"> <i class="remoi remo-github-fill"/>  vuex-persisted-state:  <a href="https://github.com/robinvdvleuten/vuex-persistedstate"> https://github.com/robinvdvleuten/vuex-persistedstate</a></re-tip>
             <demo-block>
                 Install
                 <template slot="code">
