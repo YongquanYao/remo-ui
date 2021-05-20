@@ -53,7 +53,7 @@
       <iframe width="1px" height="1px" id="frame" name="sendframe" class="sendFrame"></iframe>
       <re-dragger :visible.sync="connectionShow"  :width="370" :height='350'>
         <template slot="title">
-          <i class="remoi remo-desktop"></i>  Remo Connection Form
+          <i class="remoi remo-desktop"></i>  One Time Remo Connection Form
         </template>
         <div class="chat_container">
             <div class="chat_top">

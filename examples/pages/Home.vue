@@ -71,9 +71,12 @@
             <div class="content">
                 <router-view></router-view>
             </div>
+            <div class="qrCode">
+              <img src="../assets/qr_code.jpeg" alt="wechat">
+            </div>
         </div>
         <div class="footer" :class="{'show': this.toBottom === true}">
-            © 2021 Remo 
+                 © 2021 Remo | Jersey City, NJ, 07302 
         </div>
     </div>
 </template>
@@ -546,7 +549,7 @@ export default {
         box-shadow: 1px 1px 5px 1px #ebebeb;
         .container{ //里面的容器
             height: 100%; // 撑开
-            width: 1140px;
+            max-width: 1140px;
             margin: 0 auto;
             padding: 0 10px;
             display: flex;
@@ -584,7 +587,10 @@ export default {
             }
             .header-nav{
               flex:1;
-              margin-right: -135px;
+              margin-right: -130px;
+              @media (max-width: 1480px) {
+                 margin-right: 0;
+              }
               ul{
                 float: right;
                 visibility: visible; // 始终显示列表
@@ -620,7 +626,7 @@ export default {
     }
     .main{
         position: relative;
-        width: 1140px;
+        max-width: 1140px;
         height: -webkit-calc(100%-65px);
         height: -moz-calc(100%-65px);
         height: calc(100%-65px);
@@ -717,6 +723,25 @@ export default {
             margin-left: 240px;
             margin-bottom: 120px;
         }
+        .qrCode {
+          position: fixed;
+          top: calc(50% - 80px);
+          right: 40px;
+          border: 1px solid #eaeefb;
+          padding: 8px;
+          border-radius: 6px;
+          &:hover {
+            box-shadow: 0 0 8px 0 rgba(232, 237, 250, 0.6),
+            0 2px 4px 0 rgba(232, 237, 250, 0.5);
+          }
+          img{
+            width: 160px;
+            height: 160px;
+          }
+          @media (max-width: 1480px) {
+              display: none;
+          }
+        }
     }
     .footer {
         // 不会被覆盖属于置顶
@@ -730,6 +755,9 @@ export default {
         line-height: 45px;  // 字体居中
         background: #fff;
         box-shadow: 1px 1px 5px 1px #ebebeb;
+        border-top: 1px solid #ebebeb;
+        // background: #999;
+        color: #FFF;
         text-align: center;
         font-size: 14px;
         color: #a8a8a8;
