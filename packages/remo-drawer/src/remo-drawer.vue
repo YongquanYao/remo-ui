@@ -169,7 +169,7 @@ export default {
       position: absolute;
       top: 0;
       width: auto;
-      min-width: 400px;
+      min-width: 300px;
     }
     .remo-drawer-header {
       position: relative;
@@ -190,6 +190,7 @@ export default {
     }
     .remo-drawer-body {
       padding: 24px;
+      overflow: scroll;
     }
   }
 }

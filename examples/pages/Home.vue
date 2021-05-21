@@ -22,6 +22,10 @@
                         <i :class="x.icon" :style="{color: x.color}" @click="handleNavJump(x.path)"></i>
                         <a :href="x.path">{{x.name}}</a>
                       </template>
+                      <template v-if="x.id === 992">
+                        <i :class="x.icon" :style="{color: x.color}" class="mb-menu" @click="handleMenuTableShow()"></i>
+                        <a :href="x.path">{{x.name}}</a>
+                      </template>
                     </li>
                   </ul>
                 </div>
@@ -78,6 +82,49 @@
         <div class="footer" :class="{'show': this.toBottom === true}">
                  © 2021 Remo | Jersey City, NJ, 07302 
         </div>
+        <!-- mobile menu -->
+        <re-drawer :visible.sync="menuShow" placement="right" title="Component Menu Bar" class="mb_menu-drawer">
+          <div class="mb_sidebar">
+                <ul  v-if="this.locale === 'cn'">
+                    <li class="nav-item" :key="x.title" v-for="x in sidebar_data">
+                    <!-- <li class="nav-item" v-else :key="x.title" v-for="x in sidebar_data_en"> -->
+                        <a>{{x.title}}</a>
+                        <ul class="remo-menu-list" v-if="x.child_data.length !== 0">
+                            <li class="nav-item" :key="y.title" v-for="y in x.child_data">
+                              <div class="nav-group-title" v-if="y.group">{{y.group}}</div>
+                              <!-- 这里涉及active 和 inactive的选项 -->
+                              <a
+                                :class="{'active': active == y.id}"
+                                @click="active=y.id; handleMenuTableShow()"
+                                :href="y.path"
+                              >
+                                {{y.title}}
+                              </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul  v-if="this.locale === 'en'">
+                    <li class="nav-item" :key="x.title" v-for="x in sidebar_data_en">
+                    <!-- <li class="nav-item" v-else :key="x.title" v-for="x in sidebar_data_en"> -->
+                        <a>{{x.title}}</a>
+                        <ul class="remo-menu-list remo-menu-list_en" v-if="x.child_data.length !== 0">
+                            <li class="nav-item" :key="y.title" v-for="y in x.child_data">
+                              <div class="nav-group-title nav-group-title_en" v-if="y.group">{{y.group}}</div>
+                              <!-- 这里涉及active 和 inactive的选项 -->
+                              <a
+                                :class="{'active': active == y.id}"
+                                @click="active=y.id; handleMenuTableShow()"
+                                :href="y.path"
+                              >
+                                {{y.title}}
+                              </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </re-drawer>
     </div>
 </template>
 
@@ -87,6 +134,7 @@ export default {
   name: 'Home',
   data () {
     return {
+      menuShow: false,
       toBottom: false,
       active: '1',
       headnav_data: [
@@ -106,6 +154,13 @@ export default {
           path: 'https://github.com/YongquanYao/remo-ui',
           // name: 'Github',
           icon: 'remoi remo-github-fill',
+          color: '#364f6a'
+        },
+        {
+          id: 992,
+          path: 'https://github.com/YongquanYao/remo-ui',
+          // name: 'Github',
+          icon: 'remoi remo-menu',
           color: '#364f6a'
         }
         // {
@@ -508,7 +563,7 @@ export default {
       scrollTop = (bodyScrollTop - documentScrollTop > 0) ? bodyScrollTop : documentScrollTop;
       return scrollTop;
     },
-    getScrollHeight(){
+    getScrollHeight() {
     　　var scrollHeight = 0, bSH = 0, dSH= 0
     　　if(document.body){
     　　　　bSH = document.body.scrollHeight;
@@ -519,7 +574,7 @@ export default {
         scrollHeight = (bSH - dSH > 0) ? bSH : dSH ;
     　　return scrollHeight;
     },
-    getWindowHeight(){
+    getWindowHeight() {
     　　var windowHeight = 0;
     　　if(document.compatMode == "CSS1Compat"){
     　　　　windowHeight = document.documentElement.clientHeight;
@@ -527,6 +582,16 @@ export default {
     　　　　windowHeight = document.body.clientHeight;
     　　}
     　　return windowHeight;
+    },
+    handleMenuTableShow() {
+      this.menuShow = !this.menuShow
+      // 
+      if(this.menuShow) {
+        document.body.style.position = 'fixed' 
+        
+      }else{
+        document.body.style.position = '' 
+      }
     }
   }
 }
@@ -620,6 +685,12 @@ export default {
                     font-weight: 450;
                   }
                 }
+                .mb-menu{
+                    display: none;
+                    @media (max-width:880px) {
+                      display: contents;
+                    }
+                }
               }
             }
         }
@@ -646,6 +717,9 @@ export default {
             // padding-left: 10px;
             @media (max-width: 1160px) {
               padding-left: 20px;
+            }
+            @media (max-width: 880px) {
+              display: none;
             }
             &:hover{
                 visibility: visible; // 鼠标在才触发滚动条
@@ -722,6 +796,9 @@ export default {
             padding: 0px 50px 50px 10px;
             margin-left: 240px;
             margin-bottom: 120px;
+            @media (max-width: 880px) {
+              margin-left: 30px;
+            }
         }
         .qrCode {
           position: fixed;
@@ -764,6 +841,78 @@ export default {
     }
     .show{
       display: block;
+    }
+    .mb_menu-drawer{
+      .mb_sidebar{
+          width: 200px;
+          height: 100%;
+          visibility: hidden; // 鼠标在才触发滚动条
+          overflow-y: scroll;
+          padding-left: 10px;
+          > ul{
+              visibility: visible; // 始终显示列表
+              padding: 0;
+          }
+          .nav-item{
+            list-style: none;
+            a{
+              font-size: 16px;
+              color: #333;
+              line-height: 40px;
+              height: 40px;
+              margin: 0;
+              padding: 0;
+              text-decoration: none;
+              display: block;
+              position: relative;
+              //active点击时变颜色
+              transition: 0.15s ease-out;
+              font-weight: 700;
+              cursor: unset;
+            }
+            .nav-group-title{
+              font-size: 12px;
+              color: #999;
+              line-height: 26px;
+              margin-top: 15px;
+              font-weight: 400;
+            }
+            .nav-group-title_en{
+              font-size: 14px;
+            }
+          }
+          .remo-menu-list{
+            padding: 0;
+            a{
+              display: block;
+              height: 38px;
+              line-height: 38px;
+              color: #555;
+              font-size: 14px;
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              font-weight: 500;
+              cursor: pointer;
+              margin: 1px 0;
+              &:hover{
+                color:#409eff;
+                border-left: 3px solid #409eff;
+                padding-left: 8px;
+              }
+            }
+            .active{
+              color:#409eff;
+              border-left: 3px solid #409eff;
+              padding-left: 8px;
+            }
+          }
+          .remo-menu-list_en{
+              a{
+                font-size: 15px;
+              }
+          }
+      }
     }
 }
 </style>
