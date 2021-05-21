@@ -586,12 +586,12 @@ export default {
     handleMenuTableShow() {
       this.menuShow = !this.menuShow
       // 
-      if(this.menuShow) {
-        document.body.style.position = 'fixed' 
+      // if(this.menuShow) {
+      //   document.body.style.position = 'fixed' 
         
-      }else{
-        document.body.style.position = '' 
-      }
+      // }else{
+      //   document.body.style.position = '' 
+      // }
     }
   }
 }
@@ -858,8 +858,8 @@ export default {
             a{
               font-size: 16px;
               color: #333;
-              line-height: 40px;
-              height: 40px;
+              // line-height: 40px;
+              // height: 40px;
               margin: 0;
               padding: 0;
               text-decoration: none;
@@ -885,8 +885,8 @@ export default {
             padding: 0;
             a{
               display: block;
-              height: 38px;
-              line-height: 38px;
+              height: 30px;
+              line-height: 30px;
               color: #555;
               font-size: 14px;
               overflow: hidden;
