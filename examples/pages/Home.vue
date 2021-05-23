@@ -697,7 +697,7 @@ export default {
     }
     .main{
         position: relative;
-        max-width: 1140px;
+        width: 1140px;
         height: -webkit-calc(100%-65px);
         height: -moz-calc(100%-65px);
         height: calc(100%-65px);
@@ -708,6 +708,10 @@ export default {
         @media (max-width: 880px) {
           top: 50px;
         }
+        // @media (max-width: 480px) {
+        //   top: 50px;
+        //   width: 450px;
+        // }
         .sidebar{
             position: fixed;
             margin-right: 40px;
@@ -795,16 +799,15 @@ export default {
         }
         .content {
             flex: 1;
-            width: 1140px;
-            // width: 80%;
-            // padding: 0px 50px 50px 10px;
+        
+            padding: 0px 50px 50px 10px;
             margin-left: 240px;
             margin-bottom: 120px;
             margin-right: 140px;
             @media (max-width: 880px) {
-              width: 350px;
               margin: 0 20px;
               margin-bottom: 120px;
+              width: 80%;
             }
         }
         .qrCode {
