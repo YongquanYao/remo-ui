@@ -219,10 +219,12 @@ export default {
       }
       @media (max-width:767px) {
         width: 450px;
+        // height: 100%;
       }
       @media (max-width:550px) {
         width: 300px;
-        top: 30%;
+        top: 25%;
+        // height: 100%;
       }
       h5{
         margin: 8px 0;
@@ -270,7 +272,7 @@ export default {
           font-size: 17px;
         }
         @media (max-width:550px) {
-          width: 200px;
+          width: 100%;
           font-size: 15px;
           line-height: 30px;
         }
@@ -388,6 +390,7 @@ export default {
       }
       @media (max-width:550px) {
         right: 35%;
+        top: 65%;
       }
       .big{
         width: 550px;
