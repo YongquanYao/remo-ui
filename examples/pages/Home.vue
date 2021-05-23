@@ -690,7 +690,7 @@ export default {
                 }
                 .mb-menu{
                     display: none;
-                    @media (max-width:880px) {
+                    @media (max-width:1200px) {
                       display: contents;
                     }
                 }
@@ -715,7 +715,6 @@ export default {
         display: flex;
         @media (max-width: 880px) {
           top: 50px;
-          overflow-x: scroll;
         }
         .sidebar{
             position: fixed;
@@ -727,10 +726,7 @@ export default {
             border-right: 1px solid #dcdfe6; // 分界线
             overflow: hidden;
             // padding-left: 10px;
-            @media (max-width: 1160px) {
-              padding-left: 25px;
-            }
-            @media (max-width: 880px) {
+            @media (max-width: 1200px) {
               display: none;
             }
             &:hover{
@@ -807,7 +803,7 @@ export default {
             width: 100%;  
             margin-left: 240px;
             margin-bottom: 120px;
-            @media (max-width: 880px) {
+            @media (max-width: 1200px) {
               margin: 0 20px;
               width: 90%;
             }
@@ -824,14 +820,14 @@ export default {
             0 2px 4px 0 rgba(232, 237, 250, 0.5);
           }
           img{
-            width: 160px;
-            height: 160px;
+            width: 120px;
+            height: 120px;
             @media (max-width: 1450px) {
               width: 100px;
               height: 100px;
             }
           }
-          @media (max-width: 1380px) {
+          @media (max-width: 880px) {
               display: none;
           }
         }
