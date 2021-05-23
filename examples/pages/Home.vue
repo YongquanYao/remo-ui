@@ -1,6 +1,6 @@
 <template>
     <div class="home">
-        <re-backtop></re-backtop>
+        <re-backtop class="mb-backtop"></re-backtop>
         <div class="header">
             <div class="container">
                 <span class="title" @click="jumpIndex">
@@ -12,19 +12,17 @@
                   <ul>
                     <li class="header-nav-item" v-for="x in headnav_data" :key="x.id">
                       <template v-if="x.id === 989">
-                        <i :class="x.icon" :style="{color: x.color}"></i>
-                        <span><b><a :href="x.path">1.0.7</a></b></span>
+                        <i :class="x.icon" class="mb-tag" :style="{color: x.color}"></i>
+                        <span class="mb-tag"><b><a :href="x.path">1.0.7</a></b></span>
                       </template>
                       <template v-if="x.id === 990">
                         <i :class="x.icon" :style="{color: x.color}" @click="handleLocaleChange()"></i>
                       </template>
                       <template v-if="x.id === 991">
                         <i :class="x.icon" :style="{color: x.color}" @click="handleNavJump(x.path)"></i>
-                        <a :href="x.path">{{x.name}}</a>
                       </template>
                       <template v-if="x.id === 992">
                         <i :class="x.icon" :style="{color: x.color}" class="mb-menu" @click="handleMenuTableShow()"></i>
-                        <a :href="x.path">{{x.name}}</a>
                       </template>
                     </li>
                   </ul>
@@ -601,6 +599,11 @@ export default {
 .home{
     width: 100%;
     height: 100%;
+    .mb-backtop{
+      @media (max-width:880px) {
+        display: none;
+      }
+    }
     .header {
         // 不会被覆盖属于置顶
         z-index: 100;
@@ -691,6 +694,11 @@ export default {
                       display: contents;
                     }
                 }
+                .mb-tag{
+                    @media (max-width:880px) {
+                       display: none;
+                    }
+                }
               }
             }
         }
@@ -707,11 +715,7 @@ export default {
         display: flex;
         @media (max-width: 880px) {
           top: 50px;
-          
-        }
-        @media (max-width: 480px) {
-          top: 50px;
-          width: 400px;
+          overflow-x: scroll;
         }
         .sidebar{
             position: fixed;
@@ -799,21 +803,13 @@ export default {
             }
         }
         .content {
-            flex: 1;      
-            // max-width: 1140px; 
+            flex: 1;    
+            width: 100%;  
             margin-left: 240px;
             margin-bottom: 120px;
-            @media (max-width: 1080px) {
-               margin-left: 265px;
-            }
             @media (max-width: 880px) {
-               margin-left: 20px;
-              //  width: ;
-            }
-            @media (max-width: 480px) {
-              width: 400px;
               margin: 0 20px;
-              
+              width: 90%;
             }
         }
         .qrCode {

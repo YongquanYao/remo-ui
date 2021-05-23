@@ -105,6 +105,7 @@ export default {
 <style lang="scss" scoped>
 .demo-block{
   margin: 30px auto 60px;
+  // overflow-x: scroll;
   .header{
     font-weight: 450;
     margin: 20px 0 10px;
