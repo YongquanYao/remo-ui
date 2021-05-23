@@ -619,7 +619,7 @@ export default {
             padding: 0 10px;
             display: flex;
             @media (max-width: 1160px) {
-                 padding: 0 15px;
+                 padding: 0 20px;
             }
             // border-bottom: 1px solid #dcdfe6; // 分界线
             .title{
@@ -705,6 +705,9 @@ export default {
         padding: 10px 0;
         top: 80px;
         display: flex;
+        @media (max-width: 880px) {
+          top: 50px;
+        }
         .sidebar{
             position: fixed;
             margin-right: 40px;
@@ -716,7 +719,7 @@ export default {
             overflow: hidden;
             // padding-left: 10px;
             @media (max-width: 1160px) {
-              padding-left: 20px;
+              padding-left: 25px;
             }
             @media (max-width: 880px) {
               display: none;
@@ -792,12 +795,16 @@ export default {
         }
         .content {
             flex: 1;
-            width: 100%;
-            padding: 0px 50px 50px 10px;
+            width: 1140px;
+            // width: 80%;
+            // padding: 0px 50px 50px 10px;
             margin-left: 240px;
             margin-bottom: 120px;
+            margin-right: 140px;
             @media (max-width: 880px) {
-              margin-left: 30px;
+              width: 350px;
+              margin: 0 20px;
+              margin-bottom: 120px;
             }
         }
         .qrCode {
@@ -814,8 +821,12 @@ export default {
           img{
             width: 160px;
             height: 160px;
+            @media (max-width: 1450px) {
+              width: 100px;
+              height: 100px;
+            }
           }
-          @media (max-width: 1480px) {
+          @media (max-width: 1380px) {
               display: none;
           }
         }
