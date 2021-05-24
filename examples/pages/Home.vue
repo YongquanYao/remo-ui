@@ -77,6 +77,7 @@
               <img src="../assets/qr_code.jpeg" alt="wechat">
             </div>
         </div>
+        <!-- <div class="footer" :class="{'show': this.toBottom === true}"> -->
         <div class="footer" :class="{'show': this.toBottom === true}">
                  © 2021 Remo | Jersey City, NJ, 07302 
         </div>
@@ -715,6 +716,7 @@ export default {
         display: flex;
         @media (max-width: 880px) {
           top: 50px;
+          overflow-x: auto;
         }
         .sidebar{
             position: fixed;
@@ -804,7 +806,7 @@ export default {
             margin-left: 240px;
             margin-bottom: 120px;
             @media (max-width: 1200px) {
-              margin: 0 20px;
+              margin: 0 25px;
               width: 90%;
             }
         }
@@ -815,6 +817,7 @@ export default {
           border: 1px solid #eaeefb;
           padding: 8px;
           border-radius: 6px;
+          background: #fff;
           &:hover {
             box-shadow: 0 0 8px 0 rgba(232, 237, 250, 0.6),
             0 2px 4px 0 rgba(232, 237, 250, 0.5);
@@ -856,44 +859,42 @@ export default {
     }
     .mb_menu-drawer{
       .mb_sidebar{
-          width: 200px;
-          height: 100%;
-          visibility: hidden; // 鼠标在才触发滚动条
-          overflow-y: scroll;
-          padding-left: 10px;
-          > ul{
-              visibility: visible; // 始终显示列表
-              padding: 0;
+        overflow-y: auto;
+        height: 100vh;
+        padding-left: 10px;
+        > ul{
+            visibility: visible; // 始终显示列表
+            padding: 0;
+        }
+        .nav-item{
+          list-style: none;
+          a{
+            font-size: 16px;
+            color: #333;
+            // line-height: 40px;
+            // height: 40px;
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            display: block;
+            position: relative;
+            //active点击时变颜色
+            transition: 0.15s ease-out;
+            font-weight: 700;
+            cursor: unset;
           }
-          .nav-item{
-            list-style: none;
-            a{
-              font-size: 16px;
-              color: #333;
-              // line-height: 40px;
-              // height: 40px;
-              margin: 0;
-              padding: 0;
-              text-decoration: none;
-              display: block;
-              position: relative;
-              //active点击时变颜色
-              transition: 0.15s ease-out;
-              font-weight: 700;
-              cursor: unset;
-            }
-            .nav-group-title{
-              font-size: 12px;
-              color: #999;
-              line-height: 26px;
-              margin-top: 15px;
-              font-weight: 400;
-            }
-            .nav-group-title_en{
-              font-size: 14px;
-            }
+          .nav-group-title{
+            font-size: 12px;
+            color: #999;
+            line-height: 26px;
+            margin-top: 15px;
+            font-weight: 400;
           }
-          .remo-menu-list{
+          .nav-group-title_en{
+            font-size: 14px;
+          }
+        }
+        .remo-menu-list{
             padding: 0;
             a{
               display: block;
