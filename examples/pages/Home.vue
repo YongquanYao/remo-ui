@@ -13,7 +13,7 @@
                     <li class="header-nav-item" v-for="x in headnav_data" :key="x.id">
                       <template v-if="x.id === 989">
                         <i :class="x.icon" class="mb-tag" :style="{color: x.color}"></i>
-                        <span class="mb-tag"><b><a :href="x.path">1.0.7</a></b></span>
+                        <span class="mb-tag"><b><a :href="x.path">1.0.8</a></b></span>
                       </template>
                       <template v-if="x.id === 990">
                         <i :class="x.icon" :style="{color: x.color}" @click="handleLocaleChange()"></i>
@@ -806,7 +806,7 @@ export default {
             margin-left: 240px;
             margin-bottom: 120px;
             @media (max-width: 1200px) {
-              margin: 0 25px;
+              margin: 0 20px;
               width: 90%;
             }
         }
