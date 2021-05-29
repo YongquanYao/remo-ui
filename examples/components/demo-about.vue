@@ -3,17 +3,17 @@
       <re-backtop></re-backtop>
         <demo-block title="About Remo-UI" desc="" type='normal'>
             <div class="about">
-                <p>Just come up in mind having my own UI tool-kit ヾ(◍°∇°◍)ﾉﾞ.</p>
-                <p>Project is on going maintance and build.</p>
+                <p>Just come up in mind having my own UI tool-kit ヾ(◍°∇°◍)ﾉﾞ. </p>
+                <p>Platform is on going update and develop.</p>
                 <p>Feel free to leave me a message via below email.</p>
-                <p>If you think this is cool, give me a star 🌟 in github.</p>
+                <p>If you think this is cool, give me a star 🌟 &nbsp;in github.</p>
             </div>
         </demo-block>
         <demo-block title="About me" desc="" type='normal'> 
             <div class="about">
-              游泳圈 / Raymond 🦁<br/><br/>
-              Front End Developer | Full Stack Engineer <br/><br/>
-              Guangzhou,China 🇨🇳 -  NewYork, USA 🇺🇸
+              游泳圈 / Raymond 🦁&nbsp; / Yongquan Yao<br/><br/>
+              Front End Developer | Full Stack Developer <br/><br/>
+              Guangzhou,China 🇨🇳 &nbsp;-  NewYork, USA 🇺🇸
               <br/>
               <br/>
               Contact: &nbsp;&nbsp;

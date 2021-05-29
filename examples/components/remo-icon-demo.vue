@@ -42,7 +42,7 @@
             <!-- <a @click="handlejump">https://ant.design/components/icon/</a> -->
            </re-tip>
       </demo-block>
-      <demo-block title="Usage" :height="295" desc="By setting the class name with remoi remo-xxxx">
+      <demo-block title="Usage" height="295" desc="By setting the class name with remoi remo-xxxx">
             <i class="remoi remo-search demoIcon"></i>
             <i class="remoi remo-star demoIcon"></i>
             <i class="remoi remo-calendar demoIcon"></i>

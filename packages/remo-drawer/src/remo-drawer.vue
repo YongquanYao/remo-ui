@@ -190,7 +190,7 @@ export default {
     }
     .remo-drawer-body {
       padding: 24px;
-      overflow: scroll;
+      // overflow: scroll;
     }
   }
 }
