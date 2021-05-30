@@ -13,7 +13,7 @@
                     <li class="header-nav-item" v-for="x in headnav_data" :key="x.id">
                       <template v-if="x.id === 989">
                         <i :class="x.icon" class="mb-tag" :style="{color: x.color}"></i>
-                        <span class="mb-tag"><b><a :href="x.path">1.0.7</a></b></span>
+                        <span class="mb-tag"><b><a :href="x.path">{{version}}</a></b></span>
                       </template>
                       <template v-if="x.id === 990">
                         <i :class="x.icon" :style="{color: x.color}" @click="handleLocaleChange()"></i>
@@ -75,6 +75,8 @@
             </div>
             <div class="qrCode">
               <img src="../assets/qr_code.jpeg" alt="wechat">
+              <div v-if="this.locale === 'cn'" class="desc">联系我</div>
+              <div v-if="this.locale === 'en'" class="desc">Wechat</div>
             </div>
         </div>
         <!-- <div class="footer" :class="{'show': this.toBottom === true}"> -->
@@ -501,7 +503,8 @@ export default {
             }
           ]
         }
-      ]
+      ],
+      version: ''
     }
   },
   computed: {
@@ -517,6 +520,8 @@ export default {
     window.removeEventListener('scroll', this.handleFootershow)
   },
   mounted () {
+    const config = require('../../package.json')
+    this.version = config.version
     window.addEventListener('scroll', this.handleFootershow)
     console.log(this.locale)
     // 保证刷新导航匹配到刷新前的位置
@@ -828,6 +833,12 @@ export default {
           padding: 8px;
           border-radius: 6px;
           background: #fff;
+          text-align: center;
+          .desc{
+            font-size: 13px;
+            color: #777;
+            font-weight: 400;
+          }
           &:hover {
             box-shadow: 0 0 8px 0 rgba(232, 237, 250, 0.6),
             0 2px 4px 0 rgba(232, 237, 250, 0.5);
