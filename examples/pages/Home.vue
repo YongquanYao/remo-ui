@@ -274,6 +274,11 @@ export default {
               id: '030'
             },
             {
+              title: 'BreadCrumb 面包屑',
+              path: '#/component/remo-breadcrumb',
+              id: '037'
+            },
+            {
               title: 'Loading 加载条',
               path: '#/component/remo-loadingbar',
               id: '036'
@@ -435,6 +440,11 @@ export default {
               id: '030'
             },
             {
+              title: 'BreadCrumb',
+              path: '#/component/remo-breadcrumb',
+              id: '037'
+            },
+            {
               title: 'Loading Bar',
               path: '#/component/remo-loadingbar',
               id: '036'
@@ -544,7 +554,7 @@ export default {
     handleFootershow () {
       // const pageDefaultHeight = window.innerHeight
       // const poistion = this.getElementTop(this.$refs.backtop.$el)
-      if(this.getScrollTop() + this.getWindowHeight() == this.getScrollHeight()){
+      if(this.getScrollTop() + this.getWindowHeight() > this.getScrollHeight() - 180){
         this.toBottom = true
       }else{
         this.toBottom = false
@@ -722,7 +732,7 @@ export default {
             position: fixed;
             margin-right: 40px;
             width: 200px;
-            height: 80%;
+            height: 85%;
             top: 100px;
             // visibility: hidden; // 鼠标在才触发滚动条
             border-right: 1px solid #dcdfe6; // 分界线

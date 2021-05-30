@@ -75,8 +75,8 @@ Modern browsers and Internet Explorer 10+.
 - [x] Footer Bar
 - [ ] Layout
 - [ ] Link
-- [ ] Radio
-- [ ] Checkbox
+- [x] Radio
+- [x] Checkbox
 - [ ] Select
 - [x] Switch
 - [ ] Avatar
@@ -84,6 +84,8 @@ Modern browsers and Internet Explorer 10+.
 - [x] Message
 - [ ] Mutiple Messages on screen at the same time
 - [x] Loading
+- [x] BreadCrumb
+- [x] Clipboard
 
 ## Example Complete
 - [X] Button
@@ -108,6 +110,8 @@ Modern browsers and Internet Explorer 10+.
 - [x] Switch
 - [x] Message
 - [x] Loading
+- [x] BreadCrumb
+- [x] Clipboard
 
 ## About
 Lots of people, even me, are used to development frontend App with some mature popluar UI libraray like Ant Design, IView or Element. However, this kind of Librarys some how could not satisify your develop demand. Like some libraries are too large for a small project or product to be injected, or some componts could not implement our produts demand. So, I decide to develop my own UI library as long as deeping in VUE. Hope this could help you and me some days. :blush:

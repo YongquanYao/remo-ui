@@ -31,6 +31,7 @@ import RemoIi8n from '@/components/remo-Ii8n-demo'
 import RemoLazyload from '@/components/remo-lazyload-demo'
 import RemoInfinityLoading from '@/components/remo-infinityloading-demo'
 import RemoPersistedState from '@/components/remo-persisted-state-demo'
+import RemoBreadCrumb from '@/components/remo-breadcrumb-demo'
 
 Vue.use(Router)
 
@@ -268,6 +269,14 @@ export default new Router({
           path: '/component/remo-persisted-state',
           name: 'RemoPersistedState',
           component: RemoPersistedState,
+          meta: {
+            title: '组件|Remo'
+          }
+        },
+        {
+          path: '/component/remo-breadcrumb',
+          name: 'RemoBreadCrumb',
+          component: RemoBreadCrumb,
           meta: {
             title: '组件|Remo'
           }
