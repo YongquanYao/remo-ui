@@ -310,6 +310,11 @@ export default {
               path: '#/component/remo-clipboard',
               id: '035'
             },
+            {
+              title: 'Popup 弹窗',
+              path: '#/component/remo-popup',
+              id: '036'
+            }
           ]
         },
         {
@@ -475,6 +480,11 @@ export default {
               title: 'Clipboard',
               path: '#/component/remo-clipboard',
               id: '035'
+            },
+            {
+              title: 'Popup',
+              path: '#/component/remo-popup',
+              id: '036'
             }
           ]
         },
@@ -537,6 +547,7 @@ export default {
     }
     // console.log(id)
     this.active = id
+    this.addSiderEventListener()
   },
   methods: {
     ...mapMutations({
@@ -559,16 +570,16 @@ export default {
     handleFootershow () {
       // const pageDefaultHeight = window.innerHeight
       // const poistion = this.getElementTop(this.$refs.backtop.$el)
-      if(this.getScrollTop() + this.getWindowHeight() > this.getScrollHeight() - 180){
+      if (this.getScrollTop() + this.getWindowHeight() > this.getScrollHeight() - 180) {
         this.toBottom = true
-      }else{
+      } else{
         this.toBottom = false
       }
       console.log(this.getScrollTop())
       console.log(this.getWindowHeight())
       console.log(this.getScrollHeight())
     },
-    getScrollTop() {
+    getScrollTop () {
       var scrollTop = 0, bodyScrollTop = 0, documentScrollTop = 0;      if (document.documentElement && document.documentElement.scrollTop) {
         documentScrollTop = document.documentElement.scrollTop;
       } else if (document.body) {
@@ -577,7 +588,7 @@ export default {
       scrollTop = (bodyScrollTop - documentScrollTop > 0) ? bodyScrollTop : documentScrollTop;
       return scrollTop;
     },
-    getScrollHeight() {
+    getScrollHeight () {
     　　var scrollHeight = 0, bSH = 0, dSH= 0
     　　if(document.body){
     　　　　bSH = document.body.scrollHeight;
@@ -588,7 +599,7 @@ export default {
         scrollHeight = (bSH - dSH > 0) ? bSH : dSH ;
     　　return scrollHeight;
     },
-    getWindowHeight() {
+    getWindowHeight () {
     　　var windowHeight = 0;
     　　if(document.compatMode == "CSS1Compat"){
     　　　　windowHeight = document.documentElement.clientHeight;
@@ -597,7 +608,7 @@ export default {
     　　}
     　　return windowHeight;
     },
-    handleMenuTableShow() {
+    handleMenuTableShow () {
       this.menuShow = !this.menuShow
       // 
       // if(this.menuShow) {
@@ -606,6 +617,17 @@ export default {
       // }else{
       //   document.body.style.position = '' 
       // }
+    },
+    addSiderEventListener () {
+      const sider = document.getElementsByClassName('sidebar')[0]
+      sider.addEventListener('mouseenter', () => {
+        sider.style.visibility = 'visible'
+        sider.style.overflow = 'auto'
+      })
+      sider.addEventListener('mouseleave', () => {
+        sider.style.visibility = 'hidden'
+        sider.style.overflow = 'hidden'
+      })
     }
   }
 }

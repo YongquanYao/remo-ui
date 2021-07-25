@@ -7,8 +7,8 @@ import RemoBtn from '@/components/remo-button-demo'
 import RemoShadowBlk from '@/components/remo-shadowBlk-demo'
 import RemoTip from '@/components/remo-tip-demo'
 import RemoIcon from '@/components/remo-icon-demo'
-import RemoInstall from '@/components/demo-install'
-import RemoAbout from '@/components/demo-about'
+import RemoInstall from '@/components/install-demo'
+import RemoAbout from '@/components/about-demo'
 import RemoDivider from '@/components/remo-divider-demo'
 import RemoBacktop from '@/components/remo-backtop-demo'
 import RemoFooterbar from '@/components/remo-footerbar-demo'
@@ -32,6 +32,7 @@ import RemoLazyload from '@/components/remo-lazyload-demo'
 import RemoInfinityLoading from '@/components/remo-infinityloading-demo'
 import RemoPersistedState from '@/components/remo-persisted-state-demo'
 import RemoBreadCrumb from '@/components/remo-breadcrumb-demo'
+import RemoPopup from '@/components/remo-popup-demo'
 
 Vue.use(Router)
 
@@ -277,6 +278,14 @@ export default new Router({
           path: '/component/remo-breadcrumb',
           name: 'RemoBreadCrumb',
           component: RemoBreadCrumb,
+          meta: {
+            title: '组件|Remo'
+          }
+        },
+        {
+          path: '/component/remo-popup',
+          name: 'RemoPopup',
+          component: RemoPopup,
           meta: {
             title: '组件|Remo'
           }
