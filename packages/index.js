@@ -27,6 +27,7 @@ import VueCropper from './vue-cropper'
 import VueDragger from './vue-dragger'
 import ReBreadcrumb from './remo-breadcrumb'
 import ReBreadcrumbItem from './remo-breadcrumb-item'
+import RePopup from './remo-popup'
 
 // 所有组件列表
 const components = [
@@ -54,7 +55,8 @@ const components = [
   VueCropper,
   VueDragger,
   ReBreadcrumb,
-  ReBreadcrumbItem
+  ReBreadcrumbItem,
+  RePopup
 ]
 
 // 定义 install 方法，接收 Vue 作为参数
@@ -123,5 +125,6 @@ export default {
   VueDragger,
   gobalLoadingBar,
   ReBreadcrumbItem,
-  ReBreadcrumb
+  ReBreadcrumb,
+  RePopup
 }

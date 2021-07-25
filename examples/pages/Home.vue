@@ -313,7 +313,7 @@ export default {
             {
               title: 'Popup 弹窗',
               path: '#/component/remo-popup',
-              id: '036'
+              id: '038'
             }
           ]
         },
@@ -484,7 +484,7 @@ export default {
             {
               title: 'Popup',
               path: '#/component/remo-popup',
-              id: '036'
+              id: '038'
             }
           ]
         },
