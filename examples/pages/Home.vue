@@ -744,9 +744,9 @@ export default {
     .main{
         position: relative;
         max-width: 1140px;
-        height: -webkit-calc(100%-65px);
-        height: -moz-calc(100%-65px);
-        height: calc(100%-65px);
+        height: -webkit-calc(100% - 65px);
+        height: -moz-calc(100% - 65px);
+        height: calc(100% - 65px);
         margin: 0 auto;
         padding: 10px 0;
         top: 80px;
