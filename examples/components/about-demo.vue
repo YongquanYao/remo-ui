@@ -12,8 +12,8 @@
         <demo-block title="About me" desc="" type='normal' class="scorll_hidden">
             <div class="about scorll_hidden">
               游泳圈 / Raymond 🦁&nbsp; / Yongquan Yao<br/><br/>
-              Front End Developer | Full Stack Developer <br/><br/>
-              Guangzhou,China 🇨🇳 &nbsp;-  NewYork, USA 🇺🇸
+              Full Stack Developer || Front End Developer <br/><br/>
+              Guangzhou, China 🇨🇳 &nbsp; ✈️ &nbsp; New York, United State 🇺🇸
               <br/>
               <br/>
               Contact: &nbsp;&nbsp;

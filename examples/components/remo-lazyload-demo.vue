@@ -26,13 +26,13 @@
             <demo-block header="Lazyload" />
             <re-tip color="blue"> <i class="remoi remo-github-fill"/>  vue-lazyload: <a href="https://github.com/hilongjw/vue-lazyload"> https://github.com/hilongjw/vue-lazyload</a></re-tip>
             <demo-block>
-                Install
+                Install Instruction
                 <template slot="code">
                     <code class="html">{{fCode(install.code.html)}}</code>
                 </template>
             </demo-block>
             <demo-block height="350">
-                Import
+                Import and Initial Instruction
                 <template slot="code">
                     <code class="html">{{fCode(imported.code.html)}}</code>
                 </template>
@@ -66,7 +66,6 @@ export default {
                 code:{
                     html:`
                     // main.js:
-                    
                     import Vue from 'vue'
                     import App from './App.vue'
                     import VueLazyload from 'vue-lazyload'
@@ -113,9 +112,9 @@ export default {
                     </template>
                     `
                 }
-            }
-        }
+      }
     }
+  }
 }
 </script>
 
